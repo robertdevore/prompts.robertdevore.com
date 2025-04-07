@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>prompts.robertdevore.com</title>
+<link>https://prompts.robertdevore.com/</link>
+<description>Latest posts from prompts.robertdevore.com</description>
+<atom:link href="https://prompts.robertdevore.com/feed/index.xml" rel="self" type="application/rss+xml" />
+<lastBuildDate>Mon, 07 Apr 2025 18:43:19 GMT</lastBuildDate>
+<language>en-us</language>
+
+<item>
+<title>Prompts: Coming Soon - prompts.robertdevore.com</title>
+<link>https://prompts.robertdevore.com/blog/prompts-coming-soon/</link>
+<description>Welcome to my prompts library, where I'll be sharing and categorizing the prompts I use with AI. I'm doing this for two reasons - your benefit, and my sanity 😂...
+</description>
+<guid isPermaLink="false">2bf8a99b10cbbc6bec27ce06f558f2f2</guid>
+<pubDate>Mon, 07 Apr 2025 14:43:19 +0000</pubDate>
+</item>
+
+</channel>
+</rss>
