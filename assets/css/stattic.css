@@ -278,8 +278,6 @@ article > h1 {
 }
 
 .copy-btn {
-    background-color: #222;
-    color: #fff;
     font-size: 12px;
     padding: 4px 10px;
     border: none;
@@ -287,17 +285,21 @@ article > h1 {
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.2s ease-in-out;
-  }
-  .copy-btn:hover {
+}
+.copy-btn:hover {
     opacity: 1;
-  }
-  .code-wrapper {
+}
+.code-wrapper {
     position: relative;
     margin-bottom: 1rem;
-  }
-  pre {
+}
+pre {
     padding: 1em;
-    border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #f9f9f9;
+}
+
+.stattic-content .code-wrapper button {
+    width: auto;
+    color: #000;
 }
