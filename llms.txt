@@ -3,13 +3,13 @@
 This site contains structured content formatted for LLM-friendly consumption.
 
 ## Posts
-- [Prompts: Coming Soon](https://prompts.robertdevore.com/blog/prompts-coming-soon/): ID 737716635
 - [Simpsons Character JSON Prompts for AI Generation](https://prompts.robertdevore.com/blog/simpsons-character-json-prompts-for-ai-generation/): ID 1682342855
-- [Top Secret Military Patch JSON Prompts for AI-Generated Designs](https://prompts.robertdevore.com/blog/top-secret-military-patches-json-prompt/): ID 3881560966
+- [Prompts: Coming Soon](https://prompts.robertdevore.com/blog/prompts-coming-soon/): ID 737716635
 - [Metallic Sci-Fi HUD: Create Powerful Futuristic Icons with This JSON Prompt](https://prompts.robertdevore.com/blog/metallic-sci-fi-hud/): ID 1192994174
-- [Isometric 3D Icon JSON Prompt for AI-Generated Designs](https://prompts.robertdevore.com/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/): ID 3955460487
-- [Glowing Neon Lock: Design Bold Security Icons with This JSON Prompt](https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/): ID 1314235564
+- [Glowing Neon Icons: Design Bold Icons with This JSON Prompt](https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/): ID 1314235564
 - [YouTube Thumbnail Generation with AI JSON Prompts](https://prompts.robertdevore.com/blog/youtube-thumbnail-generation-with-ai-json-prompts/): ID 1385768888
+- [Top Secret Military Patch JSON Prompts for AI-Generated Designs](https://prompts.robertdevore.com/blog/top-secret-military-patches-json-prompt/): ID 3881560966
+- [Isometric 3D Icon JSON Prompt for AI-Generated Designs](https://prompts.robertdevore.com/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/): ID 3955460487
 - [WWF Action Figure Blister Pack JSON Prompt](https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/): ID 151537573
 
 ## Pages
