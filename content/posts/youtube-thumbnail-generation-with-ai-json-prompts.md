@@ -11,6 +11,8 @@ tags: ["json prompts", "youtube", "thumbnails", "ai images"]
 featured_image: /assets/images/youtube-thumbnails-with-json-prompts.webp
 og_image: /assets/images/youtube-thumbnails-with-json-prompts.webp
 og_image_alt: "AI-generated YouTube thumbnail examples created from structured JSON prompts"
+og_image_width: 1536
+og_image_height: 1024
 ---
 
 If you make videos, you know this truth: Creating content is fun, but making thumbnails is not.

@@ -11,6 +11,8 @@ tags: ["json prompts", "icons", "design", "ai images"]
 featured_image: /assets/images/glowing-3d-icons.webp
 og_image: /assets/images/glowing-3d-icons.webp
 og_image_alt: "Blue glowing neon lock icon generated from the JSON prompt"
+og_image_width: 1024
+og_image_height: 1024
 ---
 
 Want to create icons that **radiate power, security, and digital presence**? The **Glowing Neon Icons** prompt is your new secret weapon.

@@ -11,6 +11,8 @@ tags: ["json prompts", "sci-fi", "icons", "ai images"]
 featured_image: /assets/images/metallic-sci-fi-hud-demon.webp
 og_image: /assets/images/metallic-sci-fi-hud-demon.webp
 og_image_alt: "Metallic sci-fi demon HUD icon generated with the JSON prompt"
+og_image_width: 1024
+og_image_height: 1024
 ---
 
 If you're looking to design intense, futuristic icons that feel ripped straight out of a sci-fi world, the **Metallic Sci-Fi HUD** prompt is exactly what you need.

@@ -627,6 +627,19 @@ func excerpt_from_markdown(markdown) {
 	return join(out, " ") + "..."
 }
 
+func decode_common_html_entities(value) {
+	# Excerpts come from rendered HTML. Decode the common named entities before
+	# XML escaping so RSS readers receive one correctly encoded text layer.
+	s := to_string(value)
+	s = replace(s, "&apos;", "'")
+	s = replace(s, "&#39;", "'")
+	s = replace(s, "&quot;", "\"")
+	s = replace(s, "&lt;", "<")
+	s = replace(s, "&gt;", ">")
+	s = replace(s, "&amp;", "&")
+	return s
+}
+
 func parse_frontmatter(content, source_file) {
 	meta := {
 		"title": "",
@@ -642,6 +655,8 @@ func parse_frontmatter(content, source_file) {
 		"featured_image": "",
 		"og_image": "",
 		"og_image_alt": "",
+		"og_image_width": 0,
+		"og_image_height": 0,
 		"custom_url": "",
 			"template": "",
 			"draft": false,
@@ -1037,7 +1052,7 @@ func is_reserved_frontmatter_key(key_name) {
 	if key == "description" || key == "keywords" || key == "seo_title" || key == "seo_description" || key == "lang" || key == "canonical" {
 		return true
 	}
-	if key == "featured_image" || key == "og_image" || key == "og_image_alt" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
+	if key == "featured_image" || key == "og_image" || key == "og_image_alt" || key == "og_image_width" || key == "og_image_height" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
 		return true
 	}
 	return false
@@ -1797,6 +1812,28 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	if len(raw_featured) == 0 && has_key(settings, "default_social_image") {
 		raw_featured = trim(to_string(settings["default_social_image"]))
 	}
+	image_width := 0
+	image_height := 0
+	if has_key(settings, "default_social_image") && raw_featured == trim(to_string(settings["default_social_image"])) {
+		if has_key(settings, "default_social_image_width") {
+			image_width = parse_int_value(settings["default_social_image_width"], 0)
+		}
+		if has_key(settings, "default_social_image_height") {
+			image_height = parse_int_value(settings["default_social_image_height"], 0)
+		}
+	}
+	if has_key(page_meta, "og_image_width") {
+		configured_image_width := parse_int_value(page_meta["og_image_width"], 0)
+		if configured_image_width > 0 {
+			image_width = configured_image_width
+		}
+	}
+	if has_key(page_meta, "og_image_height") {
+		configured_image_height := parse_int_value(page_meta["og_image_height"], 0)
+		if configured_image_height > 0 {
+			image_height = configured_image_height
+		}
+	}
 	# Social cards need absolute URLs; fall back to a prefix-relative path
 	# only when no site_url is configured.
 	social_image := absolute_media_url(raw_featured, site_url)
@@ -1827,7 +1864,11 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		if starts_with(social_image, "https://") {
 			og_image_tag = og_image_tag + "<meta property=\"og:image:secure_url\" content=\"" + safe_image + "\">"
 		}
-		og_image_tag = og_image_tag + "<meta property=\"og:image:type\" content=\"" + image_type + "\"><meta property=\"og:image:alt\" content=\"" + safe_image_alt + "\">"
+		og_image_tag = og_image_tag + "<meta property=\"og:image:type\" content=\"" + image_type + "\">"
+		if image_width > 0 && image_height > 0 {
+			og_image_tag = og_image_tag + "<meta property=\"og:image:width\" content=\"" + to_string(image_width) + "\"><meta property=\"og:image:height\" content=\"" + to_string(image_height) + "\">"
+		}
+		og_image_tag = og_image_tag + "<meta property=\"og:image:alt\" content=\"" + safe_image_alt + "\">"
 		twitter_image_tag = "<meta name=\"twitter:image\" content=\"" + safe_image + "\"><meta name=\"twitter:image:alt\" content=\"" + safe_image_alt + "\">"
 	}
 	twitter_site_tag := ""
@@ -1850,12 +1891,29 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 
 	# article:published_time + datePublished for posts.
 	published_iso := trim(meta_string(page_meta, "published_iso", ""))
+	modified_iso := trim(meta_string(page_meta, "modified_iso", published_iso))
+	if len(modified_iso) == 0 {
+		modified_iso = published_iso
+	}
+	author_url := site_url
+	if has_key(settings, "author_url") {
+		configured_author_url := trim(to_string(settings["author_url"]))
+		if len(configured_author_url) > 0 {
+			author_url = configured_author_url
+		}
+	}
 	og_article_tags := ""
 	if og_type == "article" {
 		if len(published_iso) > 0 {
 			og_article_tags = og_article_tags + "<meta property=\"article:published_time\" content=\"" + xml_escape(published_iso) + "\">"
 		}
-		if len(author_meta) > 0 {
+		if len(modified_iso) > 0 {
+			og_article_tags = og_article_tags + "<meta property=\"article:modified_time\" content=\"" + xml_escape(modified_iso) + "\">"
+		}
+		if len(author_url) > 0 {
+			safe_author_url := xml_escape(author_url)
+			og_article_tags = og_article_tags + "<meta property=\"article:author\" content=\"" + safe_author_url + "\"><meta property=\"article:publisher\" content=\"" + safe_author_url + "\">"
+		} else if len(author_meta) > 0 {
 			og_article_tags = og_article_tags + "<meta property=\"article:author\" content=\"" + xml_escape(author_meta) + "\">"
 		}
 		article_section := meta_string(page_meta, "article_section", "")
@@ -1900,17 +1958,23 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		"\"headline\":\"" + json_escape(seo_title) + "\"",
 		"\"name\":\"" + json_escape(seo_title) + "\"",
 		"\"description\":\"" + json_escape(seo_description) + "\"",
-		"\"url\":\"" + json_escape(og_url) + "\""
+		"\"url\":\"" + json_escape(og_url) + "\"",
+		"\"inLanguage\":\"" + json_escape(lang) + "\""
 	]
 	if len(social_image) > 0 {
 		json_ld_parts = push(json_ld_parts, "\"image\":\"" + json_escape(social_image) + "\"")
 	}
 	if og_type == "article" {
-		json_ld_parts = push(json_ld_parts, "\"author\":{\"@type\":\"Person\",\"name\":\"" + json_escape(author_meta) + "\"}")
+		author_json := "\"author\":{\"@type\":\"Person\",\"name\":\"" + json_escape(author_meta) + "\""
+		if len(author_url) > 0 {
+			author_json = author_json + ",\"url\":\"" + json_escape(author_url) + "\""
+		}
+		author_json = author_json + "}"
+		json_ld_parts = push(json_ld_parts, author_json)
 		json_ld_parts = push(json_ld_parts, "\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"" + json_escape(og_url) + "\"}")
 		if len(published_iso) > 0 {
 			json_ld_parts = push(json_ld_parts, "\"datePublished\":\"" + json_escape(published_iso) + "\"")
-			json_ld_parts = push(json_ld_parts, "\"dateModified\":\"" + json_escape(published_iso) + "\"")
+			json_ld_parts = push(json_ld_parts, "\"dateModified\":\"" + json_escape(modified_iso) + "\"")
 		}
 		if has_key(page_meta, "article_tags") {
 			json_ld_parts = push(json_ld_parts, "\"keywords\":\"" + json_escape(join(to_string_array(page_meta["article_tags"]), ", ")) + "\"")
@@ -1918,16 +1982,9 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	} else if schema_type != "WebSite" && len(site_url) > 0 {
 		json_ld_parts = push(json_ld_parts, "\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"" + json_escape(settings["site_title"]) + "\",\"url\":\"" + json_escape(site_url) + "\"}")
 	}
-	publisher_url := site_url
-	if has_key(settings, "author_url") {
-		configured_author_url := trim(to_string(settings["author_url"]))
-		if len(configured_author_url) > 0 {
-			publisher_url = configured_author_url
-		}
-	}
 	publisher_json := "\"publisher\":{\"@type\":\"Person\",\"name\":\"Robert DeVore\""
-	if len(publisher_url) > 0 {
-		publisher_json = publisher_json + ",\"url\":\"" + json_escape(publisher_url) + "\""
+	if len(author_url) > 0 {
+		publisher_json = publisher_json + ",\"url\":\"" + json_escape(author_url) + "\""
 	}
 	publisher_json = publisher_json + "}"
 	json_ld_parts = push(json_ld_parts, publisher_json)
@@ -3425,6 +3482,8 @@ func build_site(settings) {
 		featured_image := trim(to_string(meta["featured_image"]))
 		og_image := trim(to_string(meta["og_image"]))
 		og_image_alt := trim(to_string(meta["og_image_alt"]))
+		og_image_width := parse_int_value(meta["og_image_width"], 0)
+		og_image_height := parse_int_value(meta["og_image_height"], 0)
 		author_name := resolve_lookup(meta["author"], authors_lookup, "")
 		page_categories := meta_terms(meta, "categories", categories_lookup)
 		page_tags := meta_terms(meta, "tags", tags_lookup)
@@ -3444,6 +3503,8 @@ func build_site(settings) {
 			"featured_image": featured_image,
 			"og_image": og_image,
 			"og_image_alt": og_image_alt,
+			"og_image_width": og_image_width,
+			"og_image_height": og_image_height,
 			"author": author_name,
 			"categories": page_categories,
 			"tags": page_tags,
@@ -3579,6 +3640,8 @@ func build_site(settings) {
 				"canonical": page_data["canonical"],
 				"featured_image": processed_page_social_image,
 				"og_image_alt": page_data["og_image_alt"],
+				"og_image_width": page_data["og_image_width"],
+				"og_image_height": page_data["og_image_height"],
 				"schema_type": page_schema_type,
 				"author": page_data["author"]
 			}
@@ -3661,6 +3724,8 @@ func build_site(settings) {
 			og_image = featured_image
 		}
 		og_image_alt := trim(to_string(meta["og_image_alt"]))
+		og_image_width := parse_int_value(meta["og_image_width"], 0)
+		og_image_height := parse_int_value(meta["og_image_height"], 0)
 
 		excerpt := trim(to_string(meta["excerpt"]))
 		if len(excerpt) == 0 {
@@ -3671,6 +3736,11 @@ func build_site(settings) {
 
 		post_date_raw := trim(to_string(meta["date"]))
 		post_date := parse_post_date(post_date_raw)
+		modified_date := parse_post_date(trim(to_string(meta["last_updated"])))
+		modified_iso := post_date["iso"]
+		if modified_date["valid"] {
+			modified_iso = modified_date["iso"]
+		}
 		post_date_display := post_date_raw
 		if post_date["valid"] {
 			post_date_display = post_date["display"]
@@ -3754,9 +3824,12 @@ func build_site(settings) {
 				"canonical": canonical,
 				"featured_image": og_image,
 				"og_image_alt": og_image_alt,
+				"og_image_width": og_image_width,
+				"og_image_height": og_image_height,
 				"author": author_name,
 				"og_type": "article",
 				"published_iso": post_date["iso"],
+				"modified_iso": modified_iso,
 				"article_section": category_text,
 				"article_tags": tags
 			}
@@ -3765,7 +3838,7 @@ func build_site(settings) {
 		write_route_alias(output_dir, route, make_aliases)
 
 		if want_sitemap {
-			append_file(sitemap_tmp, sitemap_url_entry(site_url, route, post_date["iso"], blog_prefix))
+			append_file(sitemap_tmp, sitemap_url_entry(site_url, route, modified_iso, blog_prefix))
 		}
 
 		if post_date["sort_key"] > newest_date_sort {
@@ -4294,19 +4367,31 @@ func build_site(settings) {
 				rss_post_idx := rss_post_idx + 1
 				post_url := site_url + "/" + post["route"]
 				rss_description := trim(regex_replace(regex_replace(to_string(post["excerpt"]), "<[^>]+>", " "), "\\s+", " "))
+				rss_description = decode_common_html_entities(rss_description)
 				pub_date_tag := ""
 				post_rfc822 := trim(to_string(post["date_rfc822"]))
 				if len(post_rfc822) > 0 {
 					pub_date_tag = "<pubDate>" + post_rfc822 + "</pubDate>"
 				}
-				rss_items := rss_items + "<item><title>" + xml_escape(post["title"]) + "</title><link>" + xml_escape(post_url) + "</link><guid isPermaLink=\"true\">" + xml_escape(post_url) + "</guid>" + pub_date_tag + "<description>" + xml_escape(rss_description) + "</description></item>"
+				category_tags := ""
+				post_tags := to_string_array(post["tags"])
+				rss_tag_idx := 0
+				loop {
+					if rss_tag_idx >= len(post_tags) { break }
+					post_tag := trim(to_string(post_tags[rss_tag_idx]))
+					rss_tag_idx = rss_tag_idx + 1
+					if len(post_tag) > 0 {
+						category_tags = category_tags + "<category>" + xml_escape(post_tag) + "</category>"
+					}
+				}
+				rss_items := rss_items + "<item><title>" + xml_escape(post["title"]) + "</title><link>" + xml_escape(post_url) + "</link><guid isPermaLink=\"true\">" + xml_escape(post_url) + "</guid>" + pub_date_tag + category_tags + "<description>" + xml_escape(rss_description) + "</description></item>"
 				rss_count := rss_count + 1
 			}
 			last_build_tag := ""
 			if len(newest_rfc822) > 0 {
 				last_build_tag = "<lastBuildDate>" + newest_rfc822 + "</lastBuildDate>"
 			}
-			rss_xml := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\"><channel><title>" + xml_escape(settings["site_title"]) + "</title><link>" + xml_escape(site_url) + "</link><description>Latest posts from " + xml_escape(settings["site_title"]) + "</description>" + last_build_tag + rss_items + "</channel></rss>\n"
+			rss_xml := "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<rss version=\"2.0\" xmlns:atom=\"http://www.w3.org/2005/Atom\"><channel><title>" + xml_escape(settings["site_title"]) + "</title><link>" + xml_escape(site_url + "/") + "</link><description>" + xml_escape(settings["site_tagline"]) + "</description><language>en-us</language><generator>Kujo SSG</generator><ttl>60</ttl><atom:link href=\"" + xml_escape(site_url + "/feed/index.xml") + "\" rel=\"self\" type=\"application/rss+xml\"/>" + last_build_tag + rss_items + "</channel></rss>\n"
 			ensure_dir(path_join(output_dir, "feed"))
 			write_file(path_join(output_dir, "feed/index.xml"), rss_xml)
 
@@ -4348,7 +4433,7 @@ func build_site(settings) {
 			# Streamed to the output file directly (O(1) appends) since string
 			# concatenation of a large body is O(n^2) in Kujo.
 			llms_path := path_join(output_dir, "llms.txt")
-			write_file(llms_path, "# " + settings["site_title"] + "\n\nThis site contains structured content formatted for LLM-friendly consumption.\n\n## Posts\n")
+			write_file(llms_path, "# " + settings["site_title"] + "\n\n> " + settings["site_tagline"] + "\n\nThis is Robert DeVore's curated library of reusable AI prompts. Each linked article includes the original explanatory content and its complete prompt structure.\n\n## Start here\n\n- [Prompt Library](" + site_url + "/): Browse the complete prompt library.\n- [RSS feed](" + site_url + "/feed/index.xml): Latest prompt articles in RSS 2.0 format.\n- [XML sitemap](" + site_url + "/sitemap.xml): Canonical indexable URLs for search crawlers.\n\n## Posts\n\n")
 			llms_post_idx := 0
 			loop {
 				if llms_post_idx >= len(posts_sorted) {
@@ -4359,7 +4444,7 @@ func build_site(settings) {
 				llms_post_idx := llms_post_idx + 1
 				append_file(llms_path, "- [" + post["title"] + "](" + site_url + "/" + post["route"] + ")\n")
 			}
-			append_file(llms_path, "\n## Pages\n")
+			append_file(llms_path, "\n## Pages\n\n")
 			built_page_idx := 0
 			loop {
 				if built_page_idx >= len(built_pages) {
@@ -4374,7 +4459,6 @@ func build_site(settings) {
 				append_file(llms_path, read_file(llms_collections_tmp))
 				delete_file(llms_collections_tmp)
 			}
-			append_file(llms_path, "\n## Sitemap\n" + site_url + "/sitemap.xml\n")
 		}
 	}
 

@@ -11,6 +11,8 @@ tags: ["json prompts", "patches", "design", "ai images"]
 featured_image: /assets/images/patch-wolf-pack.webp
 og_image: /assets/images/patch-wolf-pack.webp
 og_image_alt: "Wolf Pack embroidered military patch generated with a JSON prompt"
+og_image_width: 1024
+og_image_height: 1024
 ---
 
 Designing elite military-style patches just got a classified-level upgrade 🤘

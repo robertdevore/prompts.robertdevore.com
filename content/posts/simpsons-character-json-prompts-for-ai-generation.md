@@ -11,6 +11,8 @@ tags: ["json prompts", "characters", "simpsons", "ai images"]
 featured_image: /assets/images/simpsons-wwf-scene.webp
 og_image: /assets/images/simpsons-wwf-scene.webp
 og_image_alt: "A Simpsons-style wrestling scene generated with an AI character prompt"
+og_image_width: 1536
+og_image_height: 1024
 ---
 
 Ever wanted to live in Springfield? Now you can - kind of 😎
