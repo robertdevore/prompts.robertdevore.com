@@ -34,7 +34,7 @@ img { block-size: auto; }
 .skip-link:focus { position: fixed; inset-block-start: var(--sk-space-3); inset-inline-start: var(--sk-space-3); z-index: var(--sk-z-modal); inline-size: auto; block-size: auto; margin: 0; padding: var(--sk-space-2) var(--sk-space-3); clip: auto; background: var(--prompts-page); border: var(--sk-border-2) solid var(--prompts-accent); }
 
 .site-header { position: sticky; inset-block-start: 0; z-index: var(--sk-z-sticky); display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 28rem) minmax(0, 1fr); gap: var(--sk-space-6); align-items: center; padding: var(--sk-space-3) max(var(--sk-space-4), calc((100vw - var(--sk-size-content-xl)) / 2)); background: color-mix(in srgb, var(--prompts-page) 94%, transparent); border-block-end: var(--sk-border-1) solid var(--prompts-line); backdrop-filter: blur(var(--sk-space-3)); }
-.site-brand { justify-self: start; color: var(--sk-color-black); font-size: var(--sk-type-size-xl); font-weight: var(--sk-type-weight-bold); line-height: var(--sk-type-line-tight); text-decoration: none; -webkit-text-stroke: var(--sk-border-1) var(--prompts-accent); paint-order: stroke fill; }
+.site-brand { justify-self: start; color: var(--prompts-accent); font-size: var(--sk-type-size-xl); font-weight: var(--sk-type-weight-bold); line-height: var(--sk-type-line-tight); text-decoration: none; }
 .site-brand:hover { color: var(--prompts-accent); }
 .site-search-shell { position: relative; inline-size: 100%; }
 .site-search { display: block; inline-size: 100%; }
@@ -55,7 +55,7 @@ img { block-size: auto; }
 .menu-overlay-backdrop { display: none; }
 .menu-overlay-panel { min-block-size: 100dvh; max-block-size: 100dvh; overflow-y: auto; padding: clamp(var(--sk-space-6), 7vw, var(--sk-space-16)) max(var(--sk-space-6), calc((100vw - var(--sk-size-content-md)) / 2)); background: var(--prompts-panel); }
 .menu-overlay-header { display: flex; justify-content: space-between; gap: var(--sk-space-4); align-items: center; padding-block-end: var(--sk-space-6); border-block-end: var(--sk-border-1) solid var(--prompts-line); }
-.menu-overlay-title { margin: 0; color: var(--sk-color-black); font-size: var(--sk-type-size-2xl); font-weight: var(--sk-type-weight-bold); -webkit-text-stroke: var(--sk-border-1) var(--prompts-accent); paint-order: stroke fill; }
+.menu-overlay-title { margin: 0; color: var(--prompts-accent); font-size: var(--sk-type-size-2xl); font-weight: var(--sk-type-weight-bold); }
 .menu-overlay-close { min-block-size: var(--sk-size-control-md); padding-inline: var(--sk-space-3); background: transparent; color: var(--prompts-accent); border: var(--sk-border-1) solid var(--prompts-accent); border-radius: var(--sk-radius-0); cursor: pointer; }
 .site-navigation { display: grid; gap: var(--sk-space-5); padding-block-start: var(--sk-space-8); }
 .site-navigation > a, .menu-categories > a { color: var(--prompts-ink); font-size: clamp(var(--sk-type-size-xl), 4vw, var(--sk-type-size-3xl)); font-weight: var(--sk-type-weight-bold); text-decoration: none; }
@@ -66,7 +66,7 @@ img { block-size: auto; }
 
 .site-home, .site-listing, .article-shell { inline-size: min(100% - var(--sk-space-8), var(--sk-size-content-xl)); margin-inline: auto; padding-block: var(--sk-space-12) var(--sk-space-20); }
 .home-hero { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(20rem, .8fr); gap: var(--sk-space-10); align-items: center; padding: clamp(var(--sk-space-8), 7vw, var(--sk-space-20)); background: var(--prompts-panel); border: var(--sk-border-1) solid var(--prompts-accent); border-radius: var(--sk-radius-0); }
-.home-hero h1, .listing-header h1, .article-header h1 { margin-block: 0 var(--sk-space-5); color: var(--sk-color-black); font-size: clamp(var(--sk-type-size-3xl), 7vw, var(--sk-type-size-5xl)); line-height: var(--sk-type-line-tight); -webkit-text-stroke: var(--sk-border-1) var(--prompts-accent); paint-order: stroke fill; }
+.home-hero h1, .listing-header h1, .article-header h1 { margin-block: 0 var(--sk-space-5); color: var(--prompts-accent); font-size: clamp(var(--sk-type-size-3xl), 7vw, var(--sk-type-size-5xl)); line-height: var(--sk-type-line-tight); }
 .home-hero h1 { max-inline-size: 12ch; }
 .eyebrow { margin-block: 0 var(--sk-space-3); color: var(--prompts-accent); font-size: var(--sk-type-size-xs); font-weight: var(--sk-type-weight-bold); letter-spacing: .1em; text-transform: uppercase; }
 .home-lede, .listing-header > p, .article-description { max-inline-size: 48rem; color: var(--prompts-body); font-size: var(--sk-type-size-lg); }

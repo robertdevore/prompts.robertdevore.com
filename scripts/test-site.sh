@@ -80,6 +80,9 @@ assert_contains output/blog/top-secret-military-patches-json-prompt/index.html '
 assert_contains output/assets/css/style.css '--prompts-accent: var(--sk-state-warning)'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
+if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then
+	fail "outlined title styling leaked into generated output"
+fi
 assert_contains output/assets/js/docs.js 'copyBlockText'
 assert_contains output/index.html 'data-theme="kujo-dark"'
 assert_contains output/index.html 'assets/sitekit/sitekit.css'
