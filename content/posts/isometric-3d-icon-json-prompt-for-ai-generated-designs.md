@@ -4,6 +4,7 @@ description: "Generate polished isometric 3D icons with lifelike materials, real
 custom_url: isometric-3d-icon-json-prompt-for-ai-generated-designs
 date: 2025-05-15
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "3d icons", "design", "ai images"]
 featured_image: /assets/images/isometric-3d-icons.webp
 og_image: /assets/images/isometric-3d-icons.webp

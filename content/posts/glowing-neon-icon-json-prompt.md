@@ -4,6 +4,7 @@ description: "Create bold, glowing 3D icons with luminous outlines, high-contras
 custom_url: glowing-neon-icon-json-prompt
 date: 2025-05-19
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "icons", "design", "ai images"]
 featured_image: /assets/images/glowing-3d-icons.webp
 og_image: /assets/images/glowing-3d-icons.webp

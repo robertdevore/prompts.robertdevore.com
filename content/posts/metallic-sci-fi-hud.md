@@ -4,6 +4,7 @@ description: "Create intense futuristic icons with brushed metal, electric blue 
 custom_url: metallic-sci-fi-hud
 date: 2025-04-27
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "sci-fi", "icons", "ai images"]
 featured_image: /assets/images/metallic-sci-fi-hud-demon.webp
 og_image: /assets/images/metallic-sci-fi-hud-demon.webp

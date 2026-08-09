@@ -4,6 +4,7 @@ description: "The original welcome to Robert DeVore's organized, reusable librar
 custom_url: prompts-coming-soon
 date: 2025-04-07
 author: Robert DeVore
+categories: ["announcements"]
 tags: ["prompts", "announcements"]
 ---
 

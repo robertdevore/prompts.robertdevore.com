@@ -4,6 +4,7 @@ description: "Generate bold YouTube thumbnails from a title, optional subhead, a
 custom_url: youtube-thumbnail-generation-with-ai-json-prompts
 date: 2025-04-22
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "youtube", "thumbnails", "ai images"]
 featured_image: /assets/images/youtube-thumbnails-with-json-prompts.webp
 og_image: /assets/images/youtube-thumbnails-with-json-prompts.webp

@@ -4,6 +4,7 @@ description: "Generate photorealistic embroidered military patches for covert un
 custom_url: top-secret-military-patches-json-prompt
 date: 2025-05-13
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "patches", "design", "ai images"]
 featured_image: /assets/images/patch-wolf-pack.webp
 og_image: /assets/images/patch-wolf-pack.webp

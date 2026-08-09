@@ -4,6 +4,7 @@ description: "Turn a supplied photo into a vintage 1980s or 1990s WWF-style acti
 custom_url: wwf-action-figure-blister-pack-json-prompt
 date: 2025-04-09
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "action figures", "wwf", "ai images"]
 ---
 

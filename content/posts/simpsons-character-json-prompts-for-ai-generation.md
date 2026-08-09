@@ -4,6 +4,7 @@ description: "Recreate real-world scenes or turn a photo into a full-body Simpso
 custom_url: simpsons-character-json-prompts-for-ai-generation
 date: 2025-04-11
 author: Robert DeVore
+categories: ["images"]
 tags: ["json prompts", "characters", "simpsons", "ai images"]
 featured_image: /assets/images/simpsons-wwf-scene.webp
 og_image: /assets/images/simpsons-wwf-scene.webp

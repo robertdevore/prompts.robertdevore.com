@@ -111,6 +111,9 @@ func parse_frontmatter(content) {
 		"difficulty": "",
 		"status": "",
 		"version": "",
+		"date": "",
+		"featured_image": "",
+		"categories": [],
 		"tags": [],
 		"draft": false,
 		"search_exclude": false
@@ -167,6 +170,7 @@ func parse_frontmatter(content) {
 	}
 	meta["draft"] = parse_bool_value(meta["draft"], false)
 	meta["search_exclude"] = parse_bool_value(meta["search_exclude"], false)
+	meta["categories"] = to_string_array(meta["categories"])
 	meta["tags"] = to_string_array(meta["tags"])
 	return {"meta": meta, "body": body}
 }
@@ -302,6 +306,9 @@ func main() {
 			"difficulty": trim(to_string(meta["difficulty"])),
 			"status": trim(to_string(meta["status"])),
 			"version": trim(to_string(meta["version"])),
+			"date": trim(to_string(meta["date"])),
+			"featured_image": trim(to_string(meta["featured_image"])),
+			"categories": meta["categories"],
 			"tags": meta["tags"],
 			"headings": first_headings(parsed["body"]),
 			"text": text

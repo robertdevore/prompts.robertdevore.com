@@ -28,21 +28,41 @@
 <body>
 <a href="#main-content" class="skip-link">Skip to main content</a>
 <header class="site-header" id="navigation">
-	<div class="site-header-row">
-		<a class="site-brand" href="{{home_path}}"><span class="site-brand-mark" aria-hidden="true">&gt;_</span><span>Prompts</span></a>
-		<button class="site-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-docs-menu>Menu</button>
+	<a class="site-brand" href="{{home_path}}">Prompts</a>
+	<div class="site-search-shell">
+		<label class="site-search">
+			<span class="sr-only">Search prompts</span>
+			<input id="docs-search" type="search" placeholder="Search prompts" autocomplete="off">
+		</label>
+		<div id="docs-search-results" class="search-results" aria-live="polite"></div>
 	</div>
-	<nav id="primary-navigation" class="site-navigation" aria-label="Primary navigation"><a href="{{relative_path}}contact/">Contact</a></nav>
-	<label class="site-search">
-		<span class="sr-only">Search prompts</span>
-		<input id="docs-search" type="search" placeholder="Search prompts" autocomplete="off">
-	</label>
+	<button class="site-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-docs-menu>Menu</button>
 </header>
-<div id="docs-search-results" class="search-results" aria-live="polite"></div>
+<div class="menu-overlay" aria-hidden="true" data-menu-overlay>
+	<button class="menu-overlay-backdrop" type="button" aria-label="Close menu" data-docs-menu-close></button>
+	<div class="menu-overlay-panel" role="dialog" aria-modal="true" aria-labelledby="menu-title">
+		<div class="menu-overlay-header">
+			<p class="menu-overlay-title" id="menu-title">Prompt Library</p>
+			<button class="menu-overlay-close" type="button" data-docs-menu-close>Close</button>
+		</div>
+		<nav id="primary-navigation" class="site-navigation" aria-label="Primary navigation">
+			<a href="{{relative_path}}about/">About</a>
+			<div class="menu-categories">
+				<p>Browse prompt categories</p>
+				<a href="{{relative_path}}images/">Images</a>
+				<a href="{{relative_path}}writing/">Writing</a>
+				<a href="{{relative_path}}business/">Business</a>
+				<a href="{{relative_path}}marketing/">Marketing</a>
+				<a href="{{relative_path}}coding/">Coding</a>
+			</div>
+			<a href="{{relative_path}}contact/">Contact</a>
+		</nav>
+	</div>
+</div>
 {{content}}
 <footer class="site-footer" id="footer">
 	<div><strong>Prompts by Robert DeVore</strong><span>Useful prompts. Clear structure. Better output.</span></div>
-	<nav aria-label="Footer navigation"><a href="{{relative_path}}contact/">Contact</a><a href="{{relative_path}}feed/index.xml">RSS</a><a href="{{relative_path}}sitemap.xml">Sitemap</a><a href="{{relative_path}}llms.txt">llms.txt</a></nav>
+	<nav aria-label="Footer navigation"><a href="{{relative_path}}about/">About</a><a href="{{relative_path}}contact/">Contact</a><a href="{{relative_path}}feed/index.xml">RSS</a><a href="{{relative_path}}sitemap.xml">Sitemap</a><a href="{{relative_path}}llms.txt">llms.txt</a></nav>
 </footer>
 <script src="{{relative_path}}assets/sitekit/sitekit.js"></script>
 <script src="{{relative_path}}assets/js/docs.js"></script>
