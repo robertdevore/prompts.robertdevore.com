@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" data-theme="kujo-dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{{page_title}}</title>
+	<meta name="description" content="{{meta_description}}">
+	<meta name="keywords" content="{{seo_keywords}}">
+	{{canonical_tag}}
+	{{favicon_tag}}
+	{{rss_link_tag}}
+	<meta property="og:title" content="{{seo_title}}">
+	<meta property="og:description" content="{{seo_description}}">
+	<meta property="og:url" content="{{og_url}}">
+	<meta property="og:type" content="{{og_type}}">
+	<meta property="og:site_name" content="{{site_title}}">
+	<meta property="og:locale" content="{{og_locale}}">
+	{{og_image_tag}}
+	{{og_article_tags}}
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="{{seo_title}}">
+	<meta name="twitter:description" content="{{seo_description}}">
+	{{twitter_image_tag}}
+	<link href="{{relative_path}}assets/sitekit/sitekit.css" rel="stylesheet">
+	<link href="{{stylesheet_path}}" rel="stylesheet">
+	{{json_ld}}
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<header class="site-header" id="navigation">
+	<div class="site-header-row">
+		<a class="site-brand" href="{{home_path}}"><span class="site-brand-mark" aria-hidden="true">&gt;_</span><span>Prompts</span></a>
+		<button class="site-menu-button" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open menu" data-docs-menu>Menu</button>
+	</div>
+	<nav id="primary-navigation" class="site-navigation" aria-label="Primary navigation"><a href="{{relative_path}}contact/">Contact</a></nav>
+	<label class="site-search">
+		<span class="sr-only">Search prompts</span>
+		<input id="docs-search" type="search" placeholder="Search prompts" autocomplete="off">
+	</label>
+</header>
+<div id="docs-search-results" class="search-results" aria-live="polite"></div>
+{{content}}
+<footer class="site-footer" id="footer">
+	<div><strong>Prompts by Robert DeVore</strong><span>Useful prompts. Clear structure. Better output.</span></div>
+	<nav aria-label="Footer navigation"><a href="{{relative_path}}contact/">Contact</a><a href="{{relative_path}}feed/index.xml">RSS</a><a href="{{relative_path}}sitemap.xml">Sitemap</a><a href="{{relative_path}}llms.txt">llms.txt</a></nav>
+</footer>
+<script src="{{relative_path}}assets/sitekit/sitekit.js"></script>
+<script src="{{relative_path}}assets/js/docs.js"></script>
+</body>
+</html>

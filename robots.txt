@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-
-# Sitemap URL
-Sitemap: https://prompts.robertdevore.com/sitemap.xml
