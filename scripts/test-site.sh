@@ -82,6 +82,7 @@ assert_contains output/index.html 'https://rsms.me/inter/inter.css'
 assert_contains output/index.html 'assets/css/style.css?v=20260809.8'
 assert_contains output/index.html 'assets/js/docs.js?v=20260809.5'
 assert_contains output/index.html '<code class="language-json">'
+assert_contains output/index.html '<link rel="author" href="https://robertdevore.com/">'
 if grep -Fq 'Copy the structure, swap in your idea, and start creating.' output/index.html; then
 	fail "obsolete homepage helper copy leaked into generated output"
 fi
@@ -119,6 +120,19 @@ assert_contains output/index.html 'assets/sitekit/sitekit.css'
 assert_contains output/CNAME 'prompts.robertdevore.com'
 assert_contains output/sitemap.xml 'https://prompts.robertdevore.com/contact/'
 assert_contains output/robots.txt 'Allow: /'
+assert_contains output/robots.txt 'Sitemap: https://prompts.robertdevore.com/sitemap.xml'
+assert_contains output/feed/index.xml 'xmlns:atom="http://www.w3.org/2005/Atom"'
+assert_contains output/feed/index.xml '<atom:link href="https://prompts.robertdevore.com/feed/index.xml" rel="self" type="application/rss+xml"/>'
+assert_contains output/feed/index.xml '<generator>Kujo SSG</generator>'
+assert_contains output/feed/index.xml '<category>json prompts</category>'
+if grep -Fq '&amp;apos;' output/feed/index.xml; then
+	fail "double-escaped apostrophe leaked into RSS output"
+fi
+assert_contains output/llms.txt '> Explore a growing library of high-quality AI prompts'
+assert_contains output/llms.txt '- [Prompt Library](https://prompts.robertdevore.com/)'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:width" content="1024">'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
 
 if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then
 	fail "legacy Stattic presentation leaked into generated output"
@@ -126,5 +140,6 @@ fi
 
 python3 scripts/check-internal-links.py output
 python3 scripts/check-seo.py output
+python3 scripts/check-discovery.py output
 
 printf 'Site contract passed\n'

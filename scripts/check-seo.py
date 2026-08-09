@@ -84,6 +84,32 @@ def expected_schema(route: str) -> str:
     return "WebPage"
 
 
+def webp_dimensions(path: Path) -> tuple[int, int] | None:
+    data = path.read_bytes()
+    if len(data) < 30 or data[:4] != b"RIFF" or data[8:12] != b"WEBP":
+        return None
+    chunk = data[12:16]
+    payload = data[20:]
+    if chunk == b"VP8X" and len(payload) >= 10:
+        return (
+            1 + int.from_bytes(payload[4:7], "little"),
+            1 + int.from_bytes(payload[7:10], "little"),
+        )
+    if chunk == b"VP8L" and len(payload) >= 5 and payload[0] == 0x2F:
+        b1, b2, b3, b4 = payload[1:5]
+        return (
+            1 + (((b2 & 0x3F) << 8) | b1),
+            1 + (((b4 & 0x0F) << 10) | (b3 << 2) | ((b2 & 0xC0) >> 6)),
+        )
+    if chunk == b"VP8 ":
+        marker = payload.find(b"\x9d\x01\x2a")
+        if marker >= 0 and len(payload) >= marker + 7:
+            width = int.from_bytes(payload[marker + 3 : marker + 5], "little") & 0x3FFF
+            height = int.from_bytes(payload[marker + 5 : marker + 7], "little") & 0x3FFF
+            return width, height
+    return None
+
+
 def fail(errors: list[str], route: str, message: str) -> None:
     errors.append(f"{route}: {message}")
 
@@ -117,6 +143,8 @@ def main() -> int:
         robots = meta_content(parser, "name", "robots")
         canonical = link_href(parser, "canonical")
         og_image = meta_content(parser, "property", "og:image")
+        og_image_width = meta_content(parser, "property", "og:image:width")
+        og_image_height = meta_content(parser, "property", "og:image:height")
 
         if not title:
             fail(errors, route, "missing title")
@@ -144,7 +172,8 @@ def main() -> int:
 
         required_property = [
             "og:title", "og:description", "og:url", "og:type", "og:site_name",
-            "og:locale", "og:image", "og:image:secure_url", "og:image:type", "og:image:alt",
+            "og:locale", "og:image", "og:image:secure_url", "og:image:type",
+            "og:image:width", "og:image:height", "og:image:alt",
         ]
         for prop in required_property:
             if not meta_content(parser, "property", prop):
@@ -160,8 +189,23 @@ def main() -> int:
         parsed_image = urlparse(og_image)
         if parsed_image.scheme != "https" or parsed_image.netloc != "prompts.robertdevore.com":
             fail(errors, route, "Open Graph image must use the production HTTPS origin")
-        elif not (root / parsed_image.path.lstrip("/")).is_file():
-            fail(errors, route, f"Open Graph image does not exist: {parsed_image.path}")
+        else:
+            image_path = root / parsed_image.path.lstrip("/")
+            if not image_path.is_file():
+                fail(errors, route, f"Open Graph image does not exist: {parsed_image.path}")
+            else:
+                try:
+                    declared_dimensions = (int(og_image_width), int(og_image_height))
+                except ValueError:
+                    fail(errors, route, "Open Graph image dimensions must be integers")
+                else:
+                    actual_dimensions = webp_dimensions(image_path)
+                    if actual_dimensions and declared_dimensions != actual_dimensions:
+                        fail(
+                            errors,
+                            route,
+                            f"Open Graph dimensions {declared_dimensions} do not match image {actual_dimensions}",
+                        )
 
         if len(parser.json_ld) != 1:
             fail(errors, route, "expected exactly one JSON-LD block")
@@ -180,13 +224,30 @@ def main() -> int:
                     fail(errors, route, "JSON-LD URL does not match canonical")
                 if structured.get("image") != og_image:
                     fail(errors, route, "JSON-LD image does not match og:image")
+                if structured.get("inLanguage") != "en":
+                    fail(errors, route, "JSON-LD inLanguage must be en")
+                publisher = structured.get("publisher")
+                if not isinstance(publisher, dict) or publisher.get("@type") != "Person":
+                    fail(errors, route, "JSON-LD publisher must be a Person")
+                elif publisher.get("name") != "Robert DeVore" or publisher.get("url") != "https://robertdevore.com":
+                    fail(errors, route, "JSON-LD publisher identity is incomplete")
                 if schema == "BlogPosting":
                     for field in ("author", "datePublished", "dateModified", "mainEntityOfPage", "keywords"):
                         if not structured.get(field):
                             fail(errors, route, f"BlogPosting JSON-LD is missing {field}")
-                    for prop in ("article:published_time", "article:author", "article:section", "article:tag"):
+                    for prop in (
+                        "article:published_time", "article:modified_time", "article:author",
+                        "article:publisher", "article:section", "article:tag",
+                    ):
                         if not meta_content(parser, "property", prop):
                             fail(errors, route, f"article metadata is missing {prop}")
+                    if meta_content(parser, "property", "article:author") != "https://robertdevore.com":
+                        fail(errors, route, "article:author must use the author profile URL")
+                    author_data = structured.get("author")
+                    if not isinstance(author_data, dict) or author_data.get("url") != "https://robertdevore.com":
+                        fail(errors, route, "BlogPosting author URL is incomplete")
+                    if structured.get("dateModified") != meta_content(parser, "property", "article:modified_time"):
+                        fail(errors, route, "JSON-LD dateModified does not match article metadata")
 
     if errors:
         for error in errors:

@@ -53,4 +53,4 @@ featured_image: /assets/images/useful-prompt.webp
 bash scripts/test-site.sh
 ```
 
-The test builds the production site, validates generated HTML, confirms all legacy routes, checks migrated content and media, and verifies SiteKit, Inter, and Departure Mono are present.
+The test builds the production site, validates generated HTML, confirms all legacy routes, checks migrated content and media, verifies complete SEO/social/schema metadata, and cross-checks canonical URLs against RSS, `sitemap.xml`, `robots.txt`, and the LLM-friendly `llms.txt` index.
