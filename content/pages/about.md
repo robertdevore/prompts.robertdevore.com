@@ -1,6 +1,8 @@
 ---
 title: "About"
 description: "A practical library of reusable prompts for creative and professional work with AI."
+seo_title: "About the Prompt Library"
+keywords: "Robert DeVore, AI prompt library, reusable AI prompts, prompt engineering"
 custom_url: about
 nav_title: About
 order: 5

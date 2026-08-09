@@ -1,6 +1,8 @@
 ---
 title: "Top Secret Military Patch JSON Prompts for AI-Generated Designs"
 description: "Generate photorealistic embroidered military patches for covert units, tactical teams, fictional programs, and morale-patch concepts."
+seo_title: "Military Patch JSON Prompts"
+keywords: "military patch prompt, embroidered patch prompt, JSON image prompt, tactical patch design, AI image generation"
 custom_url: top-secret-military-patches-json-prompt
 date: 2025-05-13
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "patches", "design", "ai images"]
 featured_image: /assets/images/patch-wolf-pack.webp
 og_image: /assets/images/patch-wolf-pack.webp
+og_image_alt: "Wolf Pack embroidered military patch generated with a JSON prompt"
 ---
 
 Designing elite military-style patches just got a classified-level upgrade 🤘

@@ -640,6 +640,8 @@ func parse_frontmatter(content, source_file) {
 		"lang": "en",
 		"canonical": "",
 		"featured_image": "",
+		"og_image": "",
+		"og_image_alt": "",
 		"custom_url": "",
 			"template": "",
 			"draft": false,
@@ -1035,7 +1037,7 @@ func is_reserved_frontmatter_key(key_name) {
 	if key == "description" || key == "keywords" || key == "seo_title" || key == "seo_description" || key == "lang" || key == "canonical" {
 		return true
 	}
-	if key == "featured_image" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
+	if key == "featured_image" || key == "og_image" || key == "og_image_alt" || key == "custom_url" || key == "template" || key == "draft" || key == "order" || key == "excerpt" || key == "nav_hide" {
 		return true
 	}
 	return false
@@ -1730,9 +1732,17 @@ func featured_image_html_tag(featured_image_url, title) {
 }
 
 func render_layout(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta) {
-	# Delegates to the native renderer (compiled once, byte-identical to the
-	# previous interpreted body, which is preserved as render_layout_interpreted).
-	return render_layout_native(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta)
+	# Keep the native renderer on the potentially large page body, then replace
+	# only its head with the richer interpreted metadata head. Rendering the
+	# interpreted shell with an empty body avoids repeated full-document passes.
+	native_html := render_layout_native(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta)
+	metadata_shell := render_layout_interpreted(layout_template, settings, route, page_title, meta_description, navigation, "", page_meta)
+	native_head_end := index_of(native_html, "</head>")
+	metadata_head_end := index_of(metadata_shell, "</head>")
+	if native_head_end < 0 || metadata_head_end < 0 {
+		return native_html
+	}
+	return substring(metadata_shell, 0, metadata_head_end) + substring(native_html, native_head_end, len(native_html))
 }
 
 func render_layout_interpreted(layout_template, settings, route, page_title, meta_description, navigation, content, page_meta) {
@@ -1747,8 +1757,16 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	if len(seo_description) == 0 {
 		seo_description = trim(to_string(settings["site_tagline"]))
 	}
-	seo_keywords := meta_string(page_meta, "seo_keywords", "SSG, Static Site Generator")
+	default_keywords := "AI prompts, image generation prompts, writing prompts, business prompts, marketing prompts, coding prompts"
+	if has_key(settings, "default_keywords") {
+		configured_keywords := trim(to_string(settings["default_keywords"]))
+		if len(configured_keywords) > 0 {
+			default_keywords = configured_keywords
+		}
+	}
+	seo_keywords := meta_string(page_meta, "seo_keywords", default_keywords)
 	author_meta := meta_string(page_meta, "author", "Robert DeVore")
+	robots_meta := meta_string(page_meta, "robots", "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1")
 	lang := to_lower(meta_string(page_meta, "lang", "en"))
 	if len(lang) == 0 {
 		lang = "en"
@@ -1776,6 +1794,9 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	}
 
 	raw_featured := meta_string(page_meta, "featured_image", "")
+	if len(raw_featured) == 0 && has_key(settings, "default_social_image") {
+		raw_featured = trim(to_string(settings["default_social_image"]))
+	}
 	# Social cards need absolute URLs; fall back to a prefix-relative path
 	# only when no site_url is configured.
 	social_image := absolute_media_url(raw_featured, site_url)
@@ -1790,8 +1811,32 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	twitter_image_tag := ""
 	if len(social_image) > 0 {
 		safe_image := xml_escape(social_image)
+		default_image_alt := seo_title
+		if index_of(to_lower(default_image_alt), to_lower(settings["site_title"])) < 0 {
+			default_image_alt = default_image_alt + " - " + settings["site_title"]
+		}
+		image_alt := meta_string(page_meta, "og_image_alt", default_image_alt)
+		safe_image_alt := xml_escape(image_alt)
+		image_type := "image/webp"
+		if ends_with(to_lower(social_image), ".png") {
+			image_type = "image/png"
+		} else if ends_with(to_lower(social_image), ".jpg") || ends_with(to_lower(social_image), ".jpeg") {
+			image_type = "image/jpeg"
+		}
 		og_image_tag = "<meta property=\"og:image\" content=\"" + safe_image + "\">"
-		twitter_image_tag = "<meta name=\"twitter:image\" content=\"" + safe_image + "\">"
+		if starts_with(social_image, "https://") {
+			og_image_tag = og_image_tag + "<meta property=\"og:image:secure_url\" content=\"" + safe_image + "\">"
+		}
+		og_image_tag = og_image_tag + "<meta property=\"og:image:type\" content=\"" + image_type + "\"><meta property=\"og:image:alt\" content=\"" + safe_image_alt + "\">"
+		twitter_image_tag = "<meta name=\"twitter:image\" content=\"" + safe_image + "\"><meta name=\"twitter:image:alt\" content=\"" + safe_image_alt + "\">"
+	}
+	twitter_site_tag := ""
+	if has_key(settings, "twitter_handle") {
+		twitter_handle := trim(to_string(settings["twitter_handle"]))
+		if len(twitter_handle) > 0 {
+			safe_twitter_handle := xml_escape(twitter_handle)
+			twitter_site_tag = "<meta name=\"twitter:site\" content=\"" + safe_twitter_handle + "\"><meta name=\"twitter:creator\" content=\"" + safe_twitter_handle + "\">"
+		}
 	}
 
 	og_type := to_lower(meta_string(page_meta, "og_type", "website"))
@@ -1813,6 +1858,22 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 		if len(author_meta) > 0 {
 			og_article_tags = og_article_tags + "<meta property=\"article:author\" content=\"" + xml_escape(author_meta) + "\">"
 		}
+		article_section := meta_string(page_meta, "article_section", "")
+		if len(article_section) > 0 {
+			og_article_tags = og_article_tags + "<meta property=\"article:section\" content=\"" + xml_escape(article_section) + "\">"
+		}
+		if has_key(page_meta, "article_tags") {
+			article_tags := to_string_array(page_meta["article_tags"])
+			article_tag_idx := 0
+			loop {
+				if article_tag_idx >= len(article_tags) { break }
+				article_tag := trim(to_string(article_tags[article_tag_idx]))
+				article_tag_idx = article_tag_idx + 1
+				if len(article_tag) > 0 {
+					og_article_tags = og_article_tags + "<meta property=\"article:tag\" content=\"" + xml_escape(article_tag) + "\">"
+				}
+			}
+		}
 	}
 
 	# RSS autodiscovery only when an aux feed is actually produced.
@@ -1825,9 +1886,13 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	favicon_tag := "<link rel=\"icon\" type=\"image/svg+xml\" href=\"" + prefix + "favicon.svg\">"
 
 	# JSON-LD structured data.
-	schema_type := "WebSite"
-	if og_type == "article" {
+	schema_type := meta_string(page_meta, "schema_type", "")
+	if len(schema_type) == 0 && og_type == "article" {
 		schema_type = "BlogPosting"
+	} else if len(schema_type) == 0 && len(normalize_route(route)) == 0 {
+		schema_type = "WebSite"
+	} else if len(schema_type) == 0 {
+		schema_type = "WebPage"
 	}
 	json_ld_parts := [
 		"\"@context\":\"https://schema.org\"",
@@ -1842,11 +1907,30 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 	}
 	if og_type == "article" {
 		json_ld_parts = push(json_ld_parts, "\"author\":{\"@type\":\"Person\",\"name\":\"" + json_escape(author_meta) + "\"}")
+		json_ld_parts = push(json_ld_parts, "\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"" + json_escape(og_url) + "\"}")
 		if len(published_iso) > 0 {
 			json_ld_parts = push(json_ld_parts, "\"datePublished\":\"" + json_escape(published_iso) + "\"")
+			json_ld_parts = push(json_ld_parts, "\"dateModified\":\"" + json_escape(published_iso) + "\"")
+		}
+		if has_key(page_meta, "article_tags") {
+			json_ld_parts = push(json_ld_parts, "\"keywords\":\"" + json_escape(join(to_string_array(page_meta["article_tags"]), ", ")) + "\"")
+		}
+	} else if schema_type != "WebSite" && len(site_url) > 0 {
+		json_ld_parts = push(json_ld_parts, "\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"" + json_escape(settings["site_title"]) + "\",\"url\":\"" + json_escape(site_url) + "\"}")
+	}
+	publisher_url := site_url
+	if has_key(settings, "author_url") {
+		configured_author_url := trim(to_string(settings["author_url"]))
+		if len(configured_author_url) > 0 {
+			publisher_url = configured_author_url
 		}
 	}
-	json_ld_parts = push(json_ld_parts, "\"publisher\":{\"@type\":\"Organization\",\"name\":\"" + json_escape(settings["site_title"]) + "\"}")
+	publisher_json := "\"publisher\":{\"@type\":\"Person\",\"name\":\"Robert DeVore\""
+	if len(publisher_url) > 0 {
+		publisher_json = publisher_json + ",\"url\":\"" + json_escape(publisher_url) + "\""
+	}
+	publisher_json = publisher_json + "}"
+	json_ld_parts = push(json_ld_parts, publisher_json)
 	json_ld := "<script type=\"application/ld+json\">{" + join(json_ld_parts, ",") + "}</script>"
 
 	computed_title := build_page_title(seo_title, settings["site_title"])
@@ -1874,6 +1958,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 			"seo_description": safe_description,
 			"seo_keywords": safe_keywords,
 			"author_meta": safe_author,
+			"robots_meta": xml_escape(robots_meta),
 			"canonical_tag": canonical_tag,
 			"og_url": safe_og_url,
 			"og_type": og_type,
@@ -1881,6 +1966,7 @@ func render_layout_interpreted(layout_template, settings, route, page_title, met
 			"og_image_tag": og_image_tag,
 			"og_article_tags": og_article_tags,
 			"twitter_image_tag": twitter_image_tag,
+			"twitter_site_tag": twitter_site_tag,
 			"rss_link_tag": rss_link_tag,
 			"favicon_tag": favicon_tag,
 			"json_ld": json_ld,
@@ -3337,6 +3423,8 @@ func build_site(settings) {
 		}
 		canonical := trim(to_string(meta["canonical"]))
 		featured_image := trim(to_string(meta["featured_image"]))
+		og_image := trim(to_string(meta["og_image"]))
+		og_image_alt := trim(to_string(meta["og_image_alt"]))
 		author_name := resolve_lookup(meta["author"], authors_lookup, "")
 		page_categories := meta_terms(meta, "categories", categories_lookup)
 		page_tags := meta_terms(meta, "tags", tags_lookup)
@@ -3354,6 +3442,8 @@ func build_site(settings) {
 			"lang": lang,
 			"canonical": canonical,
 			"featured_image": featured_image,
+			"og_image": og_image,
+			"og_image_alt": og_image_alt,
 			"author": author_name,
 			"categories": page_categories,
 			"tags": page_tags,
@@ -3426,6 +3516,10 @@ func build_site(settings) {
 			}
 		}
 			processed_page_featured_image := process_featured_image_path(page_data["featured_image"], page_data["source_file"], settings)
+			processed_page_social_image := processed_page_featured_image
+			if len(page_data["og_image"]) > 0 {
+				processed_page_social_image = process_featured_image_path(page_data["og_image"], page_data["source_file"], settings)
+			}
 			page_featured_image_url := resolve_media_url(processed_page_featured_image, route_prefix(page_data["route"]))
 			page_navigation := build_navigation(pages_data, custom_collections, page_data["route"], settings["blog_slug"])
 
@@ -3461,6 +3555,14 @@ func build_site(settings) {
 				"taxonomies_html": page_data["taxonomies_html"],
 				"body": page_body_html
 			})
+			page_schema_type := "WebPage"
+			if page_data["template"] == "category" {
+				page_schema_type = "CollectionPage"
+			} else if page_data["route"] == "about/" {
+				page_schema_type = "AboutPage"
+			} else if page_data["route"] == "contact/" {
+				page_schema_type = "ContactPage"
+			}
 			page_html := render_layout(
 			layout_template,
 			settings,
@@ -3475,7 +3577,9 @@ func build_site(settings) {
 				"seo_keywords": page_data["keywords"],
 				"lang": page_data["lang"],
 				"canonical": page_data["canonical"],
-				"featured_image": processed_page_featured_image,
+				"featured_image": processed_page_social_image,
+				"og_image_alt": page_data["og_image_alt"],
+				"schema_type": page_schema_type,
 				"author": page_data["author"]
 			}
 		)
@@ -3550,6 +3654,13 @@ func build_site(settings) {
 		canonical := trim(to_string(meta["canonical"]))
 		featured_image := trim(to_string(meta["featured_image"]))
 		featured_image = process_featured_image_path(featured_image, post_file, settings)
+		og_image := trim(to_string(meta["og_image"]))
+		if len(og_image) > 0 {
+			og_image = process_featured_image_path(og_image, post_file, settings)
+		} else {
+			og_image = featured_image
+		}
+		og_image_alt := trim(to_string(meta["og_image_alt"]))
 
 		excerpt := trim(to_string(meta["excerpt"]))
 		if len(excerpt) == 0 {
@@ -3641,10 +3752,13 @@ func build_site(settings) {
 				"seo_keywords": keywords,
 				"lang": lang,
 				"canonical": canonical,
-				"featured_image": featured_image,
+				"featured_image": og_image,
+				"og_image_alt": og_image_alt,
 				"author": author_name,
 				"og_type": "article",
-				"published_iso": post_date["iso"]
+				"published_iso": post_date["iso"],
+				"article_section": category_text,
+				"article_tags": tags
 			}
 		)
 		write_route_page(output_dir, route, post_html)
@@ -4079,6 +4193,14 @@ func build_site(settings) {
 			}
 
 			index_navigation := build_navigation(pages_data, custom_collections, index_route, settings["blog_slug"])
+			index_seo_title := settings["site_title"]
+			index_seo_description := settings["site_tagline"]
+			index_schema_type := "WebSite"
+			if page_num > 1 {
+				index_seo_title = "Prompt Library Page " + to_string(page_num)
+				index_seo_description = "Browse page " + to_string(page_num) + " of the AI prompt library for image generation, writing, business, marketing, coding, and more."
+				index_schema_type = "CollectionPage"
+			}
 			index_html := render_layout(
 				layout_template,
 				settings,
@@ -4088,8 +4210,9 @@ func build_site(settings) {
 				index_navigation,
 				index_content,
 				{
-					"seo_title": settings["site_title"],
-					"seo_description": settings["site_tagline"],
+					"seo_title": index_seo_title,
+					"seo_description": index_seo_description,
+					"schema_type": index_schema_type,
 					"lang": "en"
 				}
 			)
@@ -4124,6 +4247,12 @@ func build_site(settings) {
 				}
 
 				blog_navigation := build_navigation(pages_data, custom_collections, blog_route, settings["blog_slug"])
+				blog_seo_title := "Blog"
+				blog_seo_description := settings["site_tagline"]
+				if page_num > 1 {
+					blog_seo_title = "Blog Page " + to_string(page_num)
+					blog_seo_description = "Browse page " + to_string(page_num) + " of the latest prompts, examples, and practical AI workflows from Robert DeVore."
+				}
 				blog_html := render_layout(
 					layout_template,
 					settings,
@@ -4133,8 +4262,9 @@ func build_site(settings) {
 					blog_navigation,
 					blog_content,
 					{
-						"seo_title": "Blog",
-						"seo_description": settings["site_tagline"],
+						"seo_title": blog_seo_title,
+						"seo_description": blog_seo_description,
+						"schema_type": "CollectionPage",
 						"lang": "en"
 					}
 				)
@@ -4260,6 +4390,10 @@ func build_site(settings) {
 		{
 			"seo_title": "Page Not Found",
 			"seo_description": "Page not found",
+			"seo_keywords": "page not found",
+			"canonical": "/404.html",
+			"robots": "noindex, follow",
+			"schema_type": "WebPage",
 			"lang": "en"
 		}
 	)

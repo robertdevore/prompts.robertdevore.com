@@ -1,6 +1,8 @@
 ---
 title: "Simpsons Character JSON Prompts for AI Generation"
 description: "Recreate real-world scenes or turn a photo into a full-body Simpsons-style character with two flexible JSON prompts."
+seo_title: "Simpsons Character JSON Prompts"
+keywords: "Simpsons character prompt, JSON image prompt, AI character generation, cartoon character prompt, photo transformation"
 custom_url: simpsons-character-json-prompts-for-ai-generation
 date: 2025-04-11
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "characters", "simpsons", "ai images"]
 featured_image: /assets/images/simpsons-wwf-scene.webp
 og_image: /assets/images/simpsons-wwf-scene.webp
+og_image_alt: "A Simpsons-style wrestling scene generated with an AI character prompt"
 ---
 
 Ever wanted to live in Springfield? Now you can - kind of 😎

@@ -1,6 +1,8 @@
 ---
 title: "Contact"
 description: "Questions, feedback, or support for the Prompts library."
+seo_title: "Contact Robert DeVore"
+keywords: "contact Robert DeVore, prompt library support, AI prompt questions"
 custom_url: contact
 nav_title: Contact
 order: 10

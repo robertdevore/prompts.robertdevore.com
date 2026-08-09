@@ -1,6 +1,8 @@
 ---
 title: "Isometric 3D Icon JSON Prompt for AI-Generated Designs"
 description: "Generate polished isometric 3D icons with lifelike materials, realistic shadows, and high-resolution studio rendering."
+seo_title: "Isometric 3D Icon JSON Prompt"
+keywords: "isometric 3D icons, JSON prompt, AI image generation, 3D icon prompt, product icon design"
 custom_url: isometric-3d-icon-json-prompt-for-ai-generated-designs
 date: 2025-05-15
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "3d icons", "design", "ai images"]
 featured_image: /assets/images/isometric-3d-icons.webp
 og_image: /assets/images/isometric-3d-icons.webp
+og_image_alt: "Colorful isometric 3D icons generated with a structured JSON prompt"
 ---
 
 This JSON prompt profile is optimized to generate **isometric 3D icons** with lifelike materials, realistic shadows, and high-resolution rendering - perfect for UI kits, product visuals, onboarding illustrations, and more.

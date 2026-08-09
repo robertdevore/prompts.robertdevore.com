@@ -7,9 +7,10 @@
 
 The SiteKit distribution is copied without modification.
 
-The vendored SSG entrypoint carries two intentional local patches:
+The vendored SSG entrypoint carries three intentional local patches:
 
 - The default action for custom-collection cards reads `Read More` instead of `View Product`.
 - Fenced-code normalization restores literal emphasis and inline-code delimiters that the native Markdown inline pass would otherwise turn into HTML inside `<code>`.
+- Social metadata supports a site-wide fallback image, per-entry Open Graph overrides, image alt/type tags, Twitter attribution, article taxonomy tags, page-specific Schema.org types, and noindex control for non-content routes. The native renderer still handles full page bodies; a small interpreted shell replaces only the generated `<head>` so these site-specific fields do not regress render throughput.
 
 All other SSG behavior remains pinned to 1.0.0.

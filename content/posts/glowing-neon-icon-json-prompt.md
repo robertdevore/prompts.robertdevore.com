@@ -1,6 +1,8 @@
 ---
 title: "Glowing Neon Icons: Design Bold Icons with This JSON Prompt"
 description: "Create bold, glowing 3D icons with luminous outlines, high-contrast edges, and a polished futuristic aesthetic."
+seo_title: "Glowing Neon Icons JSON Prompt"
+keywords: "glowing neon icons, JSON prompt, AI image prompt, 3D icons, futuristic icon design"
 custom_url: glowing-neon-icon-json-prompt
 date: 2025-05-19
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "icons", "design", "ai images"]
 featured_image: /assets/images/glowing-3d-icons.webp
 og_image: /assets/images/glowing-3d-icons.webp
+og_image_alt: "Blue glowing neon lock icon generated from the JSON prompt"
 ---
 
 Want to create icons that **radiate power, security, and digital presence**? The **Glowing Neon Icons** prompt is your new secret weapon.

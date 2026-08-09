@@ -1,6 +1,8 @@
 ---
 title: "YouTube Thumbnail Generation with AI JSON Prompts"
 description: "Generate bold YouTube thumbnails from a title, optional subhead, and photo with one structured JSON prompt."
+seo_title: "YouTube Thumbnail JSON Prompts"
+keywords: "YouTube thumbnail prompt, JSON image prompt, AI thumbnail generator, thumbnail design, content creator prompts"
 custom_url: youtube-thumbnail-generation-with-ai-json-prompts
 date: 2025-04-22
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "youtube", "thumbnails", "ai images"]
 featured_image: /assets/images/youtube-thumbnails-with-json-prompts.webp
 og_image: /assets/images/youtube-thumbnails-with-json-prompts.webp
+og_image_alt: "AI-generated YouTube thumbnail examples created from structured JSON prompts"
 ---
 
 If you make videos, you know this truth: Creating content is fun, but making thumbnails is not.

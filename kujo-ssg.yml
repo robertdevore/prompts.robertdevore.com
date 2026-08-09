@@ -1,6 +1,10 @@
 site_url: https://prompts.robertdevore.com
 site_title: Prompts by Robert DeVore
 site_tagline: Explore a growing library of high-quality AI prompts for content creation, design, coding, marketing, and more.
+default_keywords: AI prompts, image generation prompts, writing prompts, business prompts, marketing prompts, coding prompts
+default_social_image: /assets/images/isometric-3d-icons.webp
+author_url: https://robertdevore.com
+twitter_handle: "@deviorobert"
 
 output: output
 content: content

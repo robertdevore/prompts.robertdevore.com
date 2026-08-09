@@ -1,6 +1,8 @@
 ---
 title: "Metallic Sci-Fi HUD: Create Powerful Futuristic Icons with This JSON Prompt"
 description: "Create intense futuristic icons with brushed metal, electric blue accents, layered geometry, and cinematic industrial lighting."
+seo_title: "Metallic Sci-Fi HUD JSON Prompt"
+keywords: "sci-fi HUD prompt, metallic icon prompt, JSON image prompt, futuristic icons, AI image generation"
 custom_url: metallic-sci-fi-hud
 date: 2025-04-27
 author: Robert DeVore
@@ -8,6 +10,7 @@ categories: ["images"]
 tags: ["json prompts", "sci-fi", "icons", "ai images"]
 featured_image: /assets/images/metallic-sci-fi-hud-demon.webp
 og_image: /assets/images/metallic-sci-fi-hud-demon.webp
+og_image_alt: "Metallic sci-fi demon HUD icon generated with the JSON prompt"
 ---
 
 If you're looking to design intense, futuristic icons that feel ripped straight out of a sci-fi world, the **Metallic Sci-Fi HUD** prompt is exactly what you need.
