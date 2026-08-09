@@ -70,14 +70,24 @@ assert_contains output/images/index.html 'data-prompt-category="images"'
 assert_contains output/writing/index.html 'data-prompt-category="writing"'
 assert_contains output/index.html 'class="menu-overlay"'
 assert_contains output/index.html 'href="images/">Images</a>'
+assert_contains output/index.html 'icon-tabler-menu-2'
+assert_contains output/index.html 'icon-tabler-x'
+assert_contains output/index.html 'https://rsms.me/inter/inter.css'
+assert_contains output/index.html 'assets/css/style.css?v=20260809.3'
+assert_contains output/index.html 'assets/js/docs.js?v=20260809.3'
 if rg -n 'site-brand-mark' output --glob '*.html' --glob '*.css'; then
 	fail "legacy header icon leaked into generated output"
+fi
+if rg -n 'menu-overlay-backdrop' output --glob '*.html' --glob '*.css'; then
+	fail "obsolete menu backdrop leaked into generated output"
 fi
 assert_contains output/blog/wwf-action-figure-blister-pack-json-prompt/index.html 'vintage wwf wrestling action figure in blister pack'
 assert_contains output/blog/youtube-thumbnail-generation-with-ai-json-prompts/index.html 'EXTREME LEADERSHIP'
 assert_contains output/blog/top-secret-military-patches-json-prompt/index.html 'alt="Patch 4"'
 assert_contains output/blog/top-secret-military-patches-json-prompt/index.html 'keywords *or* a weighted fallback pool'
 assert_contains output/assets/css/style.css '--prompts-accent: var(--sk-state-warning)'
+assert_contains output/assets/css/style.css '--prompts-body-font: "InterVariable"'
+assert_contains output/assets/css/style.css '.article-header h1 { max-inline-size: 15ch; padding-inline: 0; border: var(--sk-border-0)'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
 if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then

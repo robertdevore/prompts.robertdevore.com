@@ -18,7 +18,7 @@ This repository is the canonical source for prompts.robertdevore.com.
 - Do not hand-edit or commit `output/` or `assets/js/docs-search-index.json`.
 - Keep SiteKit's `fonts/` directory beside `sitekit.css`.
 - Use SiteKit tokens in site CSS instead of raw color, spacing, typography, border, or motion values.
-- Preserve the black background, white text, yellow accents, and Departure Mono typeface.
+- Preserve the black background, white text, yellow accents, Inter body typeface, and Departure Mono titles and controls.
 - Use semantic HTML, real controls, ordered headings, visible focus, useful alt text, and reduced-motion-safe behavior.
 
 ## Validation
