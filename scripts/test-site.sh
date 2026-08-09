@@ -79,8 +79,9 @@ assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
 assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
-assert_contains output/index.html 'assets/css/style.css?v=20260809.6'
-assert_contains output/index.html 'assets/js/docs.js?v=20260809.3'
+assert_contains output/index.html 'assets/css/style.css?v=20260809.7'
+assert_contains output/index.html 'assets/js/docs.js?v=20260809.4'
+assert_contains output/index.html '<code class="language-json">'
 assert_count output/index.html '<li class="listing-card">' 6
 assert_contains output/index.html '<a class="footer-author" href="https://robertdevore.com/">Robert DeVore</a>'
 assert_contains output/index.html 'This website was built with <a class="footer-kujo" href="https://kujolang.ai/">Kujo</a>.'
@@ -102,10 +103,12 @@ assert_contains output/assets/css/style.css '.card-grid, .site-home .card-grid {
 assert_contains output/assets/css/style.css 'background: transparent; color: var(--prompts-accent); border: var(--sk-border-0); cursor: pointer;'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
+assert_contains output/assets/css/style.css '.json-token.json-key { color: var(--prompts-accent); }'
 if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then
 	fail "outlined title styling leaked into generated output"
 fi
 assert_contains output/assets/js/docs.js 'copyBlockText'
+assert_contains output/assets/js/docs.js "document.querySelectorAll('code.language-json').forEach(highlightJson);"
 assert_contains output/index.html 'data-theme="kujo-dark"'
 assert_contains output/index.html 'assets/sitekit/sitekit.css'
 assert_contains output/CNAME 'prompts.robertdevore.com'

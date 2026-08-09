@@ -131,6 +131,12 @@ img { block-size: auto; }
 .article-body code:not(pre code) { padding: var(--sk-space-1) var(--sk-space-2); background: var(--prompts-page); color: var(--prompts-accent); border: var(--sk-border-1) solid var(--prompts-line); }
 .article-body pre { position: relative; max-inline-size: 100%; overflow: auto; margin-block: var(--sk-space-6); padding: calc(var(--sk-space-12) + var(--sk-space-2)) var(--sk-space-6) var(--sk-space-6); background: var(--prompts-code); color: var(--prompts-code-ink); border: var(--sk-border-1) solid var(--prompts-line); white-space: pre-wrap; }
 .article-body pre code { white-space: inherit; }
+.language-json { color: var(--prompts-code-ink); }
+.json-token.json-key { color: var(--prompts-accent); }
+.json-token.json-string { color: color-mix(in srgb, var(--sk-state-success) 72%, var(--prompts-ink)); }
+.json-token.json-number { color: color-mix(in srgb, var(--sk-state-info) 70%, var(--prompts-ink)); }
+.json-token.json-boolean { color: color-mix(in srgb, var(--sk-state-info) 48%, var(--prompts-accent)); font-weight: var(--sk-type-weight-bold); }
+.json-token.json-null { color: color-mix(in srgb, var(--sk-state-danger) 68%, var(--prompts-ink)); font-weight: var(--sk-type-weight-bold); }
 .copy-code-button { position: absolute; inset-block-start: var(--sk-space-3); inset-inline-end: var(--sk-space-3); min-block-size: var(--sk-size-control-sm); padding-inline: var(--sk-space-3); background: var(--prompts-accent); color: var(--sk-color-black); border: var(--sk-border-1) solid var(--prompts-accent); cursor: pointer; }
 .article-body p:has(> img[alt^="Patch "]) { display: inline-block; inline-size: calc(50% - var(--sk-space-2)); margin-inline-end: var(--sk-space-2); vertical-align: top; }
 .article-body p:has(> img[alt^="Patch "]) img { margin: 0; }

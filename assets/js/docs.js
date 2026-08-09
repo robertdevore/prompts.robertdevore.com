@@ -293,6 +293,43 @@
 		});
 	};
 
+	var escapeCodeToken = function(value) {
+		return value
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;');
+	};
+
+	var highlightJson = function(code) {
+		if (code.dataset.jsonHighlighted === 'true') {
+			return;
+		}
+		var source = code.textContent;
+		var tokenPattern = /"(?:\\.|[^"\\])*"|\b(?:true|false|null)\b|-?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?/g;
+		var highlighted = '';
+		var lastIndex = 0;
+		source.replace(tokenPattern, function(token, offset) {
+			highlighted += escapeCodeToken(source.slice(lastIndex, offset));
+			var tokenClass = 'json-number';
+			if (token.charAt(0) === '"') {
+				tokenClass = /^\s*:/.test(source.slice(offset + token.length)) ? 'json-key' : 'json-string';
+			} else if (token === 'true' || token === 'false') {
+				tokenClass = 'json-boolean';
+			} else if (token === 'null') {
+				tokenClass = 'json-null';
+			}
+			highlighted += '<span class="json-token ' + tokenClass + '">' + escapeCodeToken(token) + '</span>';
+			lastIndex = offset + token.length;
+			return token;
+		});
+		highlighted += escapeCodeToken(source.slice(lastIndex));
+		code.innerHTML = highlighted;
+		code.dataset.jsonHighlighted = 'true';
+	};
+
+	document.querySelectorAll('code.language-json').forEach(highlightJson);
+
 	document.querySelectorAll('[data-copy-code]').forEach(function(button) {
 		var container = button.closest('.sk-code-block') || button.parentElement;
 		var block = container ? container.querySelector('pre code, pre') : null;
