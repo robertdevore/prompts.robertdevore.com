@@ -105,5 +105,6 @@ if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --
 fi
 
 python3 scripts/check-internal-links.py output
+python3 scripts/check-seo.py output
 
 printf 'Site contract passed\n'
