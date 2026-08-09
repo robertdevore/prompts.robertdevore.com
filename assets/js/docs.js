@@ -338,16 +338,26 @@
 		}
 	});
 
-	document.querySelectorAll('pre').forEach(function(block) {
+	document.querySelectorAll('.article-body pre').forEach(function(block) {
 		if (block.closest('.sk-code-block') && block.closest('.sk-code-block').querySelector('[data-copy-code]')) {
 			return;
 		}
+		if (block.parentElement && block.parentElement.classList.contains('code-block-shell')) {
+			return;
+		}
+		var shell = document.createElement('div');
+		var toolbar = document.createElement('div');
+		shell.className = 'code-block-shell';
+		toolbar.className = 'code-block-toolbar';
+		block.parentNode.insertBefore(shell, block);
+		shell.appendChild(toolbar);
+		shell.appendChild(block);
 		var button = document.createElement('button');
 		button.type = 'button';
 		button.className = 'copy-code-button';
 		button.textContent = 'Copy';
 		bindCopyButton(button, block);
-		block.appendChild(button);
+		toolbar.appendChild(button);
 	});
 
 	document.querySelectorAll('.docs-body h2, .docs-body h3').forEach(function(heading) {

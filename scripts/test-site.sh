@@ -79,9 +79,12 @@ assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
 assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
-assert_contains output/index.html 'assets/css/style.css?v=20260809.7'
-assert_contains output/index.html 'assets/js/docs.js?v=20260809.4'
+assert_contains output/index.html 'assets/css/style.css?v=20260809.8'
+assert_contains output/index.html 'assets/js/docs.js?v=20260809.5'
 assert_contains output/index.html '<code class="language-json">'
+if grep -Fq 'Copy the structure, swap in your idea, and start creating.' output/index.html; then
+	fail "obsolete homepage helper copy leaked into generated output"
+fi
 assert_count output/index.html '<li class="listing-card">' 6
 assert_contains output/index.html '<a class="footer-author" href="https://robertdevore.com/">Robert DeVore</a>'
 assert_contains output/index.html 'This website was built with <a class="footer-kujo" href="https://kujolang.ai/">Kujo</a>.'
@@ -104,11 +107,13 @@ assert_contains output/assets/css/style.css 'background: transparent; color: var
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
 assert_contains output/assets/css/style.css '.json-token.json-key { color: var(--prompts-accent); }'
+assert_contains output/assets/css/style.css '.code-block-toolbar { position: sticky;'
 if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then
 	fail "outlined title styling leaked into generated output"
 fi
 assert_contains output/assets/js/docs.js 'copyBlockText'
 assert_contains output/assets/js/docs.js "document.querySelectorAll('code.language-json').forEach(highlightJson);"
+assert_contains output/assets/js/docs.js "toolbar.className = 'code-block-toolbar';"
 assert_contains output/index.html 'data-theme="kujo-dark"'
 assert_contains output/index.html 'assets/sitekit/sitekit.css'
 assert_contains output/CNAME 'prompts.robertdevore.com'
