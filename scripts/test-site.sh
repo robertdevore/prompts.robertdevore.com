@@ -17,6 +17,12 @@ assert_contains() {
 	grep -Fq -- "$2" "$1" || fail "expected '$2' in $1"
 }
 
+assert_count() {
+	local actual
+	actual="$(grep -oF -- "$2" "$1" | wc -l | tr -d ' ')"
+	[[ "$actual" == "$3" ]] || fail "expected $3 occurrences of '$2' in $1, found $actual"
+}
+
 bash -n scripts/build.sh scripts/test-site.sh scripts/validate-generated-output.sh
 
 assert_path assets/sitekit/LICENSE
@@ -73,8 +79,11 @@ assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
 assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
-assert_contains output/index.html 'assets/css/style.css?v=20260809.3'
+assert_contains output/index.html 'assets/css/style.css?v=20260809.6'
 assert_contains output/index.html 'assets/js/docs.js?v=20260809.3'
+assert_count output/index.html '<li class="listing-card">' 6
+assert_contains output/index.html '<a class="footer-author" href="https://robertdevore.com/">Robert DeVore</a>'
+assert_contains output/index.html 'This website was built with <a class="footer-kujo" href="https://kujolang.ai/">Kujo</a>.'
 if rg -n 'site-brand-mark' output --glob '*.html' --glob '*.css'; then
 	fail "legacy header icon leaked into generated output"
 fi
@@ -88,6 +97,9 @@ assert_contains output/blog/top-secret-military-patches-json-prompt/index.html '
 assert_contains output/assets/css/style.css '--prompts-accent: var(--sk-state-warning)'
 assert_contains output/assets/css/style.css '--prompts-body-font: "InterVariable"'
 assert_contains output/assets/css/style.css '.article-header h1 { max-inline-size: 15ch; padding-inline: 0; border: var(--sk-border-0)'
+assert_contains output/assets/css/style.css '.site-home .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }'
+assert_contains output/assets/css/style.css '.card-grid, .site-home .card-grid { grid-template-columns: 1fr; }'
+assert_contains output/assets/css/style.css 'background: transparent; color: var(--prompts-accent); border: var(--sk-border-0); cursor: pointer;'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
 if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then
