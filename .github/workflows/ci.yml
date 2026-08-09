@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  site-contract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Kujo 1.0.0
+        run: |
+          curl -fsSLO https://github.com/kujolang/kujo/releases/download/v1.0.0/kujo-v1.0.0-linux-x64.tar.gz
+          curl -fsSLO https://github.com/kujolang/kujo/releases/download/v1.0.0/kujo-v1.0.0-linux-x64.tar.gz.sha256
+          sha256sum --check kujo-v1.0.0-linux-x64.tar.gz.sha256
+          tar -xzf kujo-v1.0.0-linux-x64.tar.gz
+          sudo install kujo /usr/local/bin/kujo
+      - name: Verify production site
+        run: bash scripts/test-site.sh
