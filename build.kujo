@@ -4321,7 +4321,7 @@ func build_site(settings) {
 
 				blog_navigation := build_navigation(pages_data, custom_collections, blog_route, settings["blog_slug"])
 				blog_seo_title := "Blog"
-				blog_seo_description := settings["site_tagline"]
+				blog_seo_description := "Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work."
 				if page_num > 1 {
 					blog_seo_title = "Blog Page " + to_string(page_num)
 					blog_seo_description = "Browse page " + to_string(page_num) + " of the latest prompts, examples, and practical AI workflows from Robert DeVore."
@@ -4331,7 +4331,7 @@ func build_site(settings) {
 					settings,
 					blog_route,
 					"Blog - " + settings["site_title"],
-					settings["site_tagline"],
+					blog_seo_description,
 					blog_navigation,
 					blog_content,
 					{

@@ -20,6 +20,8 @@ fi
 
 "$KUJO_BIN" run scripts/docs_search_index.kujo -- "${search_args[@]}"
 "$KUJO_BIN" run ./build.kujo -- "${build_args[@]}"
+python3 scripts/add-image-dimensions.py output
+python3 scripts/fix-generated-accessibility.py output
 if [[ -d static ]]; then
 	cp -R static/. output/
 fi

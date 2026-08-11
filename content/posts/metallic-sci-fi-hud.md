@@ -31,7 +31,7 @@ Take a look at some examples generated with this JSON:
 
 Each one of these was created using the **same base prompt** -- all that was changed was the `[OBJECT]` name!
 
-### JSON Prompt
+## JSON Prompt
 
 You can use this template to create your own metallic sci-fi designs:
 

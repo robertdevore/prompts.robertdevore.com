@@ -34,7 +34,7 @@ Take a look at what this style creates:
 
 That image? Generated using this single JSON prompt. Just swap out the icon type and you're ready to go.
 
-### JSON Prompt
+## JSON Prompt
 
 Here's the full JSON prompt to generate your own glowing neon icons:
 
@@ -165,7 +165,7 @@ Here's the full JSON prompt to generate your own glowing neon icons:
 }
 ```
 
-### How to Use It
+## How to Use It
 
 1. Swap `[icon]` with your desired icon name - like **Shield**, **User**, **Key**, **Email**, or **Firewall**.
 2. Paste the JSON into your image generation tool.
@@ -174,7 +174,7 @@ Here's the full JSON prompt to generate your own glowing neon icons:
 
 ---
 
-### Why It Works
+## Why It Works
 
 This prompt is built for **style control**. Every element - from contour depth to lighting bloom - is defined with precision. That means:
 

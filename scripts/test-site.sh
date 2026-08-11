@@ -133,6 +133,13 @@ assert_contains output/llms.txt '- [Prompt Library](https://prompts.robertdevore
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:width" content="1024">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<img src="/assets/images/glowing-3d-icons.webp" alt="Glowing Neon Icon Example" width="1024" height="1024">'
+assert_contains output/index.html 'width="1024" height="1024">'
+assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
+assert_contains output/images/index.html 'href="/blog/glowing-neon-icon-json-prompt/"'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<h2>JSON Prompt</h2>'
+assert_contains output/index.html 'class="listing-card-image-link" aria-label="View prompt details"'
+assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', 'View ' + item.title);"
 
 if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then
 	fail "legacy Stattic presentation leaked into generated output"

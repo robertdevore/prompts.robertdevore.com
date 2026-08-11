@@ -13,3 +13,13 @@ section: images
 nav_hide: true
 search_exclude: true
 ---
+
+Browse the current image-prompt guides:
+
+- [Glowing neon icon JSON prompt](/blog/glowing-neon-icon-json-prompt/)
+- [Isometric 3D icon JSON prompt](/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/)
+- [Metallic sci-fi HUD prompt](/blog/metallic-sci-fi-hud/)
+- [Simpsons-style character JSON prompts](/blog/simpsons-character-json-prompts-for-ai-generation/)
+- [Top-secret military patch JSON prompt](/blog/top-secret-military-patches-json-prompt/)
+- [WWF action figure blister-pack JSON prompt](/blog/wwf-action-figure-blister-pack-json-prompt/)
+- [YouTube thumbnail JSON prompts](/blog/youtube-thumbnail-generation-with-ai-json-prompts/)

@@ -173,6 +173,7 @@
 			var imageLink = document.createElement('a');
 			imageLink.className = 'listing-card-image-link';
 			imageLink.href = item.url;
+			imageLink.setAttribute('aria-label', 'View ' + item.title);
 			if (item.featured_image) {
 				var image = document.createElement('img');
 				image.className = 'listing-card-image';

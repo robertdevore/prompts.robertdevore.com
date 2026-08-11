@@ -29,7 +29,7 @@ So I built a tool that handles all of it for you - using a single JSON prompt an
 
 ![YouTube Thumbnails with JSON Prompts](/assets/images/youtube-thumbnails-with-json-prompts.webp)
 
-### How it Works
+## How it Works
 
 You drop in:
 
@@ -45,7 +45,7 @@ No Photoshop, digging through pre-made templates or wasting 45 minutes lining up
 
 ![YouTube Thumbnails with JSON Prompts Extreme Leadership Example](/assets/images/youtube-thumbnails-extreme-leadership.webp)
 
-### Real Example
+## Real Example
 
 - **Main Text:** `EXTREME LEADERSHIP`
 - **Sub Text:** `POWER DOESN'T ASK PERMISSION`
@@ -401,7 +401,7 @@ The AI reads your intent and builds a thumbnail around it - not some random temp
 
 ![YouTube Thumbnails with JSON Prompts 10K Example](/assets/images/youtube-thumbnails-10k.webp)
 
-### Why This Works
+## Why This Works
 
 YouTube thumbnails are half science, half vibe. This prompt nails both:
 
@@ -412,14 +412,14 @@ YouTube thumbnails are half science, half vibe. This prompt nails both:
 
 It doesn't just *look good*, it *performs*.
 
-### Who This Is For
+## Who This Is For
 
 - Creators who don't want to spend another second in Canva
 - Course sellers, marketers, or indie hackers trying to scale
 - Anyone building content at speed and sick of fiddling with thumbnails
 - People who want **AI-generated YouTube thumbnails** that don't look AI-generated
 
-### Want to Try It?
+## Want to Try It?
 
 You don't need to learn anything.
 
