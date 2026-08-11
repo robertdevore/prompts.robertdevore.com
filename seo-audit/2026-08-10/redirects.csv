@@ -1,0 +1,9 @@
+phase,source_url,source_variant,http_status,target_url,chain_length,final_status,canonical_target,query_preserved,verification,issues
+baseline,http://prompts.robertdevore.com/,apex,301,https://prompts.robertdevore.com/,1,200,https://prompts.robertdevore.com/,not applicable,direct and followed production request,
+baseline,http://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/?source=audit,apex,301,https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/?source=audit,1,200,https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/?source=audit,yes,direct and followed production request,
+baseline,https://prompts.robertdevore.com/,apex,200,,0,200,https://prompts.robertdevore.com/,not applicable,direct and followed production request,
+baseline,https://prompts.robertdevore.com/about.html,apex,200,,0,200,https://prompts.robertdevore.com/about.html,not applicable,direct and followed production request,
+baseline,https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/,apex,200,,0,200,https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/,not applicable,direct and followed production request,
+baseline,https://prompts.robertdevore.com/definitely-not-a-route/,apex,404,,0,404,https://prompts.robertdevore.com/definitely-not-a-route/,not applicable,direct and followed production request,
+baseline,http://www.prompts.robertdevore.com/,www,"ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>",,0,"ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>",,not applicable,direct and followed production request,www host unavailable
+baseline,https://www.prompts.robertdevore.com/,www,"ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>",,0,"ERROR: <urlopen error [Errno 8] nodename nor servname provided, or not known>",,not applicable,direct and followed production request,www host unavailable

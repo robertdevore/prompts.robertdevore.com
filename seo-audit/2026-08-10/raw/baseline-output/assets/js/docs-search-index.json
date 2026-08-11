@@ -1,0 +1,272 @@
+{
+  "items": [
+    {
+      "audience": "",
+      "categories": [],
+      "date": "",
+      "description": "A practical library of reusable prompts for creative and professional work with AI.",
+      "difficulty": "",
+      "featured_image": "",
+      "headings": [
+        "A Better Home for Useful Prompts",
+        "What You'll Find Here"
+      ],
+      "route": "about/",
+      "section": "",
+      "status": "",
+      "tags": [],
+      "text": "A Better Home for Useful Prompts Prompts is Robert DeVore's growing library of structured, reusable prompts for working with AI. The library began with image-generation prompts and is expanding into writing, business, marketing, coding, and other practical categories. Each entry is designed to be easy to understand, copy, adapt, and use. What You'll Find Her",
+      "title": "About",
+      "url": "https://prompts.robertdevore.com/about/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [],
+      "date": "",
+      "description": "Questions, feedback, or support for the Prompts library.",
+      "difficulty": "",
+      "featured_image": "",
+      "headings": [
+        "Get in Touch",
+        "Direct Email",
+        "Let's connect"
+      ],
+      "route": "contact/",
+      "section": "",
+      "status": "",
+      "tags": [],
+      "text": "Get in Touch Whether you have questions about JSON prompts , feedback about what I'm posting, or need help/support, feel free to reach out 🤘 Direct Email If you prefer, you can email directly at: Email : me@robertdevore.com mailto:me@robertdevore.com Let's connect Stay updated with the latest news and developments: - Twitter : @deviorobert https://x.com/devi",
+      "title": "Contact",
+      "url": "https://prompts.robertdevore.com/contact/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-05-19",
+      "description": "Create bold, glowing 3D icons with luminous outlines, high-contrast edges, and a polished futuristic aesthetic.",
+      "difficulty": "",
+      "featured_image": "/assets/images/glowing-3d-icons.webp",
+      "headings": [
+        "JSON Prompt",
+        "How to Use It",
+        "Why It Works"
+      ],
+      "route": "posts/glowing-neon-icon-json-prompt/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "icons",
+        "design",
+        "ai images"
+      ],
+      "text": "Want to create icons that radiate power, security, and digital presence ? The Glowing Neon Icons prompt is your new secret weapon. This style is designed for maximum clarity and impact - icons that look like they belong in high-end cybersecurity dashboards, dark-mode UIs, or futuristic SaaS platforms. Here's what it delivers: - Thick, luminous outlines - Bol",
+      "title": "Glowing Neon Icons: Design Bold Icons with This JSON Prompt",
+      "url": "https://prompts.robertdevore.com/posts/glowing-neon-icon-json-prompt/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-05-15",
+      "description": "Generate polished isometric 3D icons with lifelike materials, realistic shadows, and high-resolution studio rendering.",
+      "difficulty": "",
+      "featured_image": "/assets/images/isometric-3d-icons.webp",
+      "headings": [
+        "What This Prompt Can Do",
+        "Real-World Subject Mapping",
+        "💡 How It Works",
+        "📆 Paste This JSON into Your Tool",
+        "Example Icons",
+        "🛶 Suggested Prompt Format",
+        "📂 Save & Reuse"
+      ],
+      "route": "posts/isometric-3d-icon-json-prompt-for-ai-generated-designs/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "3d icons",
+        "design",
+        "ai images"
+      ],
+      "text": "This JSON prompt profile is optimized to generate isometric 3D icons with lifelike materials, realistic shadows, and high-resolution rendering - perfect for UI kits, product visuals, onboarding illustrations, and more. Whether you're building a fitness tracker, spa app, cooking blog, or just want gorgeous object-based visuals for your project, this prompt de",
+      "title": "Isometric 3D Icon JSON Prompt for AI-Generated Designs",
+      "url": "https://prompts.robertdevore.com/posts/isometric-3d-icon-json-prompt-for-ai-generated-designs/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-04-27",
+      "description": "Create intense futuristic icons with brushed metal, electric blue accents, layered geometry, and cinematic industrial lighting.",
+      "difficulty": "",
+      "featured_image": "/assets/images/metallic-sci-fi-hud-demon.webp",
+      "headings": [
+        "JSON Prompt",
+        "How to Use It",
+        "Why This Prompt Works"
+      ],
+      "route": "posts/metallic-sci-fi-hud/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "sci-fi",
+        "icons",
+        "ai images"
+      ],
+      "text": "If you're looking to design intense, futuristic icons that feel ripped straight out of a sci-fi world, the Metallic Sci-Fi HUD prompt is exactly what you need. Here's the style it produces: ⚡ Cold, industrial brushed metal surfaces ⚡ Electric blue glowing accents ⚡ Precision-cut, layered geometry ⚡ Deep shadows and high-contrast highlights ⚡ Ultra-realistic,",
+      "title": "Metallic Sci-Fi HUD: Create Powerful Futuristic Icons with This JSON Prompt",
+      "url": "https://prompts.robertdevore.com/posts/metallic-sci-fi-hud/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "announcements"
+      ],
+      "date": "2025-04-07",
+      "description": "The original welcome to Robert DeVore's organized, reusable library of prompts for working with AI.",
+      "difficulty": "",
+      "featured_image": "",
+      "headings": [],
+      "route": "posts/prompts-coming-soon/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "prompts",
+        "announcements"
+      ],
+      "text": "Welcome to my prompts library , where I'll be sharing and categorizing the prompts I use with AI. I'm doing this for two reasons - your benefit, and my sanity 😂 It's getting increasingly harder to keep the prompts I use organized. From TextExpander https://textexpander.com/ snippets to MD files stored in the cloud to folders in ChatGPT - it's overwhelming. O",
+      "title": "Prompts: Coming Soon",
+      "url": "https://prompts.robertdevore.com/posts/prompts-coming-soon/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-04-11",
+      "description": "Recreate real-world scenes or turn a photo into a full-body Simpsons-style character with two flexible JSON prompts.",
+      "difficulty": "",
+      "featured_image": "/assets/images/simpsons-wwf-scene.webp",
+      "headings": [
+        "What You Can Do",
+        "1. Simpsons Scene Creator",
+        "2. Simpsons Character Generator (Full Body Edition)",
+        "🎁 Download the JSON Prompts",
+        "JSON Prompt for Simpsons Scene",
+        "JSON Prompt for Simpsons Scene"
+      ],
+      "route": "posts/simpsons-character-json-prompts-for-ai-generation/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "characters",
+        "simpsons",
+        "ai images"
+      ],
+      "text": "Ever wanted to live in Springfield? Now you can - kind of 😎 I've built two versatile JSON prompts that let you recreate any real-world scene or transform yourself into a full-body Simpsons character in the unmistakable 90s style of Matt Groening's world. They're clean, flexible, and dead-on with the look. What You Can Do 1. Simpsons Scene Creator 📸 Upload a ",
+      "title": "Simpsons Character JSON Prompts for AI Generation",
+      "url": "https://prompts.robertdevore.com/posts/simpsons-character-json-prompts-for-ai-generation/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-05-13",
+      "description": "Generate photorealistic embroidered military patches for covert units, tactical teams, fictional programs, and morale-patch concepts.",
+      "difficulty": "",
+      "featured_image": "/assets/images/patch-wolf-pack.webp",
+      "headings": [
+        "What This Prompt Can Do",
+        "Real-World Inspiration",
+        "💡 Customization Built In",
+        "🧷 Tactical Use Ideas",
+        "📦 CODE BLOCK",
+        "Example Output"
+      ],
+      "route": "posts/top-secret-military-patches-json-prompt/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "patches",
+        "design",
+        "ai images"
+      ],
+      "text": "Designing elite military-style patches just got a classified-level upgrade 🤘 This JSON prompt system is engineered to generate photorealistic, embroidered military patches-perfect for secret ops themes, blacksite missions, tactical units, and fictional top secret programs. Whether you're mocking up covert unit branding, creating merch for veteran groups, or ",
+      "title": "Top Secret Military Patch JSON Prompts for AI-Generated Designs",
+      "url": "https://prompts.robertdevore.com/posts/top-secret-military-patches-json-prompt/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-04-09",
+      "description": "Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a detailed blister pack.",
+      "difficulty": "",
+      "featured_image": "",
+      "headings": [],
+      "route": "posts/wwf-action-figure-blister-pack-json-prompt/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "action figures",
+        "wwf",
+        "ai images"
+      ],
+      "text": "Today I'm releasing the JSON prompt for creating your own WWF Action Figure Blister Packs 🔥 You can view examples of the results on the offical landing page https://wwf.robertdevore.com for the prompt. Check out the JSON prompt below, and make sure to tag me on social media https://x.com/deviorobert if you make something cool 💪",
+      "title": "WWF Action Figure Blister Pack JSON Prompt",
+      "url": "https://prompts.robertdevore.com/posts/wwf-action-figure-blister-pack-json-prompt/",
+      "version": ""
+    },
+    {
+      "audience": "",
+      "categories": [
+        "images"
+      ],
+      "date": "2025-04-22",
+      "description": "Generate bold YouTube thumbnails from a title, optional subhead, and photo with one structured JSON prompt.",
+      "difficulty": "",
+      "featured_image": "/assets/images/youtube-thumbnails-with-json-prompts.webp",
+      "headings": [
+        "How it Works",
+        "Real Example",
+        "Why This Works",
+        "Who This Is For",
+        "Want to Try It?"
+      ],
+      "route": "posts/youtube-thumbnail-generation-with-ai-json-prompts/",
+      "section": "",
+      "status": "",
+      "tags": [
+        "json prompts",
+        "youtube",
+        "thumbnails",
+        "ai images"
+      ],
+      "text": "If you make videos, you know this truth: Creating content is fun, but making thumbnails is not. You've got better things to do than spend an hour trying to: - Pose 5 different ways with the \"right\" face - Crop yourself out of a noisy background - Pick the \"perfect\" font combo that doesn't scream 2011 - Add shadows, emojis, and icons - then adjust everything ",
+      "title": "YouTube Thumbnail Generation with AI JSON Prompts",
+      "url": "https://prompts.robertdevore.com/posts/youtube-thumbnail-generation-with-ai-json-prompts/",
+      "version": ""
+    }
+  ],
+  "schema_version": "docs-search/v1"
+}

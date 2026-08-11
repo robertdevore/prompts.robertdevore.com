@@ -1,0 +1,32 @@
+# Prompts by Robert DeVore
+
+> Explore a growing library of high-quality AI prompts for content creation, design, coding, marketing, and more.
+
+This is Robert DeVore's curated library of reusable AI prompts. Each linked article includes the original explanatory content and its complete prompt structure.
+
+## Start here
+
+- [Prompt Library](https://prompts.robertdevore.com/): Browse the complete prompt library.
+- [RSS feed](https://prompts.robertdevore.com/feed/index.xml): Latest prompt articles in RSS 2.0 format.
+- [XML sitemap](https://prompts.robertdevore.com/sitemap.xml): Canonical indexable URLs for search crawlers.
+
+## Posts
+
+- [Glowing Neon Icons: Design Bold Icons with This JSON Prompt](https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/)
+- [Isometric 3D Icon JSON Prompt for AI-Generated Designs](https://prompts.robertdevore.com/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/)
+- [Top Secret Military Patch JSON Prompts for AI-Generated Designs](https://prompts.robertdevore.com/blog/top-secret-military-patches-json-prompt/)
+- [Metallic Sci-Fi HUD: Create Powerful Futuristic Icons with This JSON Prompt](https://prompts.robertdevore.com/blog/metallic-sci-fi-hud/)
+- [YouTube Thumbnail Generation with AI JSON Prompts](https://prompts.robertdevore.com/blog/youtube-thumbnail-generation-with-ai-json-prompts/)
+- [Simpsons Character JSON Prompts for AI Generation](https://prompts.robertdevore.com/blog/simpsons-character-json-prompts-for-ai-generation/)
+- [WWF Action Figure Blister Pack JSON Prompt](https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/)
+- [Prompts: Coming Soon](https://prompts.robertdevore.com/blog/prompts-coming-soon/)
+
+## Pages
+
+- [About](https://prompts.robertdevore.com/about/)
+- [Business Prompts](https://prompts.robertdevore.com/business/)
+- [Coding Prompts](https://prompts.robertdevore.com/coding/)
+- [Contact](https://prompts.robertdevore.com/contact/)
+- [Image Prompts](https://prompts.robertdevore.com/images/)
+- [Marketing Prompts](https://prompts.robertdevore.com/marketing/)
+- [Writing Prompts](https://prompts.robertdevore.com/writing/)

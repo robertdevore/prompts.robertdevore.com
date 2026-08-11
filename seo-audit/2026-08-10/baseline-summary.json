@@ -1,0 +1,22 @@
+{
+  "phase": "baseline",
+  "generated_at": "2026-08-10",
+  "canonical_pages": 19,
+  "indexable_pages": 19,
+  "missing_titles": 0,
+  "duplicate_titles": 0,
+  "missing_descriptions": 0,
+  "duplicate_descriptions": 2,
+  "missing_canonicals": 0,
+  "h1_problems": 0,
+  "broken_internal_links": 0,
+  "orphans": 0,
+  "pages_over_three_clicks": 0,
+  "missing_alt": 0,
+  "missing_dimensions": 27,
+  "json_ld_errors": 0,
+  "production_200": 19,
+  "limitations": [
+    "Search Console, Bing Webmaster Tools, analytics, CDN logs, field CWV, rankings, backlinks, and controlled AI platform sessions were not available."
+  ]
+}
