@@ -36,7 +36,7 @@ def fetch(url: str, user_agent: str, follow: bool) -> dict[str, object]:
 
 def write_csv(path: Path, fields: list[str], rows: list[dict[str, object]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields)
+        writer = csv.DictWriter(handle, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

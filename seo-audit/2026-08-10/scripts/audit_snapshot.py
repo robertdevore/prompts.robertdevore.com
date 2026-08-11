@@ -221,7 +221,7 @@ def request(url: str, user_agent: str = "SEO-Audit/1.0", method: str = "GET") ->
 
 def write_csv(path: Path, fields: list[str], rows: list[dict[str, object]]) -> None:
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore")
+        writer = csv.DictWriter(handle, fieldnames=fields, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 

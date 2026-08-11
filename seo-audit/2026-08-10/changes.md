@@ -9,3 +9,4 @@ Audit date: 2026-08-10
 - Added server-rendered, contextual article links to the image-prompt category while retaining its interactive cards.
 - Extended repository tests to lock the SEO, media, linking, and accessibility fixes.
 - Added a reproducible dated audit workspace with baseline/after crawls, production receipts, Lighthouse evidence, issue register, and measurement plan.
+- Pushed three meaningful commits to `main`; CI and GitHub Pages deployment completed successfully, followed by an independent production re-crawl.

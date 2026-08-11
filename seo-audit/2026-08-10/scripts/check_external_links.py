@@ -47,7 +47,7 @@ def main() -> int:
         status, final_url, chain_length, verification = results[url]
         row.update({"http_status": status, "final_url": final_url, "chain_length": chain_length, "verification": verification, "recommended_action": "Review destination" if verification in {"HTTP error", "network indeterminate"} else ""})
     with args.csv.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(f"Checked {len(results)} unique external destinations across {len(rows)} links")

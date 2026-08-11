@@ -19,9 +19,14 @@ def value(audits: dict, key: str) -> object:
 
 def main() -> int:
     rows: list[dict[str, object]] = []
-    for phase, environment in (("baseline", "production"), ("after", "local generated output")):
+    runs = (
+        ("baseline", "baseline", "production baseline"),
+        ("after", "after", "local generated output"),
+        ("after", "after-production", "production post-deploy"),
+    )
+    for phase, filename_phase, environment in runs:
         for name, template in TEMPLATES.items():
-            path = AUDIT / "raw" / f"{phase}-lighthouse-{name}.json"
+            path = AUDIT / "raw" / f"{filename_phase}-lighthouse-{name}.json"
             report = json.loads(path.read_text(encoding="utf-8"))
             audits = report["audits"]
             requests = audits.get("network-requests", {}).get("details", {}).get("items", [])
@@ -51,7 +56,7 @@ def main() -> int:
                 "notes": "Single Lighthouse lab run; compare directionally. INP requires field or interaction data when unavailable.",
             })
     with (AUDIT / "performance.csv").open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=FIELDS)
+        writer = csv.DictWriter(handle, fieldnames=FIELDS, lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     print(f"Wrote {len(rows)} Lighthouse rows")

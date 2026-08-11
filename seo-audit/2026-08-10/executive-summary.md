@@ -20,7 +20,7 @@ The build now adds verified image dimensions and accessible listing-link names; 
 
 ## Where the site is now
 
-The rebuilt output contains 19/19 indexable canonicals, no missing or duplicate titles/descriptions, no broken internal links, no orphans, no image alt/dimension gaps, and no JSON-LD parse errors. All repository validation gates pass. Internal audit heuristics moved from 80 to 91 for SEO health and 74 to 80 for AI-search readiness; these are trend scores, not platform scores.
+The rebuilt and deployed output contains 19/19 indexable canonicals, no missing or duplicate titles/descriptions, no broken internal links, no orphans, no image alt/dimension gaps, and no JSON-LD parse errors. CI and GitHub Pages deployment passed, and post-deployment canonical/crawler probes passed. Internal audit heuristics moved from 80 to 91 for SEO health and 74 to 80 for AI-search readiness; these are trend scores, not platform scores.
 
 ## Available measurements
 
@@ -32,4 +32,4 @@ Search Console, Bing Webmaster Tools, analytics, CDN logs, field CWV, backlinks,
 
 ## Next actions
 
-Verify production after the pushed deployment, connect owner-authorized measurement sources, repeat the fixed benchmark set at 7/28/60/90 days, and consider responsive card-image generation after selecting a portable image toolchain.
+Connect owner-authorized measurement sources, repeat the fixed benchmark set at 7/28/60/90 days, and consider responsive card-image generation after selecting a portable image toolchain.
