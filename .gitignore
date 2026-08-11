@@ -5,4 +5,5 @@ assets/js/docs-search-index.json
 .cache/
 dist/
 tmp/
+__pycache__/
 .DS_Store
