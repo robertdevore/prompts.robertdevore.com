@@ -28,7 +28,7 @@ Generated files are written to `output/` and are never edited or committed direc
 Every canonical HTML route has a committed 1200×630 PNG generated through
 [Howl](https://github.com/kujolang/howl). The cards reproduce this site's black,
 white, and yellow visual system with Departure Mono type, and intentionally
-leave the lower-left URL field empty.
+leave the lower-left URL field and its accent line empty.
 
 ```bash
 HOWL_BIN=/path/to/howl/bin/howl python3 scripts/render_howl_social.py

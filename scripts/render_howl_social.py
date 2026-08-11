@@ -59,7 +59,7 @@ def apply_prompts_brand(svg: str) -> str:
         ".social-tag{font-size:24px;fill:#282828}": ".social-tag{font-size:24px;fill:#bdbdbd}",
         ".social-url{font-size:17px;letter-spacing:1px;fill:#111}": ".social-url{font-size:17px;letter-spacing:1px;fill:#f7df1e}",
         'fill="none" stroke="#111" stroke-width="1"': 'fill="none" stroke="#303030" stroke-width="1"',
-        '<rect x="78" y="570" width="84" height="4" fill="#111"/>': '<rect x="78" y="570" width="84" height="4" fill="#f7df1e"/>',
+        '<rect x="78" y="570" width="84" height="4" fill="#111"/>': "",
     }
     branded = svg
     for old, new in replacements.items():
