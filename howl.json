@@ -1,0 +1,376 @@
+{
+  "project": {
+    "name": "Prompts by Robert DeVore",
+    "tagline": "A curated library of reusable AI prompts.",
+    "url": "https://prompts.robertdevore.com"
+  },
+  "theme": {
+    "name": "signal",
+    "mode": "light"
+  },
+  "cards": [
+    {
+      "id": "home",
+      "title": "Prompts by Robert DeVore",
+      "tagline": "A curated library of high-quality prompts built for making",
+      "file": "templates/page-home.html",
+      "language": "html",
+      "concepts": [
+        "AI prompts",
+        "structured prompts",
+        "creative workflows"
+      ],
+      "caption": "Prompts by Robert DeVore: A curated library of high-quality prompts built for making",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/",
+      "variant": "social",
+      "label": "CURATED AI PROMPT LIBRARY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "about",
+      "title": "About the Prompt Library",
+      "tagline": "A practical library of reusable prompts for creative and professional work with AI.",
+      "file": "content/pages/about.md",
+      "language": "markdown",
+      "concepts": [
+        "about",
+        "AI prompts"
+      ],
+      "caption": "About the Prompt Library: A practical library of reusable prompts for creative and professional work with AI.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/about/",
+      "variant": "social",
+      "label": "PROMPT LIBRARY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "blog",
+      "title": "Prompt Library",
+      "tagline": "Reusable prompts, complete structures, examples, and practical notes",
+      "file": "templates/page-blog.html",
+      "language": "html",
+      "concepts": [
+        "AI prompts",
+        "prompt archive"
+      ],
+      "caption": "Prompt Library: Reusable prompts, complete structures, examples, and practical notes",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/",
+      "variant": "social",
+      "label": "LATEST PROMPTS",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "glowing-neon-icon-json-prompt",
+      "title": "Glowing Neon Icons JSON Prompt",
+      "tagline": "Create bold, glowing 3D icons with luminous outlines, high-contrast edges, and a polished …",
+      "file": "content/posts/glowing-neon-icon-json-prompt.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "icons",
+        "design",
+        "ai images"
+      ],
+      "caption": "Glowing Neon Icons JSON Prompt: Create bold, glowing 3D icons with luminous outlines, high-contrast edges, and a polished futuristic aesthetic.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "isometric-3d-icon-json-prompt-for-ai-generated-designs",
+      "title": "Isometric 3D Icon JSON Prompt",
+      "tagline": "Generate polished isometric 3D icons with lifelike materials, realistic shadows, and …",
+      "file": "content/posts/isometric-3d-icon-json-prompt-for-ai-generated-designs.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "3d icons",
+        "design",
+        "ai images"
+      ],
+      "caption": "Isometric 3D Icon JSON Prompt: Generate polished isometric 3D icons with lifelike materials, realistic shadows, and high-resolution studio rendering.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "metallic-sci-fi-hud",
+      "title": "Metallic Sci-Fi HUD JSON Prompt",
+      "tagline": "Create intense futuristic icons with brushed metal, electric blue accents, layered …",
+      "file": "content/posts/metallic-sci-fi-hud.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "sci-fi",
+        "icons",
+        "ai images"
+      ],
+      "caption": "Metallic Sci-Fi HUD JSON Prompt: Create intense futuristic icons with brushed metal, electric blue accents, layered geometry, and cinematic industrial lighting.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/metallic-sci-fi-hud/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "blog-page-2",
+      "title": "Latest Prompts — Page 2",
+      "tagline": "More reusable prompts, examples, and practical AI workflows",
+      "file": "templates/page-blog.html",
+      "language": "html",
+      "concepts": [
+        "prompt archive"
+      ],
+      "caption": "Latest Prompts — Page 2: More reusable prompts, examples, and practical AI workflows",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/page/2/",
+      "variant": "social",
+      "label": "PROMPT ARCHIVE",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "prompts-coming-soon",
+      "title": "Prompts Library Coming Soon",
+      "tagline": "The original welcome to Robert DeVore's organized, reusable library of prompts for …",
+      "file": "content/posts/prompts-coming-soon.md",
+      "language": "markdown",
+      "concepts": [
+        "announcements",
+        "prompts",
+        "announcements"
+      ],
+      "caption": "Prompts Library Coming Soon: The original welcome to Robert DeVore's organized, reusable library of prompts for working with AI.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/prompts-coming-soon/",
+      "variant": "social",
+      "label": "ANNOUNCEMENTS",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "simpsons-character-json-prompts-for-ai-generation",
+      "title": "Simpsons Character JSON Prompts",
+      "tagline": "Recreate real-world scenes or turn a photo into a full-body Simpsons-style character with two …",
+      "file": "content/posts/simpsons-character-json-prompts-for-ai-generation.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "characters",
+        "simpsons",
+        "ai images"
+      ],
+      "caption": "Simpsons Character JSON Prompts: Recreate real-world scenes or turn a photo into a full-body Simpsons-style character with two flexible JSON prompts.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/simpsons-character-json-prompts-for-ai-generation/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "top-secret-military-patches-json-prompt",
+      "title": "Military Patch JSON Prompts",
+      "tagline": "Generate photorealistic embroidered military patches for covert units, tactical teams, …",
+      "file": "content/posts/top-secret-military-patches-json-prompt.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "patches",
+        "design",
+        "ai images"
+      ],
+      "caption": "Military Patch JSON Prompts: Generate photorealistic embroidered military patches for covert units, tactical teams, fictional programs, and morale-patch concepts.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/top-secret-military-patches-json-prompt/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "wwf-action-figure-blister-pack-json-prompt",
+      "title": "WWF Action Figure JSON Prompt",
+      "tagline": "Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a …",
+      "file": "content/posts/wwf-action-figure-blister-pack-json-prompt.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "action figures",
+        "wwf",
+        "ai images"
+      ],
+      "caption": "WWF Action Figure JSON Prompt: Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a detailed blister pack.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "youtube-thumbnail-generation-with-ai-json-prompts",
+      "title": "YouTube Thumbnail JSON Prompts",
+      "tagline": "Generate bold YouTube thumbnails from a title, optional subhead, and photo with one …",
+      "file": "content/posts/youtube-thumbnail-generation-with-ai-json-prompts.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "youtube",
+        "thumbnails",
+        "ai images"
+      ],
+      "caption": "YouTube Thumbnail JSON Prompts: Generate bold YouTube thumbnails from a title, optional subhead, and photo with one structured JSON prompt.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/youtube-thumbnail-generation-with-ai-json-prompts/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "business",
+      "title": "Business AI Prompts",
+      "tagline": "Prompts for strategy, operations, planning, analysis, and everyday business work.",
+      "file": "content/pages/business.md",
+      "language": "markdown",
+      "concepts": [
+        "business",
+        "AI prompts"
+      ],
+      "caption": "Business AI Prompts: Prompts for strategy, operations, planning, analysis, and everyday business work.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/business/",
+      "variant": "social",
+      "label": "PROMPT CATEGORY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "coding",
+      "title": "Coding AI Prompts",
+      "tagline": "Prompts for software design, implementation, debugging, review, and documentation.",
+      "file": "content/pages/coding.md",
+      "language": "markdown",
+      "concepts": [
+        "coding",
+        "AI prompts"
+      ],
+      "caption": "Coding AI Prompts: Prompts for software design, implementation, debugging, review, and documentation.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/coding/",
+      "variant": "social",
+      "label": "PROMPT CATEGORY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "contact",
+      "title": "Contact Robert DeVore",
+      "tagline": "Questions, feedback, or support for the Prompts library.",
+      "file": "content/pages/contact.md",
+      "language": "markdown",
+      "concepts": [
+        "contact",
+        "AI prompts"
+      ],
+      "caption": "Contact Robert DeVore: Questions, feedback, or support for the Prompts library.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/contact/",
+      "variant": "social",
+      "label": "PROMPT LIBRARY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "images",
+      "title": "AI Image Generation Prompts",
+      "tagline": "Prompts for image generation, visual concepts, icons, characters, packaging, and design …",
+      "file": "content/pages/images.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "AI prompts"
+      ],
+      "caption": "AI Image Generation Prompts: Prompts for image generation, visual concepts, icons, characters, packaging, and design systems.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/images/",
+      "variant": "social",
+      "label": "PROMPT CATEGORY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "marketing",
+      "title": "Marketing AI Prompts",
+      "tagline": "Prompts for campaigns, positioning, content, audience research, and growth.",
+      "file": "content/pages/marketing.md",
+      "language": "markdown",
+      "concepts": [
+        "marketing",
+        "AI prompts"
+      ],
+      "caption": "Marketing AI Prompts: Prompts for campaigns, positioning, content, audience research, and growth.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/marketing/",
+      "variant": "social",
+      "label": "PROMPT CATEGORY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "prompt-library-page-2",
+      "title": "Prompt Library — Page 2",
+      "tagline": "More structured prompts for creative and professional work with AI",
+      "file": "templates/page-home.html",
+      "language": "html",
+      "concepts": [
+        "prompt archive"
+      ],
+      "caption": "Prompt Library — Page 2: More structured prompts for creative and professional work with AI",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/page/2/",
+      "variant": "social",
+      "label": "PROMPT ARCHIVE",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    },
+    {
+      "id": "writing",
+      "title": "Writing AI Prompts",
+      "tagline": "Prompts for drafting, editing, storytelling, research, and clearer communication.",
+      "file": "content/pages/writing.md",
+      "language": "markdown",
+      "concepts": [
+        "writing",
+        "AI prompts"
+      ],
+      "caption": "Writing AI Prompts: Prompts for drafting, editing, storytelling, research, and clearer communication.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/writing/",
+      "variant": "social",
+      "label": "PROMPT CATEGORY",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false
+    }
+  ]
+}

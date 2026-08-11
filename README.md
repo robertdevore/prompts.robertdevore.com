@@ -23,6 +23,21 @@ SITE_URL=https://prompts.robertdevore.com ./scripts/build.sh
 
 Generated files are written to `output/` and are never edited or committed directly.
 
+## Social cards
+
+Every canonical HTML route has a committed 1200×630 PNG generated through
+[Howl](https://github.com/kujolang/howl). The cards reproduce this site's black,
+white, and yellow visual system with Departure Mono type, and intentionally
+leave the lower-left URL field empty.
+
+```bash
+HOWL_BIN=/path/to/howl/bin/howl python3 scripts/render_howl_social.py
+```
+
+This regenerates `howl.json`, the reviewable SVG sources in
+`assets/social/howl/`, the PNG cards in `assets/social/`, and the canonical
+route map in `assets/social/social-image-map.json`.
+
 ## Content
 
 - `content/posts/`: prompt articles rendered under `/blog/<slug>/`
