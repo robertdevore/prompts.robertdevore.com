@@ -9,10 +9,10 @@ author: Robert DeVore
 categories: ["images"]
 tags: ["json prompts", "3d icons", "design", "ai images"]
 featured_image: /assets/images/isometric-3d-icons.webp
-og_image: /assets/images/isometric-3d-icons.webp
-og_image_alt: "Colorful isometric 3D icons generated with a structured JSON prompt"
-og_image_width: 2044
-og_image_height: 1024
+og_image: /assets/social/isometric-3d-icon-json-prompt-for-ai-generated-designs-social.png
+og_image_alt: "Isometric 3D Icon JSON Prompt social card"
+og_image_width: 1200
+og_image_height: 630
 ---
 
 This JSON prompt profile is optimized to generate **isometric 3D icons** with lifelike materials, realistic shadows, and high-resolution rendering - perfect for UI kits, product visuals, onboarding illustrations, and more.

@@ -9,10 +9,10 @@ author: Robert DeVore
 categories: ["images"]
 tags: ["json prompts", "patches", "design", "ai images"]
 featured_image: /assets/images/patch-wolf-pack.webp
-og_image: /assets/images/patch-wolf-pack.webp
-og_image_alt: "Wolf Pack embroidered military patch generated with a JSON prompt"
-og_image_width: 1024
-og_image_height: 1024
+og_image: /assets/social/top-secret-military-patches-json-prompt-social.png
+og_image_alt: "Military Patch JSON Prompts social card"
+og_image_width: 1200
+og_image_height: 630
 ---
 
 Designing elite military-style patches just got a classified-level upgrade 🤘

@@ -3,10 +3,10 @@ title: "Image Prompts"
 description: "Prompts for image generation, visual concepts, icons, characters, packaging, and design systems."
 seo_title: "AI Image Generation Prompts"
 keywords: "AI image prompts, image generation prompts, JSON image prompts, icon prompts, character prompts, design prompts"
-og_image: /assets/images/isometric-3d-icons.webp
-og_image_alt: "A collection of colorful isometric 3D icons generated with an AI image prompt"
-og_image_width: 2044
-og_image_height: 1024
+og_image: /assets/social/images-social.png
+og_image_alt: "AI image generation prompts from Robert DeVore"
+og_image_width: 1200
+og_image_height: 630
 custom_url: images
 template: category
 section: images

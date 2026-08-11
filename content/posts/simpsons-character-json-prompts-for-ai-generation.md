@@ -9,10 +9,10 @@ author: Robert DeVore
 categories: ["images"]
 tags: ["json prompts", "characters", "simpsons", "ai images"]
 featured_image: /assets/images/simpsons-wwf-scene.webp
-og_image: /assets/images/simpsons-wwf-scene.webp
-og_image_alt: "A Simpsons-style wrestling scene generated with an AI character prompt"
-og_image_width: 1536
-og_image_height: 1024
+og_image: /assets/social/simpsons-character-json-prompts-for-ai-generation-social.png
+og_image_alt: "Simpsons Character JSON Prompts social card"
+og_image_width: 1200
+og_image_height: 630
 ---
 
 Ever wanted to live in Springfield? Now you can - kind of 😎

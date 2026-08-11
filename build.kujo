@@ -4274,6 +4274,10 @@ func build_site(settings) {
 				index_seo_description = "Browse page " + to_string(page_num) + " of the AI prompt library for image generation, writing, business, marketing, coding, and more."
 				index_schema_type = "CollectionPage"
 			}
+			index_social_image := "/assets/social/home-social.png"
+			if page_num > 1 {
+				index_social_image = "/assets/social/prompt-library-page-" + to_string(page_num) + "-social.png"
+			}
 			index_html := render_layout(
 				layout_template,
 				settings,
@@ -4285,6 +4289,9 @@ func build_site(settings) {
 				{
 					"seo_title": index_seo_title,
 					"seo_description": index_seo_description,
+					"featured_image": index_social_image,
+					"og_image_width": 1200,
+					"og_image_height": 630,
 					"schema_type": index_schema_type,
 					"lang": "en"
 				}
@@ -4326,6 +4333,10 @@ func build_site(settings) {
 					blog_seo_title = "Blog Page " + to_string(page_num)
 					blog_seo_description = "Browse page " + to_string(page_num) + " of the latest prompts, examples, and practical AI workflows from Robert DeVore."
 				}
+				blog_social_image := "/assets/social/blog-social.png"
+				if page_num > 1 {
+					blog_social_image = "/assets/social/blog-page-" + to_string(page_num) + "-social.png"
+				}
 				blog_html := render_layout(
 					layout_template,
 					settings,
@@ -4337,6 +4348,9 @@ func build_site(settings) {
 					{
 						"seo_title": blog_seo_title,
 						"seo_description": blog_seo_description,
+						"featured_image": blog_social_image,
+						"og_image_width": 1200,
+						"og_image_height": 630,
 						"schema_type": "CollectionPage",
 						"lang": "en"
 					}

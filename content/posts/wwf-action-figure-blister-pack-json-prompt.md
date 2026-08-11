@@ -3,6 +3,10 @@ title: "WWF Action Figure Blister Pack JSON Prompt"
 description: "Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a detailed blister pack."
 seo_title: "WWF Action Figure JSON Prompt"
 keywords: "WWF action figure prompt, blister pack prompt, JSON image prompt, vintage wrestling toy, AI image generation"
+og_image: /assets/social/wwf-action-figure-blister-pack-json-prompt-social.png
+og_image_alt: "WWF Action Figure JSON Prompt social card"
+og_image_width: 1200
+og_image_height: 630
 custom_url: wwf-action-figure-blister-pack-json-prompt
 date: 2025-04-09
 author: Robert DeVore

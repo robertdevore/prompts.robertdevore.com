@@ -9,10 +9,10 @@ author: Robert DeVore
 categories: ["images"]
 tags: ["json prompts", "icons", "design", "ai images"]
 featured_image: /assets/images/glowing-3d-icons.webp
-og_image: /assets/images/glowing-3d-icons.webp
-og_image_alt: "Blue glowing neon lock icon generated from the JSON prompt"
-og_image_width: 1024
-og_image_height: 1024
+og_image: /assets/social/glowing-neon-icon-json-prompt-social.png
+og_image_alt: "Glowing Neon Icons JSON Prompt social card"
+og_image_width: 1200
+og_image_height: 630
 ---
 
 Want to create icons that **radiate power, security, and digital presence**? The **Glowing Neon Icons** prompt is your new secret weapon.

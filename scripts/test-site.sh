@@ -130,7 +130,8 @@ if grep -Fq '&amp;apos;' output/feed/index.xml; then
 fi
 assert_contains output/llms.txt '> Explore a growing library of high-quality AI prompts'
 assert_contains output/llms.txt '- [Prompt Library](https://prompts.robertdevore.com/)'
-assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:width" content="1024">'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:width" content="1200">'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:height" content="630">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<img src="/assets/images/glowing-3d-icons.webp" alt="Glowing Neon Icon Example" width="1024" height="1024">'

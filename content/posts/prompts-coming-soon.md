@@ -3,6 +3,10 @@ title: "Prompts: Coming Soon"
 description: "The original welcome to Robert DeVore's organized, reusable library of prompts for working with AI."
 seo_title: "Prompts Library Coming Soon"
 keywords: "AI prompt library, reusable prompts, prompt engineering, Robert DeVore prompts"
+og_image: /assets/social/prompts-coming-soon-social.png
+og_image_alt: "Prompts Library Coming Soon social card"
+og_image_width: 1200
+og_image_height: 630
 custom_url: prompts-coming-soon
 date: 2025-04-07
 author: Robert DeVore
