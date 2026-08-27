@@ -61,6 +61,8 @@ expected_routes=(
 	output/assets/sitekit/sitekit.css
 	output/assets/sitekit/fonts/DepartureMono-Regular.woff2
 	output/assets/js/docs-search-index.json
+	output/assets/js/kujo-webmcp.js
+	output/.well-known/kujo-site-index.json
 )
 
 for route in "${expected_routes[@]}"; do
@@ -81,6 +83,24 @@ assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
 assert_contains output/index.html 'assets/css/style.css?v=20260809.8'
 assert_contains output/index.html 'assets/js/docs.js?v=20260809.5'
+assert_contains output/index.html 'data-kujo-webmcp'
+assert_contains output/index.html 'data-kujo-site-index=".well-known/kujo-site-index.json"'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html 'data-kujo-site-index="../../.well-known/kujo-site-index.json"'
+if grep -Fq 'data-kujo-webmcp' output/404.html; then
+	fail "WebMCP runtime leaked onto the 404 page"
+fi
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+index = json.loads(Path("output/.well-known/kujo-site-index.json").read_text())
+assert index["schema"] == "kujo-ssg-site-index/v1"
+assert index["site"]["url"] == "https://prompts.robertdevore.com"
+assert {entry["name"] for entry in index["content_types"]} == {"pages", "posts"}
+assert len(index["items"]) >= 10
+assert all(item["url"].startswith("/") for item in index["items"])
+assert all(set(item) <= {"id", "type", "slug", "url", "title", "description", "summary", "language", "searchable", "taxonomies", "published", "updated"} for item in index["items"])
+PY
 assert_contains output/index.html '<code class="language-json">'
 assert_contains output/index.html '<link rel="author" href="https://robertdevore.com/">'
 if grep -Fq 'Copy the structure, swap in your idea, and start creating.' output/index.html; then

@@ -2,7 +2,7 @@
 
 ## Kujo SSG
 
-`build.kujo`, `scripts/docs_search_index.kujo`, and `scripts/validate-generated-output.sh` are derived from Kujo SSG 1.0.0 and used under the MIT License. The upstream project is <https://github.com/kujolang/ssg>.
+`build.kujo`, `scripts/docs_search_index.kujo`, and `scripts/validate-generated-output.sh` are derived from Kujo SSG 1.0.0 plus its Experimental WebMCP v1 implementation and used under the MIT License. The upstream project is <https://github.com/kujolang/ssg>.
 
 ## SiteKit
 

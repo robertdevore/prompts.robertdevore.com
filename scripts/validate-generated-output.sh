@@ -65,6 +65,21 @@ if [[ -f "$OUT_DIR/feed/index.xml" ]]; then
 	fi
 fi
 
+if [[ -f "$OUT_DIR/.well-known/kujo-site-index.json" ]]; then
+	if [[ ! -f "$OUT_DIR/assets/js/kujo-webmcp.js" ]]; then
+		record_failure "FAIL webmcp-runtime: missing $OUT_DIR/assets/js/kujo-webmcp.js"
+	fi
+	if ! grep -Fq '"schema":"kujo-ssg-site-index/v1"' "$OUT_DIR/.well-known/kujo-site-index.json"; then
+		record_failure "FAIL webmcp-schema: $OUT_DIR/.well-known/kujo-site-index.json"
+	fi
+	if ! grep -RFl 'data-kujo-webmcp' "$OUT_DIR" --include='*.html' >/dev/null; then
+		record_failure "FAIL webmcp-injection: no generated page references the runtime"
+	fi
+	if [[ -f "$OUT_DIR/404.html" ]] && grep -Fq 'data-kujo-webmcp' "$OUT_DIR/404.html"; then
+		record_failure "FAIL webmcp-404: runtime must not be exposed on the 404 page"
+	fi
+fi
+
 echo "Checked HTML files: $html_count"
 
 if [[ "$failures" -gt 0 ]]; then
