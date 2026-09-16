@@ -17,8 +17,6 @@ tags: ["prompts", "announcements"]
 
 Welcome to my **prompts library**, where I'll be sharing and categorizing the prompts I use with AI.
 
-![An ASCII-grunge archive opening into a library of prompt cards](/assets/images/ascii-grunge/prompts-coming-soon.webp)
-
 I'm doing this for two reasons - your benefit, and my sanity 😂
 
 It's getting increasingly harder to keep the prompts I use organized. From [TextExpander](https://textexpander.com/) snippets to MD files stored in the cloud to folders in ChatGPT - it's overwhelming.

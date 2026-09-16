@@ -17,9 +17,6 @@ tags: ["dependabot", "dependency security", "github", "automation", "coding agen
 
 Use this prompt to give a capable coding agent a strict, safety-first process for resolving open Dependabot alerts across an explicit repository list. Replace the example repositories before running it, and make sure the agent has the required GitHub and repository access.
 
-![An ASCII-grunge dependency graph protected by a shield and repaired chain](/assets/images/ascii-grunge/dependabot-security-maintenance.webp)
-
-
 ## Prompt
 
 %%RAW_PROMPT:dependabot-security-maintenance-agent%%

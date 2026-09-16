@@ -41,9 +41,7 @@ Perfect for:
 - 3/4 isometric view or side-view layouts
 - Clean 2px black linework, flat cel-shaded colors
 
-🖼️ Example:
-
-![WWF Simpsons Scene](/assets/images/simpsons-wwf-scene.webp)
+The featured image above shows this scene workflow in action.
 
 ### 2. Simpsons Character Generator (Full Body Edition)
 

@@ -17,8 +17,6 @@ tags: ["keyword research", "competitor analysis", "content strategy", "seo"]
 
 Use this prompt to build a sourced keyword and competitor research brief for a topic. Replace `KEYWORD_HERE` before running it. Access to a current keyword-data platform will make the requested volume and competition figures more reliable.
 
-![An ASCII-grunge magnifying glass examining a keyword and competitor network](/assets/images/ascii-grunge/keyword-competitor-analysis.webp)
-
 ## Prompt
 
 ```text

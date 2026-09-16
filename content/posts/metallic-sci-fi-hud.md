@@ -21,9 +21,7 @@ Here's the style it produces:
 
 ⚡ Cold, industrial brushed metal surfaces ⚡ Electric blue glowing accents ⚡ Precision-cut, layered geometry ⚡ Deep shadows and high-contrast highlights ⚡ Ultra-realistic, industrial lighting ⚡ A feeling of power, tech, and futuristic dominance
 
-Take a look at some examples generated with this JSON:
-
-![Cyber Demon](/assets/images/metallic-sci-fi-hud-demon.webp)
+The featured Cyber Demon above and the examples below were generated with this JSON:
 
 ![Tech Wolf](/assets/images/metallic-sci-fi-hud-wolf.webp)
 

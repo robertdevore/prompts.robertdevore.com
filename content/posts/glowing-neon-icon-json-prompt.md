@@ -28,11 +28,7 @@ Here's what it delivers:
 - Perfectly centered compositions with transparent backgrounds
 - An unmistakable feeling of tech-grade security
 
-Take a look at what this style creates:
-
-![Glowing Neon Icon Example](/assets/images/glowing-3d-icons.webp)
-
-That image? Generated using this single JSON prompt. Just swap out the icon type and you're ready to go.
+The featured image above was generated using this single JSON prompt. Just swap out the icon type and you're ready to go.
 
 ## JSON Prompt
 

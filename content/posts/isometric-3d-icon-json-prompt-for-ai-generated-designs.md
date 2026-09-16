@@ -19,8 +19,6 @@ This JSON prompt profile is optimized to generate **isometric 3D icons** with li
 
 Whether you're building a fitness tracker, spa app, cooking blog, or just want gorgeous object-based visuals for your project, this prompt delivers.
 
-![Isometric 3D icon Designs](/assets/images/isometric-3d-icons.webp)
-
 ## What This Prompt Can Do
 
 This system creates crisp, ultra-realistic icons with:

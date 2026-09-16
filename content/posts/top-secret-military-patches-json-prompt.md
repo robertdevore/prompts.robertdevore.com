@@ -21,8 +21,6 @@ This JSON prompt system is engineered to generate photorealistic, embroidered mi
 
 Whether you're mocking up covert unit branding, creating merch for veteran groups, or simply building out your collection of classified-style morale patches, this prompt delivers.
 
-![Wolf Pack patch](/assets/images/patch-wolf-pack.webp)
-
 ## What This Prompt Can Do
 
 This system creates ultra-realistic embroidered patch mockups featuring any combination of:

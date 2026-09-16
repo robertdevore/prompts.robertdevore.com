@@ -17,8 +17,6 @@ tags: ["business strategy", "product strategy", "company analysis", "decision ma
 
 Use this prompt when you need an unsparing strategic review of a company, product, or active project. Replace the bracketed placeholder with the subject you want evaluated, and provide any missing background that would make the diagnosis more precise.
 
-![An ASCII-grunge product machine opened for strategic inspection](/assets/images/ascii-grunge/brutally-honest-product-diagnostic.webp)
-
 ## Prompt
 
 ```text

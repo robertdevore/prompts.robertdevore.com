@@ -27,8 +27,6 @@ You've got better things to do than spend an hour trying to:
 
 So I built a tool that handles all of it for you - using a single JSON prompt and AI thumbnail generation.
 
-![YouTube Thumbnails with JSON Prompts](/assets/images/youtube-thumbnails-with-json-prompts.webp)
-
 ## How it Works
 
 You drop in:

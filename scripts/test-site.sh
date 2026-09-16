@@ -17,6 +17,12 @@ assert_contains() {
 	grep -Fq -- "$2" "$1" || fail "expected '$2' in $1"
 }
 
+assert_not_contains() {
+	if grep -Fq -- "$2" "$1"; then
+		fail "did not expect '$2' in $1"
+	fi
+}
+
 assert_count() {
 	local actual
 	actual="$(grep -oF -- "$2" "$1" | wc -l | tr -d ' ')"
@@ -31,7 +37,11 @@ assert_path assets/sitekit/sitekit.js
 assert_path assets/sitekit/fonts/DepartureMono-Regular.woff2
 assert_path assets/sitekit/fonts/DepartureMono-LICENSE.txt
 
-SITE_URL=https://prompts.robertdevore.com bash scripts/build.sh
+if [[ "${SKIP_BUILD:-0}" == "1" ]]; then
+	bash scripts/validate-generated-output.sh output
+else
+	SITE_URL=https://prompts.robertdevore.com bash scripts/build.sh
+fi
 
 expected_routes=(
 	output/index.html
@@ -96,7 +106,7 @@ assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
 assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
-assert_contains output/index.html 'assets/css/style.css?v=20260916.1'
+assert_contains output/index.html 'assets/css/style.css?v=20260916.2'
 assert_contains output/index.html 'assets/js/docs.js?v=20260809.5'
 assert_contains output/index.html 'data-kujo-webmcp'
 assert_contains output/index.html 'data-kujo-site-index=".well-known/kujo-site-index.json"'
@@ -136,11 +146,17 @@ assert_contains output/blog/top-secret-military-patches-json-prompt/index.html '
 assert_contains output/assets/css/style.css '--prompts-accent: var(--sk-state-warning)'
 assert_contains output/assets/css/style.css '--prompts-body-font: "InterVariable"'
 assert_contains output/assets/css/style.css '.article-header h1 { max-inline-size: 15ch; padding-inline: 0; border: var(--sk-border-0)'
+assert_contains output/assets/css/style.css '.article-shell { inline-size: min(100% - var(--sk-space-8), var(--sk-size-content-md)); }'
+assert_contains output/assets/css/style.css 'grid-template-columns: minmax(0, 1fr) minmax(11rem, 14rem);'
 assert_contains output/assets/css/style.css '.site-home .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }'
 assert_contains output/assets/css/style.css '.desktop-navigation { display: flex;'
 assert_contains output/assets/css/style.css '.site-menu-button { display: none;'
 assert_contains output/assets/css/style.css '.site-menu-button { display: inline-grid; }'
 assert_contains output/assets/css/style.css '.listing-visual, .article-visual { position: absolute; inset: 0;'
+assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<div class="article-visual"><img '
+assert_count output/blog/glowing-neon-icon-json-prompt/index.html 'alt="Featured image for Glowing Neon Icons: Design Bold Icons with This JSON Prompt"' 1
+assert_not_contains output/blog/glowing-neon-icon-json-prompt/index.html 'alt="Glowing Neon Icon Example"'
+assert_contains output/blog/dependabot-security-maintenance-agent/index.html 'alt="Featured image for Autonomous Dependabot Security Maintenance Agent Prompt"'
 assert_contains output/assets/css/style.css '.card-grid, .site-home .card-grid { grid-template-columns: 1fr; }'
 assert_contains output/assets/css/style.css 'background: transparent; color: var(--prompts-accent); border: var(--sk-border-0); cursor: pointer;'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
@@ -172,7 +188,6 @@ assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta prop
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:height" content="630">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
-assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<img src="/assets/images/glowing-3d-icons.webp" alt="Glowing Neon Icon Example" width="1024" height="1024">'
 assert_contains output/index.html 'width="1024" height="1024">'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
 assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
