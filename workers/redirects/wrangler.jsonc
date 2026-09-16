@@ -1,0 +1,17 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "robertdevore-redirects",
+	"main": "src/index.mjs",
+	"compatibility_date": "2026-09-16",
+	"workers_dev": false,
+	"routes": [
+		{
+			"pattern": "wwf.robertdevore.com/*",
+			"zone_name": "robertdevore.com"
+		},
+		{
+			"pattern": "prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt*",
+			"zone_name": "robertdevore.com"
+		}
+	]
+}
