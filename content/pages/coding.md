@@ -3,6 +3,7 @@ title: "Coding Prompts"
 description: "Prompts for software design, implementation, debugging, review, and documentation."
 seo_title: "Coding AI Prompts"
 keywords: "coding AI prompts, software development prompts, debugging prompts, code review prompts, documentation prompts"
+featured_image: /assets/images/ascii-grunge/coding.webp
 og_image: /assets/social/coding-social.png
 og_image_alt: "Coding AI prompts from Robert DeVore"
 og_image_width: 1200

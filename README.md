@@ -43,6 +43,12 @@ This regenerates `howl.json`, the reviewable SVG sources in
 `assets/social/howl/`, the PNG cards in `assets/social/`, and the canonical
 route map in `assets/social/social-image-map.json`.
 
+The reusable art direction lives in
+`image-prompts/ascii-grunge-header-style-guide.json`. Category and standalone
+page artwork is stored in `assets/images/ascii-grunge/`; assigning one of those
+files (or any article image) through `featured_image` also makes it the visual
+background for that route's Howl card.
+
 ## Content
 
 - `content/posts/`: prompt articles rendered under `/blog/<slug>/`

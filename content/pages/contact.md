@@ -3,6 +3,7 @@ title: "Contact"
 description: "Questions, feedback, or support for the Prompts library."
 seo_title: "Contact Robert DeVore"
 keywords: "contact Robert DeVore, prompt library support, AI prompt questions"
+featured_image: /assets/images/ascii-grunge/contact.webp
 og_image: /assets/social/contact-social.png
 og_image_alt: "Contact Robert DeVore about the Prompts library"
 og_image_width: 1200

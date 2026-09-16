@@ -75,6 +75,13 @@ assert_contains output/contact/index.html 'mailto:me@robertdevore.com'
 assert_contains output/about/index.html 'A Better Home for Useful Prompts'
 assert_contains output/images/index.html 'data-prompt-category="images"'
 assert_contains output/writing/index.html 'data-prompt-category="writing"'
+assert_contains output/business/index.html 'alt="Featured image for Business Prompts"'
+assert_contains output/coding/index.html 'alt="Featured image for Coding Prompts"'
+assert_contains output/marketing/index.html 'alt="Featured image for Marketing Prompts"'
+assert_contains output/writing/index.html 'alt="Featured image for Writing Prompts"'
+assert_contains output/images/index.html 'alt="Featured image for Image Prompts"'
+assert_contains output/about/index.html 'alt="Featured image for About"'
+assert_contains output/contact/index.html 'alt="Featured image for Contact"'
 assert_contains output/index.html 'class="menu-overlay"'
 assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
@@ -167,6 +174,7 @@ if grep -Fq '<div class="category-introduction docs-body"><ul>' output/images/in
 fi
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<h2>JSON Prompt</h2>'
 assert_contains output/index.html 'class="listing-card-image-link" aria-label="View prompt details"'
+assert_contains output/page/2/index.html 'alt="Featured image for Prompts: Coming Soon"'
 assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', 'View ' + item.title);"
 
 if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then

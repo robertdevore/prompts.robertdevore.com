@@ -3,6 +3,7 @@ title: "Writing Prompts"
 description: "Prompts for drafting, editing, storytelling, research, and clearer communication."
 seo_title: "Writing AI Prompts"
 keywords: "writing AI prompts, editing prompts, storytelling prompts, research prompts, communication prompts"
+featured_image: /assets/images/ascii-grunge/writing.webp
 og_image: /assets/social/writing-social.png
 og_image_alt: "Writing AI prompts from Robert DeVore"
 og_image_width: 1200

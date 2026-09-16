@@ -1,0 +1,407 @@
+{
+  "prompt_name": "Repeatable ASCII Grunge Header Image Style Guide - Black Background",
+  "version": "1.2.0",
+  "primary_goal": "Generate clean but intentionally distressed ASCII-style website header images using minimalist monospaced character forms, spacious composition, black backgrounds, a single gold accent color, and a subtle editorial grunge finish that makes imperfections feel deliberate and visually refined.",
+  "usage_instruction": "Place the custom subject or scene description above this JSON. Use that subject as the only narrative content. Apply every visual rule below.",
+  "custom_scene_input": {
+    "subject_placeholder": "[DESCRIBE THE SUBJECT OR SCENE HERE]",
+    "example_subjects": [
+      "a globe on fire",
+      "a loaf of bread on a countertop",
+      "a quiet mountain lake",
+      "a futuristic city garden",
+      "a tiny island with a lighthouse"
+    ],
+    "interpretation_rule": "Translate the subject into a calm, minimalist ASCII-inspired editorial illustration with slight grunge texture. Use abstract character marks and monospaced linework to build the image. Do not include readable words, labels, logos, UI, captions, or signage. Preserve the exact gold design language against a black background."
+  },
+  "output_format": {
+    "intended_use": "website header design",
+    "orientation": "landscape",
+    "preferred_aspect_ratio": "16:9",
+    "alternate_aspect_ratios": [
+      "21:9",
+      "3:1",
+      "2:1"
+    ],
+    "minimum_pixel_width": 2400,
+    "minimum_pixel_height": 1350,
+    "preferred_pixel_width": 3200,
+    "preferred_pixel_height": 1800,
+    "resolution_quality": "high resolution",
+    "render_quality": "premium editorial hero image",
+    "background": "pure black or very deep near-black",
+    "background_color_family": "black, soft black, ink black, charcoal black, very dark blue-black",
+    "transparent_background": false,
+    "readable_text_allowed": false,
+    "decorative_ascii_characters_allowed": true,
+    "lettering_allowed": "only as abstract ASCII texture, never as readable words",
+    "logo_allowed": false,
+    "watermark_allowed": false
+  },
+  "style_identity": {
+    "core_style": "minimalist ASCII art with editorial grunge",
+    "secondary_style": "monospaced character illustration with controlled distressed texture",
+    "visual_mood": "clean, technical, calm, slightly raw, refined, intentional, spacious, dark, high-contrast",
+    "design_category": "premium website hero illustration",
+    "inspiration_keywords": [
+      "ASCII art",
+      "monospaced character illustration",
+      "editorial grunge design",
+      "distressed ink aesthetic",
+      "terminal-inspired artwork",
+      "minimal technical artwork",
+      "gold on black graphic system",
+      "clean developer aesthetic",
+      "abstract character-based illustration",
+      "modern software brand imagery",
+      "premium distressed poster feel",
+      "dark editorial hero image"
+    ],
+    "avoid_style_keywords": [
+      "retro green terminal",
+      "dense hacker screen",
+      "busy code wall",
+      "low-resolution ASCII dump",
+      "pixelated bitmap art",
+      "cartoon mascot",
+      "game screenshot",
+      "photorealistic image",
+      "flat corporate vector art",
+      "messy random sketch",
+      "dirty punk flyer chaos",
+      "neon cyberpunk overload"
+    ]
+  },
+  "composition": {
+    "layout_type": "wide cinematic website header",
+    "primary_subject_position": "center, lower center, or slightly right depending on subject",
+    "horizon_position": "lower third or middle third when relevant",
+    "top_space": "leave generous black negative space in the upper half when useful for website overlay content",
+    "bottom_weight": "place most visual mass in the lower half or central focal zone",
+    "depth_layers_required": true,
+    "minimum_depth_layers": 3,
+    "depth_layering": [
+      "empty black background",
+      "faint distant ASCII texture or contour marks",
+      "middle-ground main subject built from character clusters",
+      "foreground sparse detail marks and subtle distressed accents"
+    ],
+    "scene_edges": "allow edges to dissolve into black space through lighter, sparser character density and faint distressed fade-out",
+    "cropping": "wide and clean, with no important details cut off",
+    "camera_angle": "straight-on or slightly elevated editorial view",
+    "perspective": "subtle, mostly flat with light spatial depth suggested through character density",
+    "symmetry": "balanced but natural",
+    "visual_density": "low to moderate detail in focal area, very quiet at edges",
+    "negative_space": "critical and intentional"
+  },
+  "ascii_geometry": {
+    "ascii_visibility": "clearly visible monospaced character construction",
+    "character_style": "clean terminal-like marks, dots, slashes, brackets, pipes, underscores, dashes, plus signs, colons, and simple glyph clusters",
+    "character_density": "use density to create form, shading, contour, and depth",
+    "line_shape": "forms should be built from repeated ASCII marks and clean monospaced spacing, with slight intentional irregularity",
+    "surface_detail": "use sparse character clusters rather than filled solid shapes",
+    "micro_marks": "use small dots, colons, dashes, and slashes for texture",
+    "macro_forms": "use larger character groupings, contours, and repeated structures for main silhouettes",
+    "geometry_style": "structured, technical, airy, precise, but not sterile",
+    "silhouette_rule": "subject must remain readable from a distance",
+    "edge_rule": "edges should be suggested through character placement, not heavy outlines",
+    "organic_translation": "convert organic shapes into contour-like ASCII fields and sparse character gradients",
+    "hard_surface_translation": "convert objects into clean monospaced outlines, planes, grids, and structured character blocks",
+    "linework": "use character-based linework only",
+    "anti_aliasing": "high-resolution image with crisp character forms and clean spacing"
+  },
+  "grunge_treatment": {
+    "grunge_level": "subtle to moderate",
+    "purpose": "imperfections should feel intentional, editorial, and print-inspired rather than sloppy or accidental",
+    "texture_style": [
+      "light distressed ink texture",
+      "faint worn print effect",
+      "subtle speckling",
+      "minor character erosion",
+      "slight broken line continuity",
+      "very restrained dark-surface grit",
+      "small areas of imperfect density"
+    ],
+    "allowed_imperfections": [
+      "slight inconsistency in character spacing",
+      "subtle irregular glyph density",
+      "tiny distressed gaps in lines",
+      "faint roughened edges",
+      "light noise in selected areas",
+      "gentle ink fade variation",
+      "small offsets that feel intentional"
+    ],
+    "placement_rule": "keep grunge concentrated around focal forms, contour edges, and secondary texture zones, while preserving large areas of clean black space",
+    "balance_rule": "the image should still feel premium, minimalist, and controlled",
+    "avoid_grunge_traits": [
+      "heavy dirt overlays",
+      "muddy texture",
+      "full-page grit",
+      "chaotic destruction",
+      "random damage everywhere",
+      "punk zine clutter",
+      "illegible distressing",
+      "overly smoky or dusty atmosphere"
+    ]
+  },
+  "material_treatment": {
+    "overall_surface": "flat printed editorial graphic with subtle distressed finish",
+    "reflectivity": "none",
+    "roughness": "matte dark paper-like finish",
+    "texture_style": "minimal ASCII character texture with slight grunge wear",
+    "surface_variation": "created through character density, spacing, opacity, and light distressing rather than full color variation",
+    "avoid_materials": [
+      "chrome",
+      "glass realism",
+      "wet plastic",
+      "hyperreal skin",
+      "photographic fabric",
+      "3D clay render",
+      "voxel blocks",
+      "plastic toy render"
+    ],
+    "allowed_materials": [
+      "flat gold ink",
+      "monospaced character marks",
+      "dark matte background",
+      "technical contour lines",
+      "sparse symbolic texture",
+      "minimal diagram-like structure",
+      "light print distress"
+    ]
+  },
+  "color_palette": {
+    "overall_palette": "single-color minimalist gold on black with opacity variation",
+    "background_colors": [
+      "#000000",
+      "#030407",
+      "#050814",
+      "#080B18"
+    ],
+    "primary_accent_color": "#ffd166",
+    "primary_mark_colors": [
+      "#ffd166"
+    ],
+    "optional_opacity_range": [
+      "18%",
+      "25%",
+      "35%",
+      "50%",
+      "70%",
+      "100%"
+    ],
+    "shadow_colors": [
+      "transparent gold opacity only",
+      "no gray or black cast shadows"
+    ],
+    "color_intensity": "restrained but crisp",
+    "saturation": "clean controlled gold",
+    "contrast": "high clarity against black, softened through spacing, opacity, and distressing",
+    "gradient_usage": "avoid gradients except extremely subtle fade-out of character density or slight print-fade feel",
+    "forbidden_colors": [
+      "neon colors",
+      "rainbow palettes",
+      "white backgrounds",
+      "green terminal glow",
+      "red error-screen styling",
+      "gray drop shadows",
+      "highlighter colors",
+      "comic book primaries"
+    ]
+  },
+  "lighting": {
+    "lighting_style": "flat editorial lighting",
+    "time_of_day": "not applicable",
+    "shadow_style": "minimal or none",
+    "highlight_style": "created by black space, gold opacity variation, and character sparsity",
+    "ambient_occlusion": "none",
+    "direction": "not dependent on realistic light direction",
+    "atmosphere": "clean black space with subtle print-like softness",
+    "background_fade": "character density may fade gently into the black background",
+    "avoid_lighting": [
+      "dramatic cinematic spotlight",
+      "hard noir shadows",
+      "heavy bloom",
+      "lens flare",
+      "dark fantasy lighting",
+      "cyberpunk glow overload",
+      "3D render lighting"
+    ]
+  },
+  "environment_rules": {
+    "environment_optional": true,
+    "if_landscape": {
+      "terrain": "suggest terrain with ASCII contour lines, dashes, dots, and sparse horizontal marks",
+      "mountains": "use stepped or sloped character contours with open black gaps and lightly distressed edges",
+      "water": "use calm horizontal ASCII bands, underscores, tildes, and soft gold opacity",
+      "trees": "use small clustered character marks and simple trunk-like linework",
+      "ground": "minimal horizontal character fields with slight surface wear",
+      "sky": "mostly empty black space with only sparse atmospheric marks if needed"
+    },
+    "if_object_scene": {
+      "base": "simple ASCII pedestal, contour shadow, or sparse ground line",
+      "surroundings": "minimal supporting context",
+      "background": "mostly empty black",
+      "props": "only include props that clarify scale or setting",
+      "surface": "suggest surfaces through sparse monospaced marks, not rendered materials"
+    },
+    "if_abstract_subject": {
+      "translation": "make the abstract idea physical through ASCII structures, diagrams, symbolic forms, and character density",
+      "supporting_elements": "use minimal metaphors such as grids, arcs, paths, nodes, waves, or contour fields",
+      "clarity": "subject must still be instantly understandable"
+    }
+  },
+  "subject_rendering": {
+    "subject_priority": "the custom scene subject is always the focal point",
+    "scale": "large enough to read clearly in a website header",
+    "detail_level": "medium detail using character clusters and negative space",
+    "silhouette": "clear, iconic, recognizable",
+    "supporting_details": "use small ASCII marks only where they improve readability",
+    "style_consistency": "all parts of the image must share the same ASCII-inspired monospaced construction with the same restrained grunge treatment",
+    "no_mixed_media": true,
+    "no_photoreal_insertions": true,
+    "no_voxel_insertions": true,
+    "no_flat_vector_insertions": true,
+    "no_3d_render_insertions": true
+  },
+  "website_header_requirements": {
+    "safe_area": {
+      "left_side": "keep usable clean space when possible",
+      "top_side": "keep calm open space",
+      "center": "main visual may occupy center or lower center",
+      "right_side": "may contain visual detail but avoid clutter"
+    },
+    "overlay_readiness": "composition should allow text or buttons to be added later by a designer",
+    "visual_noise": "low",
+    "edge_cleanliness": "high",
+    "background_simplicity": "very high",
+    "premium_feel": "required",
+    "hero_image_readability": "must look good at desktop width and remain readable when cropped"
+  },
+  "detail_language": {
+    "mountain_like_forms": "sloped ASCII contours, sparse dashes, dots, and gold line density with slight distressed breaks",
+    "tree_like_forms": "small clusters of punctuation-like marks with simple vertical line trunks",
+    "water_like_forms": "horizontal underscores, tildes, soft repeated bands, and low-density gold marks",
+    "ground_like_forms": "thin monospaced contour lines and sparse dotted texture",
+    "object_edges": "clean character-based contours with lightly roughened printed edges, never thick vector outlines",
+    "fine_texture": "tiny dots, colons, dashes, slashes, pipes, and brackets arranged with discipline, plus subtle controlled wear",
+    "atmospheric_depth": "distant forms should be lighter, sparser, and lower opacity"
+  },
+  "camera_and_render": {
+    "camera_type": "flat editorial composition or lightly spatial diagram view",
+    "lens_feel": "clean website illustration lens",
+    "view_angle": "front-facing with optional slight elevation",
+    "depth_of_field": "none",
+    "sharpness": "crisp character marks with intentional distressed variation",
+    "background_sharpness": "clean and uncluttered",
+    "render_engine_feel": "high-resolution graphic design output, not a 3D render",
+    "post_processing": "minimal",
+    "grain": "extremely subtle dark-surface grain permitted",
+    "motion_blur": false
+  },
+  "negative_prompt": {
+    "forbidden_text_elements": [
+      "readable words",
+      "sentences",
+      "captions",
+      "labels",
+      "signage",
+      "logos",
+      "watermarks",
+      "navigation menus",
+      "buttons",
+      "interface elements",
+      "brand marks"
+    ],
+    "allowed_textural_elements": [
+      "abstract ASCII characters",
+      "non-readable monospaced glyph patterns",
+      "punctuation-based shading",
+      "symbolic character clusters"
+    ],
+    "forbidden_visual_styles": [
+      "photorealism",
+      "voxel art",
+      "3D render",
+      "clay render",
+      "flat corporate illustration",
+      "anime",
+      "comic book art",
+      "oil painting",
+      "watercolor painting",
+      "messy random sketch",
+      "plastic toy render",
+      "Minecraft screenshot",
+      "game UI",
+      "dense code screenshot",
+      "old green terminal screen"
+    ],
+    "forbidden_composition_traits": [
+      "busy cluttered background",
+      "cropped focal subject",
+      "chaotic perspective",
+      "overcrowded details",
+      "harsh outlines",
+      "floating random objects",
+      "unreadable silhouette",
+      "wall of code",
+      "grunge overload",
+      "washed-out low-contrast marks"
+    ],
+    "forbidden_quality_issues": [
+      "low resolution",
+      "blurry character marks",
+      "jagged compression artifacts",
+      "muddy colors",
+      "oversaturation",
+      "warped geometry",
+      "inconsistent spacing that feels accidental",
+      "mixed art styles",
+      "unreadable noisy ASCII",
+      "cheap dirty texture overlay"
+    ]
+  },
+  "generation_steps": {
+    "step_1": "Read the custom subject or scene description.",
+    "step_2": "Identify the main subject, supporting environment, and mood.",
+    "step_3": "Translate every subject element into minimalist ASCII-inspired geometry.",
+    "step_4": "Build the image as a wide website hero composition.",
+    "step_5": "Keep the background black, minimal, spacious, and free of readable text.",
+    "step_6": "Use character density, spacing, and opacity to create shape, depth, and texture.",
+    "step_7": "Introduce a subtle editorial grunge treatment so imperfections feel intentional.",
+    "step_8": "Use only #ffd166 for visible marks, with optional opacity variation.",
+    "step_9": "Maintain crisp monospaced character forms while allowing slight distressed wear.",
+    "step_10": "Check that the image has no readable text, logos, UI, labels, or watermarks.",
+    "step_11": "Ensure the image is large, clean, crisp, minimalist, slightly grungy, and suitable for a website header."
+  },
+  "quality_control": {
+    "must_feel_like_same_style_as_reference": true,
+    "must_be_ascii_inspired": true,
+    "must_use_gold_hex_color": "#ffd166",
+    "must_have_black_background": true,
+    "must_preserve_same_gold_design_elements": true,
+    "must_have_premium_header_quality": true,
+    "must_have_clean_negative_space": true,
+    "must_be_subject_flexible": true,
+    "must_avoid_readable_text": true,
+    "must_avoid_ui": true,
+    "must_avoid_logos": true,
+    "must_avoid_overcrowding": true,
+    "must_avoid_photorealism": true,
+    "must_have_intentional_imperfections": true,
+    "final_image_should_feel": [
+      "minimal",
+      "technical",
+      "spacious",
+      "modern",
+      "premium",
+      "precise",
+      "slightly distressed",
+      "intentional",
+      "clear",
+      "repeatable",
+      "dark editorial"
+    ]
+  },
+  "final_prompt_instruction": "Create a wide, high-resolution ASCII-style website header image based only on the custom subject description. Use a clean black background, minimalist monospaced character construction, abstract ASCII marks, generous negative space, and the single gold color #ffd166. Preserve the same gold design elements exactly, only changing the background system from white to black. Add a subtle editorial grunge effect so the image feels intentionally distressed rather than overly polished - think restrained print wear, slight character erosion, faint speckling, and controlled irregularity. Use character density, spacing, opacity, and light distressing to build the subject clearly without creating readable words. Do not include readable text, captions, labels, logos, watermarks, buttons, menus, UI elements, photorealism, voxel art, or 3D-rendered forms."
+}

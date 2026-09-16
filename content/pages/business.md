@@ -3,6 +3,7 @@ title: "Business Prompts"
 description: "Prompts for strategy, operations, planning, analysis, and everyday business work."
 seo_title: "Business AI Prompts"
 keywords: "business AI prompts, strategy prompts, operations prompts, planning prompts, business analysis"
+featured_image: /assets/images/ascii-grunge/business.webp
 og_image: /assets/social/business-social.png
 og_image_alt: "Business AI prompts from Robert DeVore"
 og_image_width: 1200

@@ -3,6 +3,7 @@ title: "Prompts: Coming Soon"
 description: "The original welcome to Robert DeVore's organized, reusable library of prompts for working with AI."
 seo_title: "Prompts Library Coming Soon"
 keywords: "AI prompt library, reusable prompts, prompt engineering, Robert DeVore prompts"
+featured_image: /assets/images/ascii-grunge/prompts-coming-soon.webp
 og_image: /assets/social/prompts-coming-soon-social.png
 og_image_alt: "Prompts Library Coming Soon social card"
 og_image_width: 1200
@@ -15,6 +16,8 @@ tags: ["prompts", "announcements"]
 ---
 
 Welcome to my **prompts library**, where I'll be sharing and categorizing the prompts I use with AI.
+
+![An ASCII-grunge archive opening into a library of prompt cards](/assets/images/ascii-grunge/prompts-coming-soon.webp)
 
 I'm doing this for two reasons - your benefit, and my sanity 😂
 

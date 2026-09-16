@@ -111,6 +111,9 @@ img { block-size: auto; }
 .pagination a:hover { border-color: var(--prompts-accent); }
 
 .listing-header { padding: clamp(var(--sk-space-8), 6vw, var(--sk-space-16)); background: var(--prompts-panel); border: var(--sk-border-1) solid var(--prompts-accent); }
+.listing-visual, .article-visual { margin-block-start: var(--sk-space-8); overflow: hidden; border: var(--sk-border-1) solid var(--prompts-line); background: var(--sk-color-black); }
+.listing-visual:empty, .article-visual:empty { display: none; }
+.listing-visual img, .article-visual img { display: block; inline-size: 100%; block-size: auto; aspect-ratio: 16 / 9; object-fit: cover; }
 .site-listing > .card-grid { margin-block-start: var(--sk-space-8); }
 .article-shell { inline-size: min(100% - var(--sk-space-8), var(--sk-size-content-sm)); }
 .article-shell:has(> .docs-toc) { inline-size: min(100% - var(--sk-space-8), var(--sk-size-content-lg)); display: grid; grid-template-columns: minmax(0, var(--sk-size-content-sm)) minmax(calc(var(--sk-space-20) * 3), 1fr); gap: var(--sk-space-6); align-items: start; justify-content: center; }
