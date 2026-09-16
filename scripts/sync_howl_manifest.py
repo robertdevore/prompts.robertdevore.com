@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "howl.json"
 CONTENT = ROOT / "content"
 FONT = "assets/sitekit/fonts/DepartureMono-Regular.woff2"
+HOME_BACKGROUND = "assets/images/ascii-grunge/home.webp"
+BLOG_BACKGROUND = "assets/images/ascii-grunge/blog.webp"
 
 
 def frontmatter(path: Path) -> dict[str, object]:
@@ -82,8 +84,9 @@ def card(
     label: str,
     concepts: list[str] | None = None,
     language: str = "markdown",
+    background_image: str = "",
 ) -> dict[str, object]:
-    return {
+    result: dict[str, object] = {
         "id": card_id,
         "title": fit_for_howl(title, 20, 3),
         "tagline": fit_for_howl(tagline, 47, 2),
@@ -98,6 +101,9 @@ def card(
         "font_file": FONT,
         "show_url": False,
     }
+    if background_image:
+        result["background_image"] = background_image
+    return result
 
 
 def content_card(path: Path, kind: str) -> dict[str, object]:
@@ -113,6 +119,7 @@ def content_card(path: Path, kind: str) -> dict[str, object]:
     else:
         label = "PROMPT CATEGORY" if text(meta, "template") == "category" else "PROMPT LIBRARY"
         concepts = [slug, "AI prompts"]
+    featured_image = text(meta, "featured_image").lstrip("/")
     return card(
         card_id=slug,
         route=f"/{'blog/' if kind == 'post' else ''}{slug}/",
@@ -121,6 +128,7 @@ def content_card(path: Path, kind: str) -> dict[str, object]:
         source=relative,
         label=label,
         concepts=concepts,
+        background_image=featured_image,
     )
 
 
@@ -135,6 +143,7 @@ def build_manifest() -> dict[str, object]:
             label="CURATED AI PROMPT LIBRARY",
             concepts=["AI prompts", "structured prompts", "creative workflows"],
             language="html",
+            background_image=HOME_BACKGROUND,
         ),
         card(
             card_id="blog",
@@ -145,6 +154,7 @@ def build_manifest() -> dict[str, object]:
             label="LATEST PROMPTS",
             concepts=["AI prompts", "prompt archive"],
             language="html",
+            background_image=BLOG_BACKGROUND,
         ),
     ]
 
@@ -164,6 +174,7 @@ def build_manifest() -> dict[str, object]:
                     source="templates/page-home.html",
                     label="PROMPT ARCHIVE",
                     language="html",
+                    background_image=HOME_BACKGROUND,
                 ),
                 card(
                     card_id=f"blog-page-{number}",
@@ -173,6 +184,7 @@ def build_manifest() -> dict[str, object]:
                     source="templates/page-blog.html",
                     label="PROMPT ARCHIVE",
                     language="html",
+                    background_image=BLOG_BACKGROUND,
                 ),
             ]
         )

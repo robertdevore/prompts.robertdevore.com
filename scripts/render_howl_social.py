@@ -45,11 +45,10 @@ def howl_binary() -> str:
     raise SystemExit("Howl is unavailable; install it on PATH or set HOWL_BIN.")
 
 
-def apply_prompts_brand(svg: str) -> str:
+def apply_prompts_brand(svg: str, *, has_background: bool) -> str:
     """Restyle Howl's social layout to match the site's black/yellow system."""
+    base_marker = '<rect width="1200" height="630" fill="#f4f4f1"/>\n'
     replacements = {
-        HOWL_BRAND_PREFIX: "PROMPTS.ROBERTDEVORE.COM  //  ",
-        '<rect width="1200" height="630" fill="#f4f4f1"/>\n': '<rect width="1200" height="630" fill="#060606"/>\n' + BRAND_ART,
         'stop-color="#fff" stop-opacity=".98"': 'stop-color="#060606" stop-opacity=".99"',
         'stop-color="#fff" stop-opacity=".88"': 'stop-color="#060606" stop-opacity=".96"',
         'stop-color="#fff" stop-opacity=".18"': 'stop-color="#060606" stop-opacity=".45"',
@@ -62,6 +61,16 @@ def apply_prompts_brand(svg: str) -> str:
         '<rect x="78" y="570" width="84" height="4" fill="#111"/>': "",
     }
     branded = svg
+    if HOWL_BRAND_PREFIX in branded:
+        branded = branded.replace(HOWL_BRAND_PREFIX, "PROMPTS.ROBERTDEVORE.COM  //  ", 1)
+    elif "PROMPTS.ROBERTDEVORE.COM  //  " not in branded:
+        raise SystemExit("Expected Howl SVG brand prefix is missing.")
+    if not has_background:
+        if base_marker not in branded:
+            raise SystemExit(f"Expected Howl SVG marker is missing: {base_marker[:72]}")
+        branded = branded.replace(
+            base_marker, '<rect width="1200" height="630" fill="#060606"/>\n' + BRAND_ART, 1
+        )
     for old, new in replacements.items():
         if old not in branded:
             raise SystemExit(f"Expected Howl SVG marker is missing: {old[:72]}")
@@ -102,7 +111,7 @@ def main() -> int:
             card_id = str(card["id"])
             source = rendered / f"{card_id}.svg"
             svg = source.read_text(encoding="utf-8")
-            branded_svg = apply_prompts_brand(svg)
+            branded_svg = apply_prompts_brand(svg, has_background=bool(card.get("background_image")))
             (SVG_OUTPUT / source.name).write_text(branded_svg, encoding="utf-8")
 
             portable_svg = branded_svg.replace(GRAIN_OVERLAY, "", 1).replace(

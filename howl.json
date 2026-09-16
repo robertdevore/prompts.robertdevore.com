@@ -26,7 +26,8 @@
       "variant": "social",
       "label": "CURATED AI PROMPT LIBRARY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/home.webp"
     },
     {
       "id": "about",
@@ -44,7 +45,8 @@
       "variant": "social",
       "label": "PROMPT LIBRARY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/about.webp"
     },
     {
       "id": "blog",
@@ -62,7 +64,8 @@
       "variant": "social",
       "label": "LATEST PROMPTS",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/blog.webp"
     },
     {
       "id": "glowing-neon-icon-json-prompt",
@@ -83,7 +86,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/glowing-3d-icons.webp"
     },
     {
       "id": "isometric-3d-icon-json-prompt-for-ai-generated-designs",
@@ -104,7 +108,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/isometric-3d-icons.webp"
     },
     {
       "id": "metallic-sci-fi-hud",
@@ -125,7 +130,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/metallic-sci-fi-hud-demon.webp"
     },
     {
       "id": "blog-page-2",
@@ -142,7 +148,8 @@
       "variant": "social",
       "label": "PROMPT ARCHIVE",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/blog.webp"
     },
     {
       "id": "prompts-coming-soon",
@@ -161,7 +168,8 @@
       "variant": "social",
       "label": "ANNOUNCEMENTS",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/prompts-coming-soon.webp"
     },
     {
       "id": "simpsons-character-json-prompts-for-ai-generation",
@@ -182,7 +190,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/simpsons-wwf-scene.webp"
     },
     {
       "id": "top-secret-military-patches-json-prompt",
@@ -203,7 +212,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/patch-wolf-pack.webp"
     },
     {
       "id": "youtube-thumbnail-generation-with-ai-json-prompts",
@@ -224,7 +234,8 @@
       "variant": "social",
       "label": "IMAGES",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/youtube-thumbnails-with-json-prompts.webp"
     },
     {
       "id": "business",
@@ -242,7 +253,8 @@
       "variant": "social",
       "label": "PROMPT CATEGORY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/business.webp"
     },
     {
       "id": "coding",
@@ -260,7 +272,8 @@
       "variant": "social",
       "label": "PROMPT CATEGORY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/coding.webp"
     },
     {
       "id": "contact",
@@ -278,7 +291,8 @@
       "variant": "social",
       "label": "PROMPT LIBRARY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/contact.webp"
     },
     {
       "id": "images",
@@ -296,7 +310,8 @@
       "variant": "social",
       "label": "PROMPT CATEGORY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/images.webp"
     },
     {
       "id": "marketing",
@@ -314,7 +329,8 @@
       "variant": "social",
       "label": "PROMPT CATEGORY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/marketing.webp"
     },
     {
       "id": "prompt-library-page-2",
@@ -331,7 +347,8 @@
       "variant": "social",
       "label": "PROMPT ARCHIVE",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/home.webp"
     },
     {
       "id": "writing",
@@ -349,7 +366,8 @@
       "variant": "social",
       "label": "PROMPT CATEGORY",
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/writing.webp"
     }
   ]
 }
