@@ -228,7 +228,11 @@ func route_for(content_root, path, meta) {
 		slug = override
 	}
 	if len(parts) >= 2 && parts[0] != "pages" {
-		return clean_slug(parts[0]) + "/" + slug + "/"
+		collection_route := clean_slug(parts[0])
+		if collection_route == "posts" {
+			collection_route = "blog"
+		}
+		return collection_route + "/" + slug + "/"
 	}
 	return slug + "/"
 }

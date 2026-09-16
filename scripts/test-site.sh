@@ -45,7 +45,6 @@ expected_routes=(
 	output/marketing/index.html
 	output/coding/index.html
 	output/blog/prompts-coming-soon/index.html
-	output/blog/wwf-action-figure-blister-pack-json-prompt/index.html
 	output/blog/simpsons-character-json-prompts-for-ai-generation/index.html
 	output/blog/youtube-thumbnail-generation-with-ai-json-prompts/index.html
 	output/blog/metallic-sci-fi-hud/index.html
@@ -115,7 +114,6 @@ fi
 if rg -n 'menu-overlay-backdrop' output --glob '*.html' --glob '*.css'; then
 	fail "obsolete menu backdrop leaked into generated output"
 fi
-assert_contains output/blog/wwf-action-figure-blister-pack-json-prompt/index.html 'vintage wwf wrestling action figure in blister pack'
 assert_contains output/blog/youtube-thumbnail-generation-with-ai-json-prompts/index.html 'EXTREME LEADERSHIP'
 assert_contains output/blog/top-secret-military-patches-json-prompt/index.html 'alt="Patch 4"'
 assert_contains output/blog/top-secret-military-patches-json-prompt/index.html 'keywords *or* a weighted fallback pool'
@@ -157,7 +155,16 @@ assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta prop
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<img src="/assets/images/glowing-3d-icons.webp" alt="Glowing Neon Icon Example" width="1024" height="1024">'
 assert_contains output/index.html 'width="1024" height="1024">'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
-assert_contains output/images/index.html 'href="/blog/glowing-neon-icon-json-prompt/"'
+assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
+if rg -n '"url": "https://prompts\.robertdevore\.com/posts/|"url": "/posts/' output/assets/js/docs-search-index.json; then
+	fail "legacy /posts/ routes leaked into the image prompt grid"
+fi
+if grep -Fq 'wwf-action-figure-blister-pack-json-prompt' output/assets/js/docs-search-index.json; then
+	fail "removed WWF prompt leaked into the generated search index"
+fi
+if grep -Fq '<div class="category-introduction docs-body"><ul>' output/images/index.html; then
+	fail "redundant image prompt list leaked into the category page"
+fi
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<h2>JSON Prompt</h2>'
 assert_contains output/index.html 'class="listing-card-image-link" aria-label="View prompt details"'
 assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', 'View ' + item.title);"

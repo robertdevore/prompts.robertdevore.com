@@ -206,27 +206,6 @@
       "show_url": false
     },
     {
-      "id": "wwf-action-figure-blister-pack-json-prompt",
-      "title": "WWF Action Figure JSON Prompt",
-      "tagline": "Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a …",
-      "file": "content/posts/wwf-action-figure-blister-pack-json-prompt.md",
-      "language": "markdown",
-      "concepts": [
-        "images",
-        "json prompts",
-        "action figures",
-        "wwf",
-        "ai images"
-      ],
-      "caption": "WWF Action Figure JSON Prompt: Turn a supplied photo into a vintage 1980s or 1990s WWF-style action figure displayed in a detailed blister pack.",
-      "cta": "Explore Prompts by Robert DeVore.",
-      "url": "https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/",
-      "variant": "social",
-      "label": "IMAGES",
-      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
-      "show_url": false
-    },
-    {
       "id": "youtube-thumbnail-generation-with-ai-json-prompts",
       "title": "YouTube Thumbnail JSON Prompts",
       "tagline": "Generate bold YouTube thumbnails from a title, optional subhead, and photo with one …",
