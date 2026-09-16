@@ -68,6 +68,51 @@
       "background_image": "assets/images/ascii-grunge/blog.webp"
     },
     {
+      "id": "brutally-honest-company-product-diagnostic",
+      "title": "Honest Company Diagnostic Prompt",
+      "tagline": "Pressure-test a company or product with a candid analysis of its strengths, weaknesses, …",
+      "file": "content/posts/brutally-honest-company-product-diagnostic.md",
+      "language": "markdown",
+      "concepts": [
+        "business",
+        "business strategy",
+        "product strategy",
+        "company analysis",
+        "decision making"
+      ],
+      "caption": "Honest Company Diagnostic Prompt: Pressure-test a company or product with a candid analysis of its strengths, weaknesses, moat, wasted effort, and highest-leverage opportunities.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/brutally-honest-company-product-diagnostic/",
+      "variant": "social",
+      "label": "BUSINESS",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/brutally-honest-product-diagnostic.webp"
+    },
+    {
+      "id": "dependabot-security-maintenance-agent",
+      "title": "Dependabot Security Agent Prompt",
+      "tagline": "Run a conservative, repository-by-repository workflow for investigating, fixing, …",
+      "file": "content/posts/dependabot-security-maintenance-agent.md",
+      "language": "markdown",
+      "concepts": [
+        "coding",
+        "dependabot",
+        "dependency security",
+        "github",
+        "automation",
+        "coding agents"
+      ],
+      "caption": "Dependabot Security Agent Prompt: Run a conservative, repository-by-repository workflow for investigating, fixing, validating, delivering, and reporting GitHub Dependabot security alerts.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/dependabot-security-maintenance-agent/",
+      "variant": "social",
+      "label": "CODING",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/dependabot-security-maintenance.webp"
+    },
+    {
       "id": "glowing-neon-icon-json-prompt",
       "title": "Glowing Neon Icons JSON Prompt",
       "tagline": "Create bold, glowing 3D icons with luminous outlines, high-contrast edges, and a polished …",
@@ -110,6 +155,28 @@
       "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
       "show_url": false,
       "background_image": "assets/images/isometric-3d-icons.webp"
+    },
+    {
+      "id": "keyword-competitor-content-analysis",
+      "title": "Keyword Competitor Analysis Prompt",
+      "tagline": "Research keyword demand, competition, leading content, audience needs, market trends, and …",
+      "file": "content/posts/keyword-competitor-content-analysis.md",
+      "language": "markdown",
+      "concepts": [
+        "marketing",
+        "keyword research",
+        "competitor analysis",
+        "content strategy",
+        "seo"
+      ],
+      "caption": "Keyword Competitor Analysis Prompt: Research keyword demand, competition, leading content, audience needs, market trends, and underserved content opportunities in one structured report.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/keyword-competitor-content-analysis/",
+      "variant": "social",
+      "label": "MARKETING",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/keyword-competitor-analysis.webp"
     },
     {
       "id": "metallic-sci-fi-hud",

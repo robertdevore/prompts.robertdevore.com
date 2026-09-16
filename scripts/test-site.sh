@@ -51,6 +51,9 @@ expected_routes=(
 	output/blog/top-secret-military-patches-json-prompt/index.html
 	output/blog/isometric-3d-icon-json-prompt-for-ai-generated-designs/index.html
 	output/blog/glowing-neon-icon-json-prompt/index.html
+	output/blog/brutally-honest-company-product-diagnostic/index.html
+	output/blog/keyword-competitor-content-analysis/index.html
+	output/blog/dependabot-security-maintenance-agent/index.html
 	output/404.html
 	output/feed/index.xml
 	output/sitemap.xml
@@ -75,6 +78,11 @@ assert_contains output/contact/index.html 'mailto:me@robertdevore.com'
 assert_contains output/about/index.html 'A Better Home for Useful Prompts'
 assert_contains output/images/index.html 'data-prompt-category="images"'
 assert_contains output/writing/index.html 'data-prompt-category="writing"'
+assert_contains output/business/index.html 'href="/blog/brutally-honest-company-product-diagnostic/"'
+assert_contains output/marketing/index.html 'href="/blog/keyword-competitor-content-analysis/"'
+assert_contains output/coding/index.html 'href="/blog/dependabot-security-maintenance-agent/"'
+assert_contains output/images/index.html 'aria-busy="false"'
+assert_contains output/writing/index.html 'No prompts in this category yet. Check back soon.'
 assert_contains output/business/index.html 'alt="Featured image for Business Prompts"'
 assert_contains output/coding/index.html 'alt="Featured image for Coding Prompts"'
 assert_contains output/marketing/index.html 'alt="Featured image for Marketing Prompts"'
@@ -83,11 +91,12 @@ assert_contains output/images/index.html 'alt="Featured image for Image Prompts"
 assert_contains output/about/index.html 'alt="Featured image for About"'
 assert_contains output/contact/index.html 'alt="Featured image for Contact"'
 assert_contains output/index.html 'class="menu-overlay"'
+assert_contains output/index.html 'class="desktop-navigation" aria-label="Prompt categories"'
 assert_contains output/index.html 'href="images/">Images</a>'
 assert_contains output/index.html 'icon-tabler-menu-2'
 assert_contains output/index.html 'icon-tabler-x'
 assert_contains output/index.html 'https://rsms.me/inter/inter.css'
-assert_contains output/index.html 'assets/css/style.css?v=20260809.8'
+assert_contains output/index.html 'assets/css/style.css?v=20260916.1'
 assert_contains output/index.html 'assets/js/docs.js?v=20260809.5'
 assert_contains output/index.html 'data-kujo-webmcp'
 assert_contains output/index.html 'data-kujo-site-index=".well-known/kujo-site-index.json"'
@@ -128,6 +137,10 @@ assert_contains output/assets/css/style.css '--prompts-accent: var(--sk-state-wa
 assert_contains output/assets/css/style.css '--prompts-body-font: "InterVariable"'
 assert_contains output/assets/css/style.css '.article-header h1 { max-inline-size: 15ch; padding-inline: 0; border: var(--sk-border-0)'
 assert_contains output/assets/css/style.css '.site-home .card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }'
+assert_contains output/assets/css/style.css '.desktop-navigation { display: flex;'
+assert_contains output/assets/css/style.css '.site-menu-button { display: none;'
+assert_contains output/assets/css/style.css '.site-menu-button { display: inline-grid; }'
+assert_contains output/assets/css/style.css '.listing-visual, .article-visual { position: absolute; inset: 0;'
 assert_contains output/assets/css/style.css '.card-grid, .site-home .card-grid { grid-template-columns: 1fr; }'
 assert_contains output/assets/css/style.css 'background: transparent; color: var(--prompts-accent); border: var(--sk-border-0); cursor: pointer;'
 assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3)'
@@ -163,6 +176,10 @@ assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<img src="
 assert_contains output/index.html 'width="1024" height="1024">'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
 assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
+assert_contains output/assets/js/docs-search-index.json 'minimum secure dependency version'
+if grep -Fq '%%RAW_PROMPT:' output/assets/js/docs-search-index.json; then
+	fail "raw prompt sentinel leaked into the search index"
+fi
 if rg -n '"url": "https://prompts\.robertdevore\.com/posts/|"url": "/posts/' output/assets/js/docs-search-index.json; then
 	fail "legacy /posts/ routes leaked into the image prompt grid"
 fi
@@ -175,6 +192,13 @@ fi
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<h2>JSON Prompt</h2>'
 assert_contains output/index.html 'class="listing-card-image-link" aria-label="View prompt details"'
 assert_contains output/page/2/index.html 'alt="Featured image for Prompts: Coming Soon"'
+assert_contains output/blog/brutally-honest-company-product-diagnostic/index.html 'raw truth, not sugar-coated trash'
+assert_contains output/blog/keyword-competitor-content-analysis/index.html 'Competitor Content Evaluation:'
+assert_contains output/blog/dependabot-security-maintenance-agent/index.html 'CLEAN — No open Dependabot alerts.'
+assert_contains output/blog/dependabot-security-maintenance-agent/index.html '<pre><code class="language-markdown">You are an autonomous dependency-security maintenance agent.'
+if grep -Fq '%%RAW_PROMPT:' output/blog/dependabot-security-maintenance-agent/index.html; then
+	fail "unresolved raw prompt sentinel leaked into generated output"
+fi
 assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', 'View ' + item.title);"
 
 if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then

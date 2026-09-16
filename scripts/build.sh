@@ -19,7 +19,10 @@ if [[ -n "$SITE_URL" ]]; then
 fi
 
 "$KUJO_BIN" run scripts/docs_search_index.kujo -- "${search_args[@]}"
+python3 scripts/enrich-search-index-prompts.py assets/js/docs-search-index.json content/posts prompt-sources
 "$KUJO_BIN" run ./build.kujo -- "${build_args[@]}"
+python3 scripts/render-raw-prompt-blocks.py output prompt-sources
+python3 scripts/render-category-listings.py output assets/js/docs-search-index.json
 python3 scripts/add-image-dimensions.py output
 python3 scripts/fix-generated-accessibility.py output
 if [[ -d static ]]; then
