@@ -8,3 +8,4 @@ dist/
 tmp/
 __pycache__/
 .DS_Store
+seo-audit/*/raw/baseline-output.tar.gz

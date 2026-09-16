@@ -1,0 +1,17 @@
+{
+  "phase": "after",
+  "canonical_pages": 21,
+  "indexable_pages": 21,
+  "missing_titles": 0,
+  "duplicate_titles": 0,
+  "missing_descriptions": 0,
+  "duplicate_descriptions": 0,
+  "h1_issues": 0,
+  "broken_internal_links": 0,
+  "broken_external_links": 0,
+  "orphans": 0,
+  "images": 55,
+  "missing_alt": 0,
+  "missing_dimensions": 0,
+  "schema_parse_errors": 0
+}

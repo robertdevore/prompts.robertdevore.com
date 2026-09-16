@@ -1,0 +1,15 @@
+phase,source_url,source_variant,http_status,target_url,chain_length,final_status,canonical_target,query_preserved,verification,issues
+baseline,http://prompts.robertdevore.com/,production,301,https://prompts.robertdevore.com/,1,200,https://prompts.robertdevore.com/,not applicable,verified,
+baseline,https://www.prompts.robertdevore.com/,production,0,https://www.prompts.robertdevore.com/,0,0,https://www.prompts.robertdevore.com/,not applicable,failed,"<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+baseline,http://www.prompts.robertdevore.com/,production,0,http://www.prompts.robertdevore.com/,0,0,http://www.prompts.robertdevore.com/,not applicable,failed,"<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+baseline,https://prompts.robertdevore.com/writing/?audit=1,production,200,https://prompts.robertdevore.com/writing/?audit=1,0,200,https://prompts.robertdevore.com/writing/?audit=1,True,verified,
+baseline,https://prompts.robertdevore.com/not-a-real-route/,production,404,https://prompts.robertdevore.com/not-a-real-route/,0,404,https://prompts.robertdevore.com/not-a-real-route/,not applicable,verified,
+baseline,https://wwf.robertdevore.com/,production,301,https://robertdevore.com/,1,200,https://robertdevore.com/,not applicable,verified,
+baseline,https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/,production,301,https://prompts.robertdevore.com/,1,200,https://prompts.robertdevore.com/,not applicable,verified,
+after,http://prompts.robertdevore.com/,production,301,https://prompts.robertdevore.com/,1,200,https://prompts.robertdevore.com/,not applicable,verified,
+after,https://www.prompts.robertdevore.com/,production,0,https://www.prompts.robertdevore.com/,0,0,https://www.prompts.robertdevore.com/,not applicable,failed,"<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+after,http://www.prompts.robertdevore.com/,production,0,http://www.prompts.robertdevore.com/,0,0,http://www.prompts.robertdevore.com/,not applicable,failed,"<urlopen error [Errno 8] nodename nor servname provided, or not known>"
+after,https://prompts.robertdevore.com/writing/?audit=1,production,200,https://prompts.robertdevore.com/writing/?audit=1,0,200,https://prompts.robertdevore.com/writing/?audit=1,True,verified,
+after,https://prompts.robertdevore.com/not-a-real-route/,production,404,https://prompts.robertdevore.com/not-a-real-route/,0,404,https://prompts.robertdevore.com/not-a-real-route/,not applicable,verified,
+after,https://wwf.robertdevore.com/,production,301,https://robertdevore.com/,1,200,https://robertdevore.com/,not applicable,verified,
+after,https://prompts.robertdevore.com/blog/wwf-action-figure-blister-pack-json-prompt/,production,301,https://prompts.robertdevore.com/,1,200,https://prompts.robertdevore.com/,not applicable,verified,
