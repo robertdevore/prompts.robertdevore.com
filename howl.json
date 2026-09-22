@@ -179,6 +179,30 @@
       "background_image": "assets/images/ascii-grunge/keyword-competitor-analysis.webp"
     },
     {
+      "id": "kujo-repository-hardening-performance-efficiency",
+      "title": "Kujo Repository Hardening Prompt",
+      "tagline": "Audit and improve a Kujo repository with security hardening, performance baselines, …",
+      "file": "content/posts/kujo-repository-hardening-performance-efficiency.md",
+      "language": "markdown",
+      "concepts": [
+        "coding",
+        "kujo",
+        "repository audit",
+        "security hardening",
+        "performance",
+        "token efficiency",
+        "coding agents"
+      ],
+      "caption": "Kujo Repository Hardening Prompt: Audit and improve a Kujo repository with security hardening, performance baselines, token efficiency, compatibility checks, and regression tests.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/kujo-repository-hardening-performance-efficiency/",
+      "variant": "social",
+      "label": "CODING",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/kujo-repository-hardening.webp"
+    },
+    {
       "id": "metallic-sci-fi-hud",
       "title": "Metallic Sci-Fi HUD JSON Prompt",
       "tagline": "Create intense futuristic icons with brushed metal, electric blue accents, layered …",

@@ -64,6 +64,7 @@ expected_routes=(
 	output/blog/brutally-honest-company-product-diagnostic/index.html
 	output/blog/keyword-competitor-content-analysis/index.html
 	output/blog/dependabot-security-maintenance-agent/index.html
+	output/blog/kujo-repository-hardening-performance-efficiency/index.html
 	output/404.html
 	output/feed/index.xml
 	output/sitemap.xml
@@ -91,6 +92,7 @@ assert_contains output/writing/index.html 'data-prompt-category="writing"'
 assert_contains output/business/index.html 'href="/blog/brutally-honest-company-product-diagnostic/"'
 assert_contains output/marketing/index.html 'href="/blog/keyword-competitor-content-analysis/"'
 assert_contains output/coding/index.html 'href="/blog/dependabot-security-maintenance-agent/"'
+assert_contains output/coding/index.html 'href="/blog/kujo-repository-hardening-performance-efficiency/"'
 assert_contains output/images/index.html 'aria-busy="false"'
 assert_contains output/writing/index.html 'No prompts in this category yet. Check back soon.'
 assert_contains output/business/index.html 'alt="Featured image for Business Prompts"'
@@ -192,6 +194,7 @@ assert_contains output/index.html 'width="1024" height="1024">'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
 assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
 assert_contains output/assets/js/docs-search-index.json 'minimum secure dependency version'
+assert_contains output/assets/js/docs-search-index.json 'Phase 18 — Verify the Completed Repository'
 if grep -Fq '%%RAW_PROMPT:' output/assets/js/docs-search-index.json; then
 	fail "raw prompt sentinel leaked into the search index"
 fi
