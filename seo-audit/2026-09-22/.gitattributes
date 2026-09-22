@@ -1,0 +1,2 @@
+# CSV writers use RFC 4180 CRLF records; preserve the sealed baseline bytes.
+*.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
