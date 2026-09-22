@@ -1,0 +1,27 @@
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const fs = require('fs');
+(async () => {
+ const browser = await chromium.launch({headless:true});
+ const context = await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+ const page = await context.newPage();
+ const route = 'http://127.0.0.1:4179/blog/kujo-repository-hardening-performance-efficiency/';
+ await page.goto(route,{waitUntil:'domcontentloaded'});
+ await page.locator('.code-block-toolbar button').waitFor();
+ await page.screenshot({path:'seo-audit/2026-09-22/raw/post-desktop.png'});
+ const code = await page.locator('code.language-markdown').textContent();
+ const expected = fs.readFileSync('prompt-sources/kujo-repository-hardening-performance-efficiency.md','utf8').trimEnd();
+ if (code !== expected) throw new Error('Browser prompt content mismatch');
+ await page.locator('.code-block-toolbar button').click();
+ const copied = await page.evaluate(() => navigator.clipboard.readText());
+ if (copied !== expected) throw new Error('Clipboard mismatch');
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(route,{waitUntil:'domcontentloaded'});
+ await page.locator('.code-block-toolbar button').waitFor();
+ const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+ if (overflow) throw new Error('Mobile page overflow');
+ await page.screenshot({path:'seo-audit/2026-09-22/raw/post-mobile.png'});
+ await page.goto('http://127.0.0.1:4179/coding/',{waitUntil:'domcontentloaded'});
+ await page.locator('a[href*="kujo-repository-hardening-performance-efficiency"]').first().waitFor();
+ fs.writeFileSync('seo-audit/2026-09-22/raw/browser-verification.json',JSON.stringify({result:'PASS',desktop:'1440x1000',mobile:'390x844',verbatimPrompt:true,clipboardEquality:true,mobileOverflow:false,codingLink:true},null,2)+'\n');
+ await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

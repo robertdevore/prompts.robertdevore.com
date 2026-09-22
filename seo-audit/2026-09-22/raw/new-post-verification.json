@@ -1,0 +1,20 @@
+{
+  "result": "PASS",
+  "url": "https://prompts.robertdevore.com/blog/kujo-repository-hardening-performance-efficiency/",
+  "prompt_words": 2729,
+  "prompt_sha256": "fd97bf4444f18c19c35e08ca6e60ef01bcd51ea052cdfd21faa2e368bb6f0724",
+  "phases": 19,
+  "hero_dimensions": [
+    1672,
+    941
+  ],
+  "hero_bytes": 216608,
+  "social_dimensions": [
+    1200,
+    630
+  ],
+  "social_bytes": 180616,
+  "generated_social_url": "https://prompts.robertdevore.com/images/kujo-repository-hardening-performance-efficiency-social-2a540cbf5523.webp",
+  "generated_social_bytes": 321796,
+  "checks": "verbatim prompt; category/home/archive links; sitemap/feed/llms; local search; WebMCP; canonical; social metadata; JSON-LD; images"
+}

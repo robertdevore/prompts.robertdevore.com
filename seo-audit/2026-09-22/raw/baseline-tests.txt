@@ -1,0 +1,6 @@
+Checked HTML files: 42
+Validation passed
+Internal links passed: 804
+SEO validation passed: 22 routes
+Discovery validation passed: 21 canonical routes, 21 sitemap URLs, 10 feed items, 20 llms.txt links
+Site contract passed

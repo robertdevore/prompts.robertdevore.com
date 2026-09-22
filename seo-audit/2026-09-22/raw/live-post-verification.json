@@ -1,0 +1,23 @@
+{
+  "url": "https://prompts.robertdevore.com/blog/kujo-repository-hardening-performance-efficiency/",
+  "status": 200,
+  "prompt_matches_source": true,
+  "user_agent": "Mozilla/5.0 (compatible; PromptsSeoAudit/1.0; +https://prompts.robertdevore.com/)",
+  "prior_default_python_user_agent_status": 403,
+  "assets": [
+    {
+      "url": "https://prompts.robertdevore.com/images/kujo-repository-hardening-performance-efficiency-social-2a540cbf5523.webp",
+      "status": 200,
+      "bytes": 321796,
+      "sha256": "dc95eaf8d4726b7bb11fcc46e7795956ec643b3f4f3073534cc3745761a820b6",
+      "matches_generated": true
+    },
+    {
+      "url": "https://prompts.robertdevore.com/images/kujo-repository-hardening-1e75357c345f.webp",
+      "status": 200,
+      "bytes": 216608,
+      "sha256": "8853a63ab513c815edbc176ef407fb94c9344723f5b069c86c162c4f6ba36dcd",
+      "matches_generated": true
+    }
+  ]
+}

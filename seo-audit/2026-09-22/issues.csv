@@ -1,0 +1,4 @@
+id,phase,category,severity,affected_urls,affected_count,evidence,expected_benefit,confidence,difficulty,recommended_action,owner,status
+SEO-01,baseline;after,production hostname,P2,https://www.prompts.robertdevore.com/,1,redirects.csv; prior 2026-09-16 audit,Optional hostname consistency,high,owner decision,Confirm whether www is intended before changing DNS,site owner,pre-existing; deferred
+SEO-02,after,content discovery,P2,https://prompts.robertdevore.com/blog/kujo-repository-hardening-performance-efficiency/,1,raw/new-post-verification.json; after.csv,Discover and copy the new coding prompt,high,low,Publish with full metadata and all discovery surfaces,repository,resolved
+SEO-03,baseline;after,measurement,P2,sitewide,22,data-availability.md; raw/lighthouse-baseline-coding.json,Avoid unsupported performance and visibility claims,high,access required,Repeat measurements with platform access and usable lab environment,site owner,measurement limitation

@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "verbatimPrompt": true,
+  "clipboardEquality": true,
+  "mobileOverflow": false,
+  "codingLink": true
+}

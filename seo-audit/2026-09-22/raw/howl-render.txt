@@ -1,0 +1,4 @@
+ok: /Users/robertdevore/2026/prompts.robertdevore.com/howl.json is valid (22 card(s))
+rendered 22 card(s) -> /var/folders/wb/0cck3lgd08n55g_8ly9qmf_00000gn/T/prompts-howl-76o5vrp7/ (22 files)
+Synced 22 Howl card definitions.
+Rendered 22 branded, URL-free Howl social cards.
