@@ -1,0 +1,51 @@
+{
+  "method": "built-in image_gen",
+  "date": "2026-10-12",
+  "profile": "adaptive_professional_esports_logo_generator 2.0.0",
+  "art_direction": "image-prompts/ascii-grunge-header-style-guide.json",
+  "prompts": [
+    "Create a wide 16:9 editorial website header illustration, ideally 2400x1350 or larger. Subject: a gaming tournament trophy flanked by abstract shield silhouettes and angular geometric mascot construction guides. Apply minimalist ASCII grunge art direction: black background, only warm gold #ffd166 marks, monospaced abstract character clusters, crisp dot and dash construction, generous negative space upper left, primary focal trophy slightly right of center, sparse foreground and faint background contours, restrained print wear and subtle character erosion. Premium technical editorial illustration matching a gold ASCII-on-black prompt library. NO readable words, NO logo wordmarks, no UI, watermark, photorealism, gradients or 3D. Use-case illustration-story. Save the generated image as a local file and return its path.",
+    "Use-case logo-brand. Generate one finished square professional esports logo for exact team name 'Rogue Rebels'. Colors black, red, white, gray only. Modern-esports style. Centered front-facing hooded masked rebel mascot, symmetric shoulders inside an angular shield, bold stacked exact wordmark ROGUE above REBELS. Flat solid vector-style fills, hard cel-shaded shadow shapes, controlled crisp highlights, thick uniform outer border and thinner consistent inner strokes. All block lettering must share sharp chamfer angles, stroke weight, outline thickness, baseline, slant and kerning. S in REBELS must have angular beveled bottom-right terminal matching R and E, never rounded. Balanced mascot-to-text hierarchy, clearly readable name, distinctive clean silhouette, even padding, no extra words or tagline. Black background. No texture, gradients, heavy glow, 3D or soft airbrush effects. Aim 2048x2048. This is an example for adaptive_professional_esports_logo_generator version 2.0.0.",
+    "Use-case logo-brand. One square finished professional esports logo, exact text DUNGEON LORDS stacked, no other text. Team palette purple, black, silver, flame orange. Style fantasy-darkcore, flat fantasy emblem: centered armored void knight helmet beneath symmetrical gothic horns in a compact sharp shield crest; small flame orange eyes and ember accents. Strong clean silhouette, flat vector-like solid fills and hard-edged shadows, consistent thick outer border and thinner inner lines. Silver readable angular fantasy block esports letters, matching spikes/cut angles/stroke weight/outline thickness and balanced centered kerning. DUNGEON above LORDS, sharp beveled S terminal. Balanced top and bottom, controlled symmetrical horn shapes, roomy text padding. Black background, limited restrained orange magical accents. Avoid painterly shading, heavy glow, smoke, smooth gradients, 3D, excess decoration, thin detail, extra text. Aim 2048x2048. Example of adaptive_professional_esports_logo_generator v2.0.0.",
+    "Use-case logo-brand. Generate one square esports team identity logo with exact text PIXEL RUNNERS stacked in two lines. Retro pixel arcade style, only gold, purple and black. A distinctive running arcade mascot with a compact wing-like speed silhouette over a block-stepped badge, bold readable chunky pixel block wordmark. Every shape and letter uses the same pixel grid unit, square stepped edges and flat fills, consistent pixel outline weight, even word spacing, balanced silhouette. Black background with generous black padding around the whole mark; gold main mascot and letters, purple shadow blocks and badge accents. No smooth curves, no gradients, no glow, no 3D, no scanline texture, no extra text or captions. Make this a polished competitive identity, not a scene, and keep the exact name spelled correctly. Aim 2048x2048. This is a pixel-retro example of adaptive_professional_esports_logo_generator v2.0.0."
+  ],
+  "assets": [
+    {
+      "source": "exec-e53745a5-51f9-405b-81e1-0d96fe35d55f.png",
+      "asset": "assets/images/ascii-grunge/esports-logo-generator.webp",
+      "dimensions": [
+        1672,
+        941
+      ],
+      "bytes": 307206
+    },
+    {
+      "source": "exec-bd5ed911-0b4d-45aa-9e56-45ce59e6539c.png",
+      "asset": "assets/images/esports-rogue-rebels.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 120000
+    },
+    {
+      "source": "exec-e7a55d34-190d-4160-8a80-bbcb25813952.png",
+      "asset": "assets/images/esports-dungeon-lords.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 113224
+    },
+    {
+      "source": "exec-3051936f-4296-4218-b381-597b8f0a320e.png",
+      "asset": "assets/images/esports-pixel-runners.webp",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "bytes": 42498
+    }
+  ],
+  "notes": "Generated raster examples; native output dimensions recorded, no claim of editable vectors or 2048px output. WebP encoding only; no creative postprocessing."
+}

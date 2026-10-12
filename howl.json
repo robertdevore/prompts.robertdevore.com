@@ -243,6 +243,29 @@
       "background_image": "assets/images/ascii-grunge/blog.webp"
     },
     {
+      "id": "professional-esports-logo-generator-json-prompt",
+      "title": "Esports Logo Generator JSON Prompt",
+      "tagline": "Create esports team logos with a reusable JSON prompt, six adaptive styles, consistent …",
+      "file": "content/posts/professional-esports-logo-generator-json-prompt.md",
+      "language": "markdown",
+      "concepts": [
+        "images",
+        "json prompts",
+        "esports",
+        "logos",
+        "design",
+        "ai images"
+      ],
+      "caption": "Esports Logo Generator JSON Prompt: Create esports team logos with a reusable JSON prompt, six adaptive styles, consistent lettering, and three examples: modern, fantasy, and pixel retro.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/professional-esports-logo-generator-json-prompt/",
+      "variant": "social",
+      "label": "IMAGES",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/esports-logo-generator.webp"
+    },
+    {
       "id": "prompts-coming-soon",
       "title": "Prompts Library Coming Soon",
       "tagline": "The original welcome to Robert DeVore's organized, reusable library of prompts for …",
