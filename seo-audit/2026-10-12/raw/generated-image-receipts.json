@@ -1,0 +1,38 @@
+[
+  {
+    "source": "exec-e53745a5-51f9-405b-81e1-0d96fe35d55f.png",
+    "asset": "assets/images/ascii-grunge/esports-logo-generator.webp",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "bytes": 307206
+  },
+  {
+    "source": "exec-bd5ed911-0b4d-45aa-9e56-45ce59e6539c.png",
+    "asset": "assets/images/esports-rogue-rebels.webp",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 120000
+  },
+  {
+    "source": "exec-e7a55d34-190d-4160-8a80-bbcb25813952.png",
+    "asset": "assets/images/esports-dungeon-lords.webp",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 113224
+  },
+  {
+    "source": "exec-3051936f-4296-4218-b381-597b8f0a320e.png",
+    "asset": "assets/images/esports-pixel-runners.webp",
+    "dimensions": [
+      1254,
+      1254
+    ],
+    "bytes": 42498
+  }
+]

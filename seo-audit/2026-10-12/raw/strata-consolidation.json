@@ -1,0 +1,33 @@
+{
+  "mode": "CONSOLIDATE",
+  "storage_project": "Agent Notes",
+  "scope": "robertdevore/prompts.robertdevore.com",
+  "saved": [
+    {
+      "id": "641bb5bc-05dd-4e04-9fd2-8c65869665d8",
+      "type": "procedure",
+      "title": "Prompts verbatim JSON uses literal sources and Markdown images",
+      "exact_retrieval": "PASS",
+      "concept_retrieval": "PASS"
+    },
+    {
+      "id": "c037a562-b619-4584-8aa1-0b09c3a65534",
+      "type": "handoff with current-state and timeline",
+      "title": "Prompts Library \u2014 Esports logo publication \u2014 2026-10-12",
+      "exact_retrieval": "PASS",
+      "concept_retrieval": "PASS"
+    }
+  ],
+  "related_historical_note": "02cad2cc-aaa8-4b94-be1a-4a8ef15c27bf",
+  "historical_note_mutated": false,
+  "duplicates_written": 0,
+  "superseded": 0,
+  "failed": 0,
+  "pending": 0,
+  "rejected": [
+    "Full supplied JSON duplicate in memory",
+    "Routine command logs",
+    "Repeated evidence in separate project-state note"
+  ],
+  "next_recall": "prompts esports logo published Rogue Rebels"
+}

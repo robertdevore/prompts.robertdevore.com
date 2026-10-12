@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-12",
+  "provider": "web search tool",
+  "queries": [
+    "esports logo JSON prompt team name colors",
+    "site:prompts.robertdevore.com esports logo"
+  ],
+  "observation": "No target esports URL in returned sample before publication. Other creator pages include Promptkoi, Morphic, PromptCreek and Logofai. Results merged by tool; no per-query rank inferred.",
+  "competitors": [
+    {
+      "url": "https://promptkoi.com/prompts/midjourney/gaming-esports-team-logo/",
+      "evidence": "Search excerpt gives a red/charcoal wolf mascot prompt with an empty banner and no letters.",
+      "comparison": "Our supplied profile handles exact team names, six styles and letterform consistency."
+    },
+    {
+      "url": "https://morphic.com/resources/how-to/design-an-esports-team-logo-mockup",
+      "evidence": "Creator-owned how-to result promises team name in logo from a text prompt.",
+      "comparison": "Our reusable raw JSON and three rendered examples offer a tool-independent artifact."
+    }
+  ],
+  "limitations": "Sampled result excerpts, not full competitive quality review or universal rank."
+}

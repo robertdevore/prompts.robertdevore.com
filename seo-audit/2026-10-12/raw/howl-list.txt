@@ -1,0 +1,69 @@
+home  —  Prompts by Robert DeVore
+    file: templates/page-home.html
+    concepts: AI prompts, structured prompts, creative workflows
+about  —  About the Prompt Library
+    file: content/pages/about.md
+    concepts: about, AI prompts
+blog  —  Prompt Library
+    file: templates/page-blog.html
+    concepts: AI prompts, prompt archive
+brutally-honest-company-product-diagnostic  —  Honest Company Diagnostic Prompt
+    file: content/posts/brutally-honest-company-product-diagnostic.md
+    concepts: business, business strategy, product strategy, company analysis, decision making
+dependabot-security-maintenance-agent  —  Dependabot Security Agent Prompt
+    file: content/posts/dependabot-security-maintenance-agent.md
+    concepts: coding, dependabot, dependency security, github, automation, coding agents
+glowing-neon-icon-json-prompt  —  Glowing Neon Icons JSON Prompt
+    file: content/posts/glowing-neon-icon-json-prompt.md
+    concepts: images, json prompts, icons, design, ai images
+isometric-3d-icon-json-prompt-for-ai-generated-designs  —  Isometric 3D Icon JSON Prompt
+    file: content/posts/isometric-3d-icon-json-prompt-for-ai-generated-designs.md
+    concepts: images, json prompts, 3d icons, design, ai images
+keyword-competitor-content-analysis  —  Keyword Competitor Analysis Prompt
+    file: content/posts/keyword-competitor-content-analysis.md
+    concepts: marketing, keyword research, competitor analysis, content strategy, seo
+kujo-repository-hardening-performance-efficiency  —  Kujo Repository Hardening Prompt
+    file: content/posts/kujo-repository-hardening-performance-efficiency.md
+    concepts: coding, kujo, repository audit, security hardening, performance, token efficiency, coding agents
+metallic-sci-fi-hud  —  Metallic Sci-Fi HUD JSON Prompt
+    file: content/posts/metallic-sci-fi-hud.md
+    concepts: images, json prompts, sci-fi, icons, ai images
+blog-page-2  —  Latest Prompts — Page 2
+    file: templates/page-blog.html
+    concepts: prompt archive
+professional-esports-logo-generator-json-prompt  —  Esports Logo Generator JSON Prompt
+    file: content/posts/professional-esports-logo-generator-json-prompt.md
+    concepts: images, json prompts, esports, logos, design, ai images
+prompts-coming-soon  —  Prompts Library Coming Soon
+    file: content/posts/prompts-coming-soon.md
+    concepts: announcements, prompts, announcements
+simpsons-character-json-prompts-for-ai-generation  —  Simpsons Character JSON Prompts
+    file: content/posts/simpsons-character-json-prompts-for-ai-generation.md
+    concepts: images, json prompts, characters, simpsons, ai images
+top-secret-military-patches-json-prompt  —  Military Patch JSON Prompts
+    file: content/posts/top-secret-military-patches-json-prompt.md
+    concepts: images, json prompts, patches, design, ai images
+youtube-thumbnail-generation-with-ai-json-prompts  —  YouTube Thumbnail JSON Prompts
+    file: content/posts/youtube-thumbnail-generation-with-ai-json-prompts.md
+    concepts: images, json prompts, youtube, thumbnails, ai images
+business  —  Business AI Prompts
+    file: content/pages/business.md
+    concepts: business, AI prompts
+coding  —  Coding AI Prompts
+    file: content/pages/coding.md
+    concepts: coding, AI prompts
+contact  —  Contact Robert DeVore
+    file: content/pages/contact.md
+    concepts: contact, AI prompts
+images  —  AI Image Generation Prompts
+    file: content/pages/images.md
+    concepts: images, AI prompts
+marketing  —  Marketing AI Prompts
+    file: content/pages/marketing.md
+    concepts: marketing, AI prompts
+prompt-library-page-2  —  Prompt Library — Page 2
+    file: templates/page-home.html
+    concepts: prompt archive
+writing  —  Writing AI Prompts
+    file: content/pages/writing.md
+    concepts: writing, AI prompts

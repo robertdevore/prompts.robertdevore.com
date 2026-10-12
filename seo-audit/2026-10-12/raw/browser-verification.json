@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "base": "https://prompts.robertdevore.com",
+  "desktop": "1440x1000",
+  "mobile": "390x844",
+  "verbatimJSON": true,
+  "clipboardEquality": true,
+  "threeImagesDecoded": true,
+  "mobileOverflow": false,
+  "categoryDimensionsRetained": true,
+  "emptyCategory": true,
+  "noJSDiscovery": true
+}

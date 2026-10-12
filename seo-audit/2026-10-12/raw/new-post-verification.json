@@ -1,0 +1,10 @@
+{
+  "result": "PASS",
+  "url": "https://prompts.robertdevore.com/blog/professional-esports-logo-generator-json-prompt/",
+  "json_sha256": "aa99423da130d462b5fb1baa0785c1adcff003100c14482df937ba1421970b27",
+  "styles": 6,
+  "examples": 3,
+  "discovery": "home/category/archive/sitemap/feed/llms/search/WebMCP",
+  "social": "https://prompts.robertdevore.com/images/professional-esports-logo-generator-json-prompt-social-2c9bae808dcb.webp",
+  "checks": "JSON text equality; schema parsing; canonical; square examples and actual dimensions; discovery; social image dimensions"
+}

@@ -1,0 +1,44 @@
+const {chromium} = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const fs = require('fs');
+(async () => {
+ const browser = await chromium.launch({headless:true,channel:'chrome'});
+ const context = await browser.newContext({viewport:{width:1440,height:1000},permissions:['clipboard-read','clipboard-write']});
+ const page = await context.newPage();
+ const base = process.env.SITE_BASE || 'http://127.0.0.1:4179';
+ const slug = 'professional-esports-logo-generator-json-prompt';
+ const expected = fs.readFileSync(`prompt-sources/${slug}.json`,'utf8').trimEnd();
+ await page.goto(`${base}/blog/${slug}/`,{waitUntil:'domcontentloaded'});
+ await page.locator('.code-block-toolbar button').waitFor();
+ const text = await page.locator('code.language-json').textContent();
+ if (text.trimEnd() !== expected) throw new Error('Browser JSON mismatch');
+ await page.locator('.code-block-toolbar button').click();
+ if ((await page.evaluate(() => navigator.clipboard.readText())).trimEnd() !== expected) throw new Error('Clipboard mismatch');
+ await page.screenshot({path:'seo-audit/2026-10-12/raw/post-desktop.png'});
+ if (await page.locator('img[alt*="esports logo"]').count() !== 3) throw new Error('Missing examples');
+ for (const img of await page.locator('img[alt*="esports logo"]').all()) {
+  await img.scrollIntoViewIfNeeded();
+  await img.evaluate(i => i.decode());
+  if (!await img.evaluate(i => i.naturalWidth > 0 && i.width > 0)) throw new Error('Broken example');
+ }
+ await page.locator('img[alt*="esports logo"]').first().screenshot({path:'seo-audit/2026-10-12/raw/example-in-page.png'});
+ await page.evaluate(() => scrollTo(0,0));
+ await page.locator('.article-visual img').evaluate(i => i.decode());
+ await page.screenshot({path:'seo-audit/2026-10-12/raw/post-desktop.png'});
+ await page.setViewportSize({width:390,height:844});
+ await page.goto(`${base}/blog/${slug}/`,{waitUntil:'domcontentloaded'});
+ if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) throw new Error('Mobile overflow');
+ await page.screenshot({path:'seo-audit/2026-10-12/raw/post-mobile.png'});
+ await page.goto(`${base}/images/`,{waitUntil:'domcontentloaded'});
+ await page.locator(`a[href*="${slug}"]`).first().waitFor();
+ await page.waitForFunction(() => document.querySelector('[data-category-results]').getAttribute('aria-busy') === 'false');
+ const images = await page.locator('[data-category-results] img').evaluateAll(xs=>xs.map(i=>({width:i.getAttribute('width'),height:i.getAttribute('height')})));
+ if (!images.length || images.some(i=>!i.width||!i.height)) throw new Error('Category dimensions removed by JavaScript');
+ await page.goto(`${base}/writing/`,{waitUntil:'domcontentloaded'});
+ if (!await page.locator('[data-category-status]').isVisible()) throw new Error('Empty category message hidden');
+ const nojs = await browser.newContext({javaScriptEnabled:false});
+ const staticPage = await nojs.newPage();
+ await staticPage.goto(`${base}/images/`);
+ if (!await staticPage.locator(`a[href*="${slug}"]`).count()) throw new Error('No-JS discovery failed');
+ fs.writeFileSync('seo-audit/2026-10-12/raw/browser-verification.json',JSON.stringify({result:'PASS',base,desktop:'1440x1000',mobile:'390x844',verbatimJSON:true,clipboardEquality:true,threeImagesDecoded:true,mobileOverflow:false,categoryDimensionsRetained:true,emptyCategory:true,noJSDiscovery:true},null,2)+'\n');
+ await browser.close();
+})().catch(e=>{console.error(e);process.exit(1)});

@@ -1,0 +1,10 @@
+Docs search index generated
+  Output: assets/js/docs-search-index.json
+  Items: 14
+Enriched 2 search-index prompt source(s)
+╔════════════════════════════════════════════════╗
+║        Kujo Static Site Generator              ║
+╚════════════════════════════════════════════════╝
+
+Loaded configuration from kujo-ssg.yml
+scripts/build.sh: line 23:   550 Terminated: 15          "$KUJO_BIN" run ./build.kujo -- "${build_args[@]}"

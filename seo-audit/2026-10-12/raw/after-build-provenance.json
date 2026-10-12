@@ -1,0 +1,10 @@
+{
+  "source_commit": "b8a30bcce9d56422d192fcbd3d15f27380dbc472",
+  "ci_run": 38297133730,
+  "pages_run": 38297133738,
+  "pinned_kujo": "1.0.1",
+  "ci": "success",
+  "deployment": "success",
+  "local_artifact_validation": "SKIP_BUILD=1 bash scripts/test-site.sh passed",
+  "local_build": "Slow local full build stopped; complete CI artifact used. No full local compilation success claimed."
+}

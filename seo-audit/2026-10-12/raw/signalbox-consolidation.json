@@ -1,0 +1,20 @@
+{
+  "project": "prompts.robertdevore.com",
+  "captures": [
+    {
+      "id": "cap_860c6944-7a02-46aa-9d02-811d65229f09",
+      "finding": "Responsive category thumbnails / font delivery lab performance candidate",
+      "exact_retrieval": "PASS",
+      "concept_search": "responsive category thumbnails",
+      "concept_retrieval": "PASS"
+    }
+  ],
+  "signals": [],
+  "duplicates_skipped": [],
+  "rejected": [
+    "Completed implementation and verification summaries belong in Strata.",
+    "Optional www hostname already documented in prior audit; no new policy decision or impact.",
+    "Unavailable account measurements are access limitations, not verified defects."
+  ],
+  "signal_rationale": "Lab-only opportunity warrants a capture; no field evidence or urgent human decision to justify a Signal."
+}
