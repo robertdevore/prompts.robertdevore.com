@@ -25,11 +25,15 @@ def main() -> int:
             nonlocal rendered
             slug = match.group(1)
             prompt_path = args.sources / f"{slug}.md"
+            language = "markdown"
+            if not prompt_path.is_file():
+                prompt_path = args.sources / f"{slug}.json"
+                language = "json"
             if not prompt_path.is_file():
                 raise SystemExit(f"Raw prompt source is missing: {prompt_path}")
             rendered += 1
             prompt = prompt_path.read_text(encoding="utf-8").rstrip()
-            return f'<pre><code class="language-markdown">{html.escape(prompt)}</code></pre>'
+            return f'<pre><code class="language-{language}">{html.escape(prompt)}</code></pre>'
 
         updated = SENTINEL.sub(replace, source)
         if updated != source:

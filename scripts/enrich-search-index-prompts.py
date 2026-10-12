@@ -32,6 +32,8 @@ def main() -> int:
         if item is None:
             raise SystemExit(f"Search-index item missing for raw prompt: {slug}")
         prompt_path = args.sources / f"{slug}.md"
+        if not prompt_path.is_file():
+            prompt_path = args.sources / f"{slug}.json"
         prompt = prompt_path.read_text(encoding="utf-8").strip()
         item["text"] = (str(item.get("text", "")).replace(match.group(0), "") + " " + prompt).strip()
         headings = [heading.strip() for heading in re.findall(r"^#{1,6}\s+(.+)$", prompt, flags=re.MULTILINE)]

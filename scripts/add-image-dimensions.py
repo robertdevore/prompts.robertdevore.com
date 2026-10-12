@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add intrinsic dimensions to local images in generated HTML."""
+"""Add intrinsic image dimensions and defer below-header article examples."""
 
 from __future__ import annotations
 
@@ -88,6 +88,18 @@ def main() -> int:
             return tag[:-1] + f' width="{width}" height="{height}">'
 
         updated = IMG_RE.sub(add_dimensions, source)
+        body_marker = '<div class="article-body docs-body">'
+        if body_marker in updated:
+            header, body = updated.split(body_marker, 1)
+
+            def defer_example(match: re.Match[str]) -> str:
+                tag = match.group(0)
+                for attribute, value in (("loading", "lazy"), ("decoding", "async")):
+                    if not re.search(rf"\b{attribute}\s*=", tag, re.IGNORECASE):
+                        tag = tag[:-1] + f' {attribute}="{value}">'
+                return tag
+
+            updated = header + body_marker + IMG_RE.sub(defer_example, body)
         if updated != source:
             html_file.write_text(updated, encoding="utf-8")
             changed_files += 1
