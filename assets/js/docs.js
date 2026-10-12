@@ -217,6 +217,8 @@
 		};
 
 		indexRequest.then(function(items) {
+			// Keep build-rendered cards, including their intrinsic image dimensions.
+			if (categoryResults.getAttribute('aria-busy') === 'false') return;
 			var matches = items.filter(function(item) {
 				return (item.categories || []).some(function(value) {
 					return String(value).toLowerCase() === category;
