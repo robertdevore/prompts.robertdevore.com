@@ -29,3 +29,4 @@ if [[ -d static ]]; then
 	cp -R static/. output/
 fi
 bash scripts/validate-generated-output.sh output
+python3 scripts/security-checkpoint.py

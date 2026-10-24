@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "sites": [
+    {
+      "domain": "prompts.robertdevore.com",
+      "contact": "me@robertdevore.com",
+      "adapter": "github-pages",
+      "output_dir": "output",
+      "expires": "2027-04-22T00:00:00Z"
+    }
+  ]
+}
