@@ -1,8 +1,0 @@
-{
-  "status": "PASS",
-  "source_sha256": "c45c4e398db34a7ef92342d66487c1ece54d21161ca77b4735d08670f40bbd27",
-  "verbatim_render": true,
-  "discovery": true,
-  "single_h1": true,
-  "schema_parses": true
-}

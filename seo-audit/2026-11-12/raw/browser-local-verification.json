@@ -1,9 +1,0 @@
-{
-  "result": "PASS",
-  "base": "http://127.0.0.1:4179",
-  "verbatim": true,
-  "clipboard": true,
-  "heroDecoded": true,
-  "mobileOverflow": false,
-  "noJsCategories": true
-}
