@@ -1,0 +1,9 @@
+{
+  "result": "PASS",
+  "base": "https://prompts.robertdevore.com",
+  "verbatim": true,
+  "clipboard": true,
+  "heroDecoded": true,
+  "mobileOverflow": false,
+  "noJsCategories": true
+}
