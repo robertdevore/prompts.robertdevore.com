@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Create a wide 16:9 editorial header illustration for a strategic marketing review prompt. Scene: a strategy table with two opposing chairs, a single chess knight and a magnifying glass over a simple campaign planning sheet. Translate all shapes into sparse monospaced punctuation marks, dashes, dots, brackets and ASCII-like contours. Pure black background, only gold #ffd166 visible marks with opacity variation. Subtle distressed print wear, crisp refined character edges, calm generous empty upper half and left space, visual mass in lower center/right, faint distant contours, midground objects and sparse foreground texture. Match the site's minimalist gold-on-black ASCII grunge visual language. No readable words, letters forming words, numbers, logos, labels, UI, people, photorealism, 3D rendering or extra colors. Landscape high resolution.",
+  "asset": "assets/images/ascii-grunge/ogilvy-mather-strategic-review.webp",
+  "native_dimensions": [
+    1672,
+    941
+  ],
+  "style_reference": "image-prompts/ascii-grunge-header-style-guide.json",
+  "note": "Generated raster; WebP encoding only. Artwork visually reviewed; no upscaling."
+}

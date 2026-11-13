@@ -46,6 +46,9 @@ fi
 expected_routes=(
 	output/index.html
 	output/page/2/index.html
+	output/page/3/index.html
+	output/blog/page/3/index.html
+	output/blog/ogilvy-mather-universal-strategic-review/index.html
 	output/blog/index.html
 	output/about/index.html
 	output/contact/index.html
@@ -83,8 +86,8 @@ for route in "${expected_routes[@]}"; do
 done
 
 assert_contains output/index.html 'Prompts built for making.'
-assert_contains output/index.html 'Glowing Neon Icons: Design Bold Icons with This JSON Prompt'
-assert_contains output/page/2/index.html 'Prompts: Coming Soon'
+assert_contains output/index.html 'Ogilvy &amp; Mather: Universal Strategic Review Prompt'
+assert_contains output/page/3/index.html 'Prompts: Coming Soon'
 assert_contains output/contact/index.html 'mailto:me@robertdevore.com'
 assert_contains output/about/index.html 'A Better Home for Useful Prompts'
 assert_contains output/images/index.html 'data-prompt-category="images"'
@@ -190,7 +193,7 @@ assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta prop
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="og:image:height" content="630">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
-assert_contains output/index.html 'width="1024" height="1024">'
+assert_contains output/blog/ogilvy-mather-universal-strategic-review/index.html 'width="1672" height="941"'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
 assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
 assert_contains output/assets/js/docs-search-index.json 'minimum secure dependency version'
@@ -209,7 +212,7 @@ if grep -Fq '<div class="category-introduction docs-body"><ul>' output/images/in
 fi
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<h2>JSON Prompt</h2>'
 assert_contains output/index.html 'class="listing-card-image-link" aria-label="View prompt details"'
-assert_contains output/page/2/index.html 'alt="Featured image for Prompts: Coming Soon"'
+assert_contains output/page/3/index.html 'alt="Featured image for Prompts: Coming Soon"'
 assert_contains output/blog/brutally-honest-company-product-diagnostic/index.html 'raw truth, not sugar-coated trash'
 assert_contains output/blog/keyword-competitor-content-analysis/index.html 'Competitor Content Evaluation:'
 assert_contains output/blog/dependabot-security-maintenance-agent/index.html 'CLEAN — No open Dependabot alerts.'
@@ -222,6 +225,19 @@ assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', '
 if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then
 	fail "legacy Stattic presentation leaked into generated output"
 fi
+
+assert_contains output/marketing/index.html 'href="/blog/ogilvy-mather-universal-strategic-review/"'
+assert_contains output/business/index.html 'href="/blog/ogilvy-mather-universal-strategic-review/"'
+assert_contains output/assets/js/docs-search-index.json 'Triple-win and durable usefulness'
+python3 - <<'PYTHON'
+from pathlib import Path
+from html import unescape
+import re
+slug = 'ogilvy-mather-universal-strategic-review'
+page = Path(f'output/blog/{slug}/index.html').read_text()
+block = re.search(r'<pre><code class="language-markdown">(.*?)</code></pre>', page, re.S)
+assert block and unescape(block.group(1)) == Path(f'prompt-sources/{slug}.md').read_text().rstrip(), 'Strategic review prompt was altered'
+PYTHON
 
 python3 scripts/check-internal-links.py output
 python3 scripts/check-seo.py output
