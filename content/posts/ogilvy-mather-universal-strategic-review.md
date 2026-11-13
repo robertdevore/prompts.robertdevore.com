@@ -1,7 +1,7 @@
 ---
 title: "Ogilvy & Mather: Universal Strategic Review Prompt"
 description: "Review positioning, buyer needs, messaging, offers, and distribution with two fictional strategic voices, evidence checks, and a seven-day action plan."
-seo_title: "Ogilvy & Mather Strategic Review Prompt"
+seo_title: "Ogilvy & Mather Strategic Review"
 keywords: "strategic review prompt, marketing strategy prompt, positioning review, messaging critique, campaign review"
 featured_image: /assets/images/ascii-grunge/ogilvy-mather-strategic-review.webp
 og_image: /assets/social/ogilvy-mather-universal-strategic-review-social.png

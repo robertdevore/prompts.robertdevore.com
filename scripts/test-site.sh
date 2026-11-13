@@ -139,10 +139,10 @@ fi
 assert_count output/index.html '<li class="listing-card">' 6
 assert_contains output/index.html '<a class="footer-author" href="https://robertdevore.com/">Robert DeVore</a>'
 assert_contains output/index.html 'This website was built with <a class="footer-kujo" href="https://kujolang.ai/">Kujo</a>.'
-if rg -n 'site-brand-mark' output --glob '*.html' --glob '*.css'; then
+if grep -RnE --include='*.html' --include='*.css' 'site-brand-mark' output; then
 	fail "legacy header icon leaked into generated output"
 fi
-if rg -n 'menu-overlay-backdrop' output --glob '*.html' --glob '*.css'; then
+if grep -RnE --include='*.html' --include='*.css' 'menu-overlay-backdrop' output; then
 	fail "obsolete menu backdrop leaked into generated output"
 fi
 assert_contains output/blog/youtube-thumbnail-generation-with-ai-json-prompts/index.html 'EXTREME LEADERSHIP'
@@ -168,7 +168,7 @@ assert_contains output/assets/css/style.css 'inset-block-start: var(--sk-space-3
 assert_contains output/assets/css/style.css '.search-results { position: absolute'
 assert_contains output/assets/css/style.css '.json-token.json-key { color: var(--prompts-accent); }'
 assert_contains output/assets/css/style.css '.code-block-toolbar { position: sticky;'
-if rg -n 'text-stroke|paint-order' output/assets/css/style.css; then
+if grep -nE 'text-stroke|paint-order' output/assets/css/style.css; then
 	fail "outlined title styling leaked into generated output"
 fi
 assert_contains output/assets/js/docs.js 'copyBlockText'
@@ -201,7 +201,7 @@ assert_contains output/assets/js/docs-search-index.json 'Phase 18 — Verify the
 if grep -Fq '%%RAW_PROMPT:' output/assets/js/docs-search-index.json; then
 	fail "raw prompt sentinel leaked into the search index"
 fi
-if rg -n '"url": "https://prompts\.robertdevore\.com/posts/|"url": "/posts/' output/assets/js/docs-search-index.json; then
+if grep -nE '"url": "https://prompts\.robertdevore\.com/posts/|"url": "/posts/' output/assets/js/docs-search-index.json; then
 	fail "legacy /posts/ routes leaked into the image prompt grid"
 fi
 if grep -Fq 'wwf-action-figure-blister-pack-json-prompt' output/assets/js/docs-search-index.json; then
@@ -222,7 +222,7 @@ if grep -Fq '%%RAW_PROMPT:' output/blog/dependabot-security-maintenance-agent/in
 fi
 assert_contains output/assets/js/docs.js "imageLink.setAttribute('aria-label', 'View ' + item.title);"
 
-if rg -n 'stattic\.site|tailwind\.min\.css|quicksand-' output --glob '*.html' --glob '*.css'; then
+if grep -RnE --include='*.html' --include='*.css' 'stattic\.site|tailwind\.min\.css|quicksand-' output; then
 	fail "legacy Stattic presentation leaked into generated output"
 fi
 

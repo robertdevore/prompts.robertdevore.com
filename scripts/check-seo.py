@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
@@ -68,12 +69,12 @@ def expected_schema(route: str) -> str:
         return "AboutPage"
     if route == "contact/index.html":
         return "ContactPage"
-    if route.startswith("blog/") and route not in {"blog/index.html", "blog/page/2/index.html"}:
+    if re.fullmatch(r"(?:blog/)?page/[1-9][0-9]*/index\.html", route):
+        return "CollectionPage"
+    if route.startswith("blog/") and route != "blog/index.html":
         return "BlogPosting"
     if route in {
-        "page/2/index.html",
         "blog/index.html",
-        "blog/page/2/index.html",
         "images/index.html",
         "writing/index.html",
         "business/index.html",
