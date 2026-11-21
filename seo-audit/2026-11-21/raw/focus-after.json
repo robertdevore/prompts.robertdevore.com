@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "phase": "after",
+  "url": "https://prompts.robertdevore.com/blog/post-build-technical-educator/",
+  "canonical": "https://prompts.robertdevore.com/blog/post-build-technical-educator/",
+  "prompt_sha256": "ecffb83e641e75b705b82598b3125689aa2a7a1a1b60d93e26bc0b09b8414d3b",
+  "article_schema": "BlogPosting",
+  "hero_priority": [
+    "eager",
+    "high"
+  ],
+  "og_image": "https://prompts.robertdevore.com/images/post-build-technical-educator-social-019b8f16761a.webp"
+}

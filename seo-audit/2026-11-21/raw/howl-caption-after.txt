@@ -1,0 +1,3 @@
+Post-Build Technical Educator Prompt: Turn finished AI coding work into a tutorial grounded in code, with hands-on exercises.
+
+Explore Prompts by Robert DeVore.
