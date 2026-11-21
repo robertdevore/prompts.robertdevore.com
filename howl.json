@@ -285,6 +285,29 @@
       "background_image": "assets/images/ascii-grunge/blog.webp"
     },
     {
+      "id": "post-build-technical-educator",
+      "title": "Post-Build Technical Educator Prompt",
+      "tagline": "Turn completed AI-assisted coding work into a source-verified technical tutorial with code …",
+      "file": "content/posts/post-build-technical-educator.md",
+      "language": "markdown",
+      "concepts": [
+        "coding",
+        "coding agents",
+        "technical education",
+        "software architecture",
+        "code walkthroughs",
+        "technical writing"
+      ],
+      "caption": "Post-Build Technical Educator Prompt: Turn completed AI-assisted coding work into a source-verified technical tutorial with code walkthroughs, diagrams, hands-on exercises, and knowledge checks.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/post-build-technical-educator/",
+      "variant": "social",
+      "label": "CODING",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/post-build-technical-educator.webp"
+    },
+    {
       "id": "professional-esports-logo-generator-json-prompt",
       "title": "Esports Logo Generator JSON Prompt",
       "tagline": "Create esports team logos with a reusable JSON prompt, six adaptive styles, consistent …",

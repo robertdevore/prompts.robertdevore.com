@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Asset: wide 16:9 article header for prompts.robertdevore.com. Make a gold ASCII grunge editorial still life for Post-Build Technical Educator. A large open technical field notebook, seen from slightly above, with a small three-node software architecture diagram on its right page and short abstract lines on its left page, beside one mechanical pencil. All objects drawn only with crisp sparse monospaced punctuation glyphs (dots, dashes, brackets, slashes, underscores, pipes), including the notebook outline and diagram connectors. Flat matte pure black #000000 background; all marks in gold #ffd166 at varying opacities. Subtle distressed ink breaks around focal contours only, faint scattered dots beneath, contours fading into black. Anchor the visual in the lower center-right, leave upper 35% and side margins black and quiet. Recognizable even at thumbnail size. The site's reference aesthetic is a sparse minimalist gold-on-black ASCII illustration with visible punctuation and intentional empty space. No readable words or numerals, solid fills, logo, UI frame, glow, other colors, photography, or 3D. High resolution landscape.",
+  "asset": "assets/images/ascii-grunge/post-build-technical-educator.webp",
+  "native_dimensions": [
+    1672,
+    941
+  ],
+  "style_reference": "image-prompts/ascii-grunge-header-style-guide.json",
+  "note": "Generated raster, visually reviewed and encoded as WebP without upscaling."
+}
