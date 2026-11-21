@@ -1,6 +1,6 @@
 ---
 title: "Post-Build Technical Educator Prompt"
-description: "Turn completed AI-assisted coding work into a source-verified technical tutorial with code walkthroughs, diagrams, hands-on exercises, and knowledge checks."
+description: "Turn finished AI coding work into a tutorial grounded in code, with hands-on exercises."
 seo_title: "Post-Build Technical Educator Prompt"
 keywords: "technical educator prompt, AI coding tutorial, learn from AI coding agents, source-verified code walkthrough, software engineering exercises"
 featured_image: /assets/images/ascii-grunge/post-build-technical-educator.webp
