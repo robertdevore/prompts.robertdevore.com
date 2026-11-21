@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Add intrinsic image dimensions and defer below-header article examples."""
+"""Add intrinsic image dimensions and set loading priorities for article images."""
 
 from __future__ import annotations
 
@@ -12,6 +12,7 @@ from urllib.parse import unquote, urlparse
 
 IMG_RE = re.compile(r"<img\b[^>]*>", re.IGNORECASE)
 SRC_RE = re.compile(r'\bsrc=["\']([^"\']+)["\']', re.IGNORECASE)
+ARTICLE_HERO_RE = re.compile(r'(<div class="article-visual">)(<img\b[^>]*>)')
 
 
 def image_size(path: Path) -> tuple[int, int] | None:
@@ -88,6 +89,12 @@ def main() -> int:
             return tag[:-1] + f' width="{width}" height="{height}">'
 
         updated = IMG_RE.sub(add_dimensions, source)
+        updated = ARTICLE_HERO_RE.sub(
+            lambda match: match[1] + match[2].replace(
+                ' loading="lazy"', ' loading="eager" fetchpriority="high"', 1
+            ),
+            updated,
+        )
         body_marker = '<div class="article-body docs-body">'
         if body_marker in updated:
             header, body = updated.split(body_marker, 1)

@@ -194,6 +194,7 @@ assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta prop
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:modified_time" content="2025-05-19">'
 assert_contains output/blog/glowing-neon-icon-json-prompt/index.html '<meta property="article:author" content="https://robertdevore.com">'
 assert_contains output/blog/ogilvy-mather-universal-strategic-review/index.html 'width="1672" height="941"'
+assert_contains output/blog/post-build-technical-educator/index.html 'class="featured-image" loading="eager" fetchpriority="high" decoding="async" width="1672" height="941"'
 assert_contains output/blog/index.html 'Browse reusable AI prompts with complete JSON structures, examples, and practical notes for image generation, design, and creative work.'
 assert_contains output/assets/js/docs-search-index.json '"url": "https://prompts.robertdevore.com/blog/glowing-neon-icon-json-prompt/"'
 assert_contains output/assets/js/docs-search-index.json 'minimum secure dependency version'
