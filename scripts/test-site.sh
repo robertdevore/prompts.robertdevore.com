@@ -49,6 +49,7 @@ expected_routes=(
 	output/page/3/index.html
 	output/blog/page/3/index.html
 	output/blog/ogilvy-mather-universal-strategic-review/index.html
+	output/blog/universal-release-explainer/index.html
 	output/blog/index.html
 	output/about/index.html
 	output/contact/index.html
@@ -97,7 +98,7 @@ assert_contains output/marketing/index.html 'href="/blog/keyword-competitor-cont
 assert_contains output/coding/index.html 'href="/blog/dependabot-security-maintenance-agent/"'
 assert_contains output/coding/index.html 'href="/blog/kujo-repository-hardening-performance-efficiency/"'
 assert_contains output/images/index.html 'aria-busy="false"'
-assert_contains output/writing/index.html 'No prompts in this category yet. Check back soon.'
+assert_contains output/writing/index.html 'href="/blog/universal-release-explainer/"'
 assert_contains output/business/index.html 'alt="Featured image for Business Prompts"'
 assert_contains output/coding/index.html 'alt="Featured image for Coding Prompts"'
 assert_contains output/marketing/index.html 'alt="Featured image for Marketing Prompts"'

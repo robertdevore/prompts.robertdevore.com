@@ -1,0 +1,11 @@
+{
+  "mode": "built-in image_gen",
+  "prompt": "Use case: stylized-concept. Generate a new wide 16:9 editorial article hero for prompts.robertdevore.com, using the site's ASCII Grunge Header Image Style Guide v1.2. Scene: a large vintage newspaper front page lying at a slight diagonal, with several rows of abstract punctuation suggesting article columns, and a round magnifying glass resting on the lower right of the newspaper over a small three-node commit history diagram. Translate every shape, including the magnifier rim and handle, into fine crisp sparse monospaced ASCII punctuation such as colons, dots, dashes, brackets, slashes, underscores and pipes. Matte pure black #000000 background with exclusively flat warm gold #ffd166 marks at varied opacity. Three layers: faint receding contours, iconic paper and magnifier silhouette, sparse stray foreground flecks. Restrained eroded ink and slight distressed gaps around contours, black margins, clean upper third, focal mass lower center-right, enough scale for a small thumbnail. The reference image is the site's visual style only: match its tiny evenly spaced character strokes, rich black, sparse pure gold depth and dark editorial tone while illustrating the distinct scene above. No readable words, letters in sequence, numbers, logo, labels, UI, glow, other hues, photographic texture, 3D, heavy lines, filled shapes. High-resolution landscape, centered safely for a shallow hero crop.",
+  "asset": "assets/images/ascii-grunge/universal-release-explainer.webp",
+  "native_dimensions": [
+    1672,
+    941
+  ],
+  "style_reference": "image-prompts/ascii-grunge-header-style-guide.json",
+  "note": "Generated raster, visually reviewed and encoded as WebP without upscaling."
+}

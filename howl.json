@@ -395,6 +395,28 @@
       "background_image": "assets/images/patch-wolf-pack.webp"
     },
     {
+      "id": "universal-release-explainer",
+      "title": "Software Release Explainer Prompt",
+      "tagline": "Turn software releases into clear articles grounded in code and tests.",
+      "file": "content/posts/universal-release-explainer.md",
+      "language": "markdown",
+      "concepts": [
+        "writing",
+        "technical writing",
+        "software releases",
+        "release notes",
+        "fact checking"
+      ],
+      "caption": "Software Release Explainer Prompt: Turn software releases into clear articles grounded in code and tests.",
+      "cta": "Explore Prompts by Robert DeVore.",
+      "url": "https://prompts.robertdevore.com/blog/universal-release-explainer/",
+      "variant": "social",
+      "label": "WRITING",
+      "font_file": "assets/sitekit/fonts/DepartureMono-Regular.woff2",
+      "show_url": false,
+      "background_image": "assets/images/ascii-grunge/universal-release-explainer.webp"
+    },
+    {
       "id": "youtube-thumbnail-generation-with-ai-json-prompts",
       "title": "YouTube Thumbnail JSON Prompts",
       "tagline": "Generate bold YouTube thumbnails from a title, optional subhead, and photo with one …",
