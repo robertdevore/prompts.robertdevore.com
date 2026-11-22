@@ -1,0 +1,155 @@
+[
+  {
+    "sample": "lighthouse-release-explainer-after",
+    "raw_sha256": "3d75311ffc52bc4c0c261dbaf0f2d323d2e95263af60b1d39c1a94464e0c5a8b",
+    "url": "https://prompts.robertdevore.com/blog/universal-release-explainer/",
+    "lighthouse_version": "13.0.1",
+    "fetch_time": "2026-11-22T22:59:56.521Z",
+    "scores": {
+      "performance": 95,
+      "accessibility": 100,
+      "seo": 100
+    },
+    "lcp_ms": 2069.0,
+    "tbt_ms": 212,
+    "cls": 0,
+    "server_response_ms": 68,
+    "lcp_discovery": [
+      {
+        "type": "checklist",
+        "items": {
+          "priorityHinted": {
+            "label": "fetchpriority=high applied",
+            "value": true
+          },
+          "requestDiscoverable": {
+            "label": "Request is discoverable in initial document",
+            "value": true
+          },
+          "eagerlyLoaded": {
+            "label": "lazy load not applied",
+            "value": true
+          }
+        }
+      },
+      {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,3,MAIN,0,ARTICLE,0,HEADER,4,DIV,0,IMG",
+        "selector": "article.prompt-article > header.article-header > div.article-visual > img.featured-image",
+        "boundingRect": {
+          "top": 90,
+          "bottom": 420,
+          "left": 17,
+          "right": 395,
+          "width": 378,
+          "height": 330
+        },
+        "snippet": "<img src=\"../../images/universal-release-explainer-9ed39a05bf02.webp\" alt=\"Featured image for Universal Release Explainer Prompt\" class=\"featured-image\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" width=\"1672\" height=\"941\">",
+        "nodeLabel": "Featured image for Universal Release Explainer Prompt"
+      }
+    ]
+  },
+  {
+    "sample": "lighthouse-writing-after",
+    "raw_sha256": "3418a6298da414652a2c0fb173476cd7562f1272d5c62ddc739781d29a26b98a",
+    "url": "https://prompts.robertdevore.com/writing/",
+    "lighthouse_version": "13.0.1",
+    "fetch_time": "2026-11-22T22:59:05.587Z",
+    "scores": {
+      "performance": 73,
+      "accessibility": 100,
+      "seo": 100
+    },
+    "lcp_ms": 6829.1,
+    "tbt_ms": 183.7,
+    "cls": 0.0042,
+    "server_response_ms": 153,
+    "lcp_discovery": [
+      {
+        "type": "checklist",
+        "items": {
+          "priorityHinted": {
+            "label": "fetchpriority=high should be applied",
+            "value": false
+          },
+          "requestDiscoverable": {
+            "label": "Request is discoverable in initial document",
+            "value": true
+          },
+          "eagerlyLoaded": {
+            "label": "lazy load not applied",
+            "value": false
+          }
+        }
+      },
+      {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,3,MAIN,0,HEADER,3,DIV,0,IMG",
+        "selector": "main#main-content > header.listing-header > div.listing-visual > img.featured-image",
+        "boundingRect": {
+          "top": 90,
+          "bottom": 408,
+          "left": 9,
+          "right": 403,
+          "width": 394,
+          "height": 318
+        },
+        "snippet": "<img src=\"../images/writing-8a45e3e785a6.webp\" alt=\"Featured image for Writing Prompts\" class=\"featured-image\" loading=\"lazy\" decoding=\"async\" width=\"1672\" height=\"941\">",
+        "nodeLabel": "Featured image for Writing Prompts"
+      }
+    ]
+  },
+  {
+    "sample": "lighthouse-writing-baseline",
+    "raw_sha256": "d305188115f46f466614d59aee48b99c2e61c9a890b3d485c9c1d899db5407ad",
+    "url": "https://prompts.robertdevore.com/writing/",
+    "lighthouse_version": "13.0.1",
+    "fetch_time": "2026-11-22T22:56:54.967Z",
+    "scores": {
+      "performance": 70,
+      "accessibility": 100,
+      "seo": 100
+    },
+    "lcp_ms": 5530.1,
+    "tbt_ms": 350,
+    "cls": 0,
+    "server_response_ms": 184,
+    "lcp_discovery": [
+      {
+        "type": "checklist",
+        "items": {
+          "priorityHinted": {
+            "label": "fetchpriority=high should be applied",
+            "value": false
+          },
+          "requestDiscoverable": {
+            "label": "Request is discoverable in initial document",
+            "value": true
+          },
+          "eagerlyLoaded": {
+            "label": "lazy load not applied",
+            "value": false
+          }
+        }
+      },
+      {
+        "type": "node",
+        "lhId": "page-0-IMG",
+        "path": "1,HTML,1,BODY,3,MAIN,0,HEADER,3,DIV,0,IMG",
+        "selector": "main#main-content > header.listing-header > div.listing-visual > img.featured-image",
+        "boundingRect": {
+          "top": 90,
+          "bottom": 408,
+          "left": 9,
+          "right": 403,
+          "width": 394,
+          "height": 318
+        },
+        "snippet": "<img src=\"../images/writing-8a45e3e785a6.webp\" alt=\"Featured image for Writing Prompts\" class=\"featured-image\" loading=\"lazy\" decoding=\"async\" width=\"1672\" height=\"941\">",
+        "nodeLabel": "Featured image for Writing Prompts"
+      }
+    ]
+  }
+]

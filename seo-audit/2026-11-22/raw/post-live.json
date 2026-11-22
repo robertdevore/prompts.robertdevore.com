@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "phase": "after",
+  "url": "https://prompts.robertdevore.com/blog/universal-release-explainer/",
+  "canonical": "https://prompts.robertdevore.com/blog/universal-release-explainer/",
+  "prompt_sha256": "430a26974f17f02a39f8b62ae5dd7e0d95c50fc15f8f93dd9d045646edfa94de",
+  "article_schema": "BlogPosting",
+  "hero_priority": [
+    "eager",
+    "high"
+  ],
+  "og_image": "https://prompts.robertdevore.com/images/universal-release-explainer-social-1c845ea1d4e2.webp"
+}
